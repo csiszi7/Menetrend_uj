@@ -35,8 +35,8 @@ dbConnect()
 
 // route-ok kezelése
 app.use('/api', require('./routes/mainRoutesBackend'));
-app.use('/api/books-backend', require('./routes/booksRoutesBackend'));
-app.use('/api/new-book', require('./routes/newBookRoutesBackend'));
+app.use('/api/schedules-backend', require('./routes/schedulesRoutesBackend'));
+app.use('/api/new-schedule', require('./routes/newScheduleRoutesBackend'));
 
 // nem létező route-ok kezelése, mindig ez legyen az utolsó
 app.use((req, res) => {

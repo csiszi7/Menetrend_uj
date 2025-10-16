@@ -1,7 +1,7 @@
 @import url('./alap.css');
 @import url('./nav.css');
 
-#new-book-kontener {
+#schedule-kontener {
     margin: auto;
     width: 80%;
 }
@@ -11,16 +11,16 @@
     padding: 0.5em;
 }
 
-#new-book-kontener td {
+#schedule-kontener td {
     padding: 0.5em;
 }
 
-#new-book-kontener input {
+#scheule-kontener input {
     font-size: larger;
     width: 400px;
 }
 
-#new-book-kontener button {
+#schedule-kontener button {
     color: whitesmoke;
     background-color: green;
     border: none;

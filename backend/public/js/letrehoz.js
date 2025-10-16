@@ -1,28 +1,27 @@
 async function letrehoz(event) {
     event.preventDefault();
-    const cim = document.querySelector('#cim').value;
-    const szerzok = document.querySelector('#szerzok').value;
-    const zsaner = document.querySelector('#zsaner').value;
-    const oldalszam = document.querySelector('#oldalszam').value;
-    const tartalom = document.querySelector('#tartalom').value;
-    const ar = document.querySelector('#ar').value;
-    const peldanySzam = document.querySelector('#peldanySzam').value;
-    const kep = document.querySelector('#kep').value;
+    const jarat = document.querySelector('#jarat').value;
+    const idotartamok = document.querySelector('#idotartamok').value;
+    const kedvezmenyek = document.querySelector('#kedvezmenyek').value;
+    const kortablak = document.querySelector('#kortablak').value;
+    const allomasok = document.querySelector('#allomasok').value;
+    const idopontok = document.querySelector('#idopontok').value;
+;
+    // const peldanySzam = document.querySelector('#peldanySzam').value;
+    // const kep = document.querySelector('#kep').value;
 
-    const response = await fetch('/api/new-book', {
+    const response = await fetch('/api/new-schedule', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            cim,
-            szerzok,
-            zsaner,
-            oldalszam,
-            tartalom,
-            ar,
-            peldanySzam,
-            kep,
+        body: JSON.stringify({ 
+        jarat,
+        allomasok,
+        kedvezmenyek,
+        kortablak,
+        idotartamok,
+        idopontok, 
         }),
     });
 
@@ -31,6 +30,6 @@ async function letrehoz(event) {
     if (response.ok) {
         const resp = await response.json();
         window.alert(resp.msg);
-        window.location.href = '/api/books-backend';
+        window.location.href = '/api/schedules-backend';
     }
 }

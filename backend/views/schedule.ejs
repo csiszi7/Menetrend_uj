@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/schedule.css"
+        />
+        <title>Menetrend módosítása</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="schedule">
+           <h1>Menetrend módosítása</h1>
+       <form>
+  <table>
+    <tr>
+      <td>Típus:</td>
+      <td>
+        <select id="tipus">
+          <% for(let i = 0; i < tipusok.length; i++) { %>
+            <option value="<%= tipusok[i] %>"><%= tipusok[i] %></option>
+          <% } %>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Induló állomás:</td>
+      <td>
+        <select id="induloallomas">
+          <% for(let i = 0; i < allomasok.length; i++) { %>
+            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
+          <% } %>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Célállomás:</td>
+      <td>
+        <select id="celallomas">
+          <% for(let i = 0; i < allomasok.length; i++) { %>
+            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
+          <% } %>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Kedvezmény (%):</td>
+      <td>
+        <select id="kedvezmeny">
+          <% for(let i = 0; i < kedvezmenyek.length; i++) { %>
+            <option value="<%= kedvezmenyek[i] %>"><%= kedvezmenyek[i] %></option>
+          <% } %>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Indulás ideje:</td>
+      <td><input type="time" id="indulasideje" /></td>
+    </tr>
+
+    <tr>
+      <td>Visszaideje:</td>
+      <td><input type="time" id="visszaideje" /></td>
+    </tr>
+
+    <tr>
+      <td>Kortábla:</td>
+      <td><input type="text" id="kortabla" /></td>
+    </tr>
+
+    <tr>
+      <td>Időtartam:</td>
+      <td><input type="text" id="idotartam" placeholder="pl. 2 óra 30 perc" /></td>
+    </tr>
+
+    <tr>
+      <td>Klíma:</td>
+      <td><input type="checkbox" id="klima" /></td>
+    </tr>
+
+    <tr>
+      <td>Helyjegy:</td>
+      <td><input type="checkbox" id="helyjegy" /></td>
+    </tr>
+
+    <tr>
+      <td>
+        <button onclick="letrehoz(event)">Létrehoz</button>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</form>
+        </div>
+        <script src="/js/schedule-modosit.js"></script>
+    </body>
+</html>

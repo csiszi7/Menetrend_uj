@@ -1,5 +1,5 @@
 async function torles(id) {
-    const response = await fetch(`/api/books-backend/${id}`, {
+    const response = await fetch(`/api/schedules-backend/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -8,6 +8,6 @@ async function torles(id) {
 
     if (response.ok) {
         window.alert('Sikeres törlés!');
-        window.location.href = '/api/books-backend';
+        window.location.href = '/api/schedules-backend';
     }
 }

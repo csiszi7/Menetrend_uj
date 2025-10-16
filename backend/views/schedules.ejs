@@ -8,18 +8,18 @@
         />
         <link
             rel="stylesheet"
-            href="/css/books.css"
+            href="/css/schedules.css"
         />
-        <title>Könyvek backend</title>
+        <title>Menetrendek backend</title>
     </head>
     <body>
         <%- include('nav.ejs') %>
-        <div id="books-kontener">
-            <h1>Könyvek</h1>
-            <p><a href="/api/new-book">Új könyv felvétele</a></p>
-            <div id="konyvek">
-                <% books.forEach(elem => { %>
-                <div class="konyv">
+        <div id="schedules-kontener">
+            <h1>Menetrendek</h1>
+            <p><a href="/api/new-schedule">Új menetrend felvétele</a></p>
+            <div id="menetrendek">
+                <% schedules.forEach(elem => { %>
+                <div class="menetrend">
                     <table>
                         <tr>
                             <td>Cím:</td>
@@ -90,6 +90,6 @@
                 <% }) %>
             </div>
         </div>
-        <script src="/js/konyv-kezel.js"></script>
+        <script src="/js/menetrend-kezel.js"></script>
     </body>
 </html>
