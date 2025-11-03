@@ -1,10 +1,10 @@
 const Schedule = require('../models/schedule');
-const { jaratok, napok, kedvezmenyek } = require('../public/js/adatok');
+const { jarat, allomasok, kortablak, idotartamok, idopontok, kedvezmenyek, induloallomas, celallomas, indulasideje, visszaideje, klima, helyjegy } = require('../public/js/adatok');
 
 exports.getNewScheduleBackend = (req, res) => {
     try {
         res.statusCode = 200;
-        return res.render('new-schedule.ejs', { zsanerek, kedvezmenyek });
+        return res.render('new-schedule.ejs', { jarat, allomasok, kortablak, idotartamok, idopontok, kedvezmenyek, induloallomas, celallomas, indulasideje, visszaideje, klima, helyjegy });
     } catch (error) {
         res.statusCode = 500;
         return res.render('404.ejs');
@@ -14,23 +14,35 @@ exports.getNewScheduleBackend = (req, res) => {
 exports.postNewScheduleBackend = async (req, res) => {
     try {
         const {
-        jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
-        idopontok, 
+       jarat, 
+       allomasok, 
+       kortablak, 
+       idotartamok, 
+       idopontok, 
+       kedvezmenyek, 
+       induloallomas, 
+       celallomas, 
+       indulasideje, 
+       visszaideje, 
+       klima, 
+       helyjegy
         } = req.body;
 
         const irok = szerzok.split(',');
 
         const newSchedule = new Schedule({
-        jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
+        jarat, 
+        allomasok, 
+        kortablak, 
+        idotartamok, 
         idopontok, 
+        kedvezmenyek, 
+        induloallomas, 
+        celallomas, 
+        indulasideje, 
+        visszaideje, 
+        klima, 
+        helyjegy
         });
 
         await newSchedule.save();

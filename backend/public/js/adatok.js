@@ -19,11 +19,19 @@ let idotartamok = ['30 perc', '1 óra', '1 óra 30 perc', '2 óra', '2 óra 30 p
 let idopontok = ['06:30', '07:00', '08:15', '09:00', '10:30', '12:00'];
 
 
-module.exports = {jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
-        idopontok,};
+module.exports = {
+        jarat, 
+        allomasok, 
+        kortablak, 
+        idotartamok, 
+        idopontok, 
+        kedvezmenyek, 
+        induloallomas, 
+        celallomas, 
+        indulasideje, 
+        visszaideje, 
+        klima, 
+        helyjegy
+};
 
 

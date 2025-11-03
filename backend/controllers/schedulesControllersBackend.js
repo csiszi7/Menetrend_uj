@@ -1,5 +1,5 @@
 const Schedule = require('../models/schedule');
-const { jarat, allomasok, kortablak, idotartamok, idopontok, kedvezmenyek } = require('../public/js/adatok');
+const { jarat, allomasok, kortablak, idotartamok, idopontok, kedvezmenyek, induloallomas, celallomas, indulasideje, visszaideje, klima, helyjegy } = require('../public/js/adatok');
 
 exports.getAllSchedulesBackend = async (req, res) => {
     try {
@@ -18,7 +18,7 @@ exports.getOneScheduleBackend = async (req, res) => {
         const schedule = await Schedule.findById({ _id: id });
 
         res.statusCode = 200;
-        return res.render('schedule.ejs', { book, zsanerek, kedvezmenyek });
+        return res.render('schedule.ejs', { jarat, allomasok, kortablak, idotartamok, idopontok, kedvezmenyek, induloallomas, celallomas, indulasideje, visszaideje, klima, helyjegy });
     } catch (error) {
         res.statusCode = 500;
         return res.render('404.ejs');
@@ -29,24 +29,35 @@ exports.updateOneScheduleBackend = async (req, res) => {
     try {
         const { id } = req.params;
         const {
-        jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
+        jarat, 
+        allomasok, 
+        kortablak, 
+        idotartamok, 
         idopontok, 
-            igenvagyNem
+        kedvezmenyek, 
+        induloallomas, 
+        celallomas, 
+        indulasideje, 
+        visszaideje, 
+        klima, 
+        helyjegy
         } = req.body;
         const irok = szerzok.split(',');
         const schedule = await Schedule.findByIdAndUpdate(
             { _id: id },
             {
-        jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
+        jarat, 
+        allomasok, 
+        kortablak, 
+        idotartamok, 
         idopontok, 
+        kedvezmenyek, 
+        induloallomas, 
+        celallomas, 
+        indulasideje, 
+        visszaideje, 
+        klima, 
+        helyjegy
             }
         );
 
