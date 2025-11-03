@@ -1,5 +1,4 @@
 
-
 // Járattípusok
 let jarat = ['busz', 'vonat', 'hajó', 'repülő'];
 
