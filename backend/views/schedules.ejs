@@ -1,95 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/schedules.css"
-        />
-        <title>Menetrendek backend</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/schedules/schedules.css" />
+        <title>Menetrendek</title>
     </head>
     <body>
         <%- include('nav.ejs') %>
-        <div id="schedules-kontener">
+        <div id="menetrend-kontener">
             <h1>Menetrendek</h1>
             <p><a href="/api/new-schedule">Új menetrend felvétele</a></p>
-            <div id="menetrendek">
+            <div id="menetrendek-kontener">
                 <% schedules.forEach(elem => { %>
                 <div class="menetrend">
-                    <table>
-                        <tr>
-                            <td>Cím:</td>
-                            <td><%= elem.cim %></td>
-                        </tr>
-                        <tr>
-                            <td>Szerzők:</td>
-                            <td>
-                                <% elem.szerzok.forEach(item => { %>
-                                <span><%= item %></span><br />
-                                <% }) %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Zsáner:</td>
-                            <td><%= elem.zsaner %></td>
-                        </tr>
-                        <tr>
-                            <td>Oldalszám:</td>
-                            <td><%= elem.oldalszam %></td>
-                        </tr>
-                        <tr>
-                            <td>Tartalom:</td>
-                            <td><%= elem.tartalom %></td>
-                        </tr>
-                        <tr>
-                            <td>Ár:</td>
-                            <td><%= elem.ar %> Ft</td>
-                        </tr>
-                        <tr>
-                            <td>Példányszám:</td>
-                            <td><%= elem.peldanySzam %> db</td>
-                        </tr>
-                        <tr>
-                            <td>Eladott:</td>
-                            <td><%= elem.eladott %> db</td>
-                        </tr>
-                        <tr>
-                            <td>Kedvezmény:</td>
-                            <td><%= elem.kedvezmeny %>%</td>
-                        </tr>
-                        <tr>
-                            <td>Kép:</td>
-                            <td>
-                                <img src="<%= elem.kep %>" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a
-                                    class="modosit"
-                                    href="/api/books-backend/<%= elem._id %>"
-                                >
-                                    Módosítás
-                                </a>
-                            </td>
-                            <td>
-                                <button
-                                    class="torol"
-                                    onclick="torles('<%= elem._id%>')"
-                                >
-                                    Törlés
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
+                    <h1><%= elem.nev %></h1>
+                    <h5>Ár: <%= elem.ar %> Ft</h5>
+                    <div class="menetrend">
+                        <% elem.kepek.forEach(item => { %>
+                        <div class="menetrend-kep">
+                            <img src="<%= item %>" alt="<%= item %>" />
+                        </div>
+                        <% }) %>
+                    </div>
+                    <p><%= elem.leiras %></p>
+                    <div id="menetrend-gombok">
+                        <a href="/api/schedules-backend/<%= elem._id %>">Lekérés</a>
+                        <button onclick="torol('<%= elem._id %>')">Törlés</button>
+                    </div>
                 </div>
                 <% }) %>
             </div>
         </div>
-        <script src="/js/menetrend-kezel.js"></script>
+        <script src="/js/menetrendek.mjs"></script>
     </body>
 </html>

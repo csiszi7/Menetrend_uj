@@ -1,107 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/new-schedule.css"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/cakes/new-schedule.css" />
         <title>Új menetrend felvétele</title>
     </head>
     <body>
         <%- include('nav.ejs') %>
-        <div id="new-schedule-kontener">
-                <h1>Új menetrend felvétele</h1>
-        <form>
-  <table>
-    <tr>
-      <td>Típus:</td>
-      <td>
-        <select id="tipus">
-          <% for(let i = 0; i < tipusok.length; i++) { %>
-            <option value="<%= tipusok[i] %>"><%= tipusok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
+        <div id="uj-menetrend-kontener">
+            <h1>Új menetrend felvétele</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Tipus:</td>
+                        <td><input type="text" id="tipus" /></td>
+                    </tr>
+                    <tr>
+                        <td>Indulóállomás:</td>
+                        <td><input type="text" id="induloallomas" /></td>
+                    </tr>
+                    <tr>
+                        <td>Célállomás:</td>
+                        <td><input type="text-area" id="celallomas" /></td>
+                    </tr>
+                    <tr>
+                        <td>Időpontok:</td>
+                        <td><textarea id="idopontok" cols="6" rows="6"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Érintő állomás:</td>
+                        <td><textarea id="erintoallomas" cols="" rows=""></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Életkor:</td>
+                        <td><textarea id="kortabla" cols="6" rows="6"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Kedvezmény:</td>
+                        <td><textarea id="kedvezmeny" cols="26" rows="26"></textarea></td>
+                    </tr>
+                    <tr>
+                    <td>Klíma</td>
+                    <td>
+                        <label>
+                        <input type="radio" id="klima_igen" name="klima" value="true">
+                        <label for="klima_igen">Van</label>
 
-    <tr>
-      <td>Induló állomás:</td>
-      <td>
-        <select id="induloallomas">
-          <% for(let i = 0; i < allomasok.length; i++) { %>
-            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
+                        <input type="radio" id="klima_nem" name="klima" value="false">
+                        <label for="klima_nem">Nincs</label>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>Helyjegy</td>
+                    <td>
+                        <label>
+                        <input type="radio" id="helyjegy_igen" name="helyjegy" value="true">
+                        <label for="helyjegy_igen">Van</label>
 
-    <tr>
-      <td>Célállomás:</td>
-      <td>
-        <select id="celallomas">
-          <% for(let i = 0; i < allomasok.length; i++) { %>
-            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Kedvezmény (%):</td>
-      <td>
-        <select id="kedvezmeny">
-          <% for(let i = 0; i < kedvezmenyek.length; i++) { %>
-            <option value="<%= kedvezmenyek[i] %>"><%= kedvezmenyek[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Indulás ideje:</td>
-      <td><input type="time" id="indulasideje" /></td>
-    </tr>
-
-    <tr>
-      <td>Visszaideje:</td>
-      <td><input type="time" id="visszaideje" /></td>
-    </tr>
-
-    <tr>
-      <td>Kortábla:</td>
-      <td><input type="text" id="kortabla" /></td>
-    </tr>
-
-    <tr>
-      <td>Időtartam:</td>
-      <td><input type="text" id="idotartam" placeholder="pl. 2 óra 30 perc" /></td>
-    </tr>
-
-    <tr>
-      <td>Klíma:</td>
-      <td><input type="checkbox" id="klima" /></td>
-    </tr>
-
-    <tr>
-      <td>Helyjegy:</td>
-      <td><input type="checkbox" id="helyjegy" /></td>
-    </tr>
-
-    <tr>
-      <td>
-        <button onclick="letrehoz(event)">Létrehoz</button>
-      </td>
-      <td></td>
-    </tr>
-  </table>
-</form>
-
+                        <input type="radio" id="helyjegy_nem" name="klima" value="false">
+                        <label for="helyjegy_nem">Nincs</label>
+                        </label>
+                    </td>
+                    </tr>
+                        <td>Ár:</td>
+                        <td><input type="number" id="ar" /></td>
+                    </tr>
+                    <tr>
+                        <td>Leírás:</td>
+                        <td><textarea id="leiras"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Kép 1:</td>
+                        <td><input type="text" id="kep1" /></td>
+                    </tr>
+                    <tr>
+                        <td>Kép 2:</td>
+                        <td><input type="text" id="kep2" /></td>
+                    </tr>
+                    <tr>
+                        <td>Kép 3:</td>
+                        <td><input type="text" id="kep3" /></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="feltoltes(event)">Feltöltés</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
         </div>
-        <script src="/js/letrehoz.js"></script>
+        <script src="/js/menetrendek.mjs"></script>
     </body>
-</html>
+</html> 
+<!-- maga az űrlap -->

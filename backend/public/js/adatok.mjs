@@ -1,6 +1,6 @@
 
 // Járattípusok
-let jarat = ['busz', 'vonat', 'hajó', 'repülő'];
+let jarat = ['busz', 'vonat'];
 
 // Állomások
 let allomasok = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc'];

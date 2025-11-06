@@ -6,6 +6,12 @@ async function letrehoz(event) {
     const kortablak = document.querySelector('#kortablak').value;
     const allomasok = document.querySelector('#allomasok').value;
     const idopontok = document.querySelector('#idopontok').value;
+    const induloallomas = document.querySelector('#induloallomas').value;
+    const celallomas = document.querySelector('#celallomas').value;
+    const indulasideje = document.querySelector('#indulasideje').value;
+    const visszaideje = document.querySelector('#visszaideje').value;
+    const helyjegy = document.querySelector('#helyjegy').value;
+    const klima = document.querySelector('#klima').value;
 ;
     // const peldanySzam = document.querySelector('#peldanySzam').value;
     // const kep = document.querySelector('#kep').value;
@@ -16,12 +22,18 @@ async function letrehoz(event) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-        jarat,
-        allomasok,
-        kedvezmenyek,
-        kortablak,
-        idotartamok,
+        jarat, 
+        allomasok, 
+        kortablak, 
+        idotartamok, 
         idopontok, 
+        kedvezmenyek, 
+        induloallomas, 
+        celallomas, 
+        indulasideje, 
+        visszaideje, 
+        klima, 
+        helyjegy 
         }),
     });
 

@@ -1,106 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html lang="hu">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <link
-            rel="stylesheet"
-            href="/css/schedule.css"
-        />
-        <title>Menetrend módosítása</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/schedules/schedules.css" />
+        <title>Menetrend</title>
     </head>
     <body>
-        <%- include('nav.ejs') %>
-        <div id="schedule">
-           <h1>Menetrend módosítása</h1>
-       <form>
-  <table>
-    <tr>
-      <td>Típus:</td>
-      <td>
-        <select id="tipus">
-          <% for(let i = 0; i < tipusok.length; i++) { %>
-            <option value="<%= tipusok[i] %>"><%= tipusok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Induló állomás:</td>
-      <td>
-        <select id="induloallomas">
-          <% for(let i = 0; i < allomasok.length; i++) { %>
-            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Célállomás:</td>
-      <td>
-        <select id="celallomas">
-          <% for(let i = 0; i < allomasok.length; i++) { %>
-            <option value="<%= allomasok[i] %>"><%= allomasok[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Kedvezmény (%):</td>
-      <td>
-        <select id="kedvezmeny">
-          <% for(let i = 0; i < kedvezmenyek.length; i++) { %>
-            <option value="<%= kedvezmenyek[i] %>"><%= kedvezmenyek[i] %></option>
-          <% } %>
-        </select>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Indulás ideje:</td>
-      <td><input type="time" id="indulasideje" /></td>
-    </tr>
-
-    <tr>
-      <td>Visszaideje:</td>
-      <td><input type="time" id="visszaideje" /></td>
-    </tr>
-
-    <tr>
-      <td>Kortábla:</td>
-      <td><input type="text" id="kortabla" /></td>
-    </tr>
-
-    <tr>
-      <td>Időtartam:</td>
-      <td><input type="text" id="idotartam" placeholder="pl. 2 óra 30 perc" /></td>
-    </tr>
-
-    <tr>
-      <td>Klíma:</td>
-      <td><input type="checkbox" id="klima" /></td>
-    </tr>
-
-    <tr>
-      <td>Helyjegy:</td>
-      <td><input type="checkbox" id="helyjegy" /></td>
-    </tr>
-
-    <tr>
-      <td>
-        <button onclick="letrehoz(event)">Létrehoz</button>
-      </td>
-      <td></td>
-    </tr>
-  </table>
-</form>
+        <%- include('../nav.ejs') %>
+        <div id="menetrend-kontener">
+            <h1>Menetrend</h1>
+            <div class="menetrend-kontener">
+                <form>
+                    <input type="hidden" id="id" value="<%= cake._id %>" />
+                    <table>
+                        <tr>
+                            <td>Név:</td>
+                            <td><input type="text" id="nev" value="<%= schedule.nev %>" /></td>
+                        </tr>
+                        <tr>
+                            <td>Ár:</td>
+                            <td><input type="number" id="ar" value="<%= schedule.ar %>" /></td>
+                        </tr>
+                        <tr>
+                            <td>Leírás:</td>
+                            <td><textarea id="leiras"><%= schedule.leiras %></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Kép 1:</td>
+                            <td><input type="text" id="kep1" value="<%= schedule.kepek[0] %>" /></td>
+                        </tr>
+                        <tr>
+                            <td>Kép 2:</td>
+                            <td><input type="text" id="kep2" value="<%= schedule.kepek[1] %>" /></td>
+                        </tr>
+                        <tr>
+                            <td>Kép 3:</td>
+                            <td><input type="text" id="kep3" value="<%= schedule.kepek[2] %>" /></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="modositas(event)">Módosítás</button></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
-        <script src="/js/schedule-modosit.js"></script>
+        <script src="/js/menetrendek.mjs"></script>
     </body>
 </html>

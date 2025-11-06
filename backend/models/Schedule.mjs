@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 
 const scheduleSchema = new mongoose.Schema(
     {
@@ -30,24 +31,15 @@ const scheduleSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        kortabla: {
+        kortabla :[{
             type: String,
             required: true
-        },
-        idotartam: {
-            type: String,
-            required: true
-        
-        },
-        indulasideje: {
+        }],
+        idotartam: [{
             type: String,
             required: true
         
-        },
-        visszaideje: {
-            type: String,
-            required: true
-        },
+        }],
         klima: {
             type: Boolean,
             default: false
@@ -55,17 +47,13 @@ const scheduleSchema = new mongoose.Schema(
         helyjegy: {
             type: Boolean,
             default: false
-        }
+        } 
 
     },
-    {
-        type: String,
-        timestamps: true
-    }
-
+    {timestamps: true}
 )
 
 const ScheduleModel = mongoose.model('schedule', scheduleSchema);
 
-module.exports = ScheduleModel;
+export default ScheduleModel;
 
