@@ -17,7 +17,7 @@ const pictureUploader = async (req, res, next) => {
     const results3 = await cloudinary.uploader.upload(kep3);
     const url3 = cloudinary.url(results3.public_id);
 
-    req.body.kep = [url1, url2, url3];
+    req.body.kepek = [url1, url2, url3];
 
     next();
 };

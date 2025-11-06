@@ -1,7 +1,7 @@
-const express = require('express');
-const { getMainBackend } = require('../controllers/mainControllersBackend');
+import express from 'express';
+import { getMain } from '../controllers/mainControllersBackend.mjs';
 const router = express.Router();
 
-router.get('/', getMainBackend);
+router.get('/', getMain);
 
-module.exports = router;
+export default router;

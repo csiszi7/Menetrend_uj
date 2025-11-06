@@ -29,7 +29,8 @@ dbConnect()
 import mainRouter from './routes/mainRoutesBackend.mjs';
 app.use('/api', mainRouter);
 
-import schedulesRouter from './routes/schedules/scheduleRouteBackend.mjs';
+
+import schedulesRouter from './routes/schedules/schedulesRouteBackend.mjs';
 app.use('/api/schedules-backend', schedulesRouter);
 
 import newScheduleRouter from './routes/schedules/newScheduleRouteBackend.mjs';
