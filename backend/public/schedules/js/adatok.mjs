@@ -30,11 +30,36 @@ let kortablak = ['Kisgyerek (0-3 éves)',
   'Nyugdíjas/senior (65+ éves)'];
 
 // Időtartamok (példa)
-let idotartamok = ['30 perc', '1 óra', '1 óra 30 perc', '2 óra', '2 óra 30 perc'];
+let idopontok = [
+  '3:25', '4:30', '5:46', '6:44', '7:44', '8:44', '9:44', '10:44', '11:44', '12:44', '13:44', '14:44', '15:44', '16:44', '17:44', '18:44', '19:44', '20:44'
+];
 
 // Például indulási és visszaidő minták
-let idopontok = ['06:30', '07:00', '08:15', '09:00', '10:30', '12:00'];
+let idotartam = [2:30];
 
+// helyegy
+let helyegy=[
+'1.osztály','2.osztály'
+];
+
+// indulo állomások
+let induloallomas = [
+'Szeged', 'Szatymaz', 'kistelek', 'Kiskunfélegyháza', 'Kecsekmét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba'
+];
+// célállomások
+let celallomas =[
+'budapest-nyugati', 'budapest-keleti', 'budapest-déli'
+];
+
+// klíma
+let klima = [
+'igen', 'nem'
+];
+
+// visszaido
+let visszaideje =[
+
+];
 
 module.exports = {
         jarat, 
@@ -45,7 +70,6 @@ module.exports = {
         kedvezmenyek, 
         induloallomas, 
         celallomas, 
-        indulasideje, 
         visszaideje, 
         klima, 
         helyjegy

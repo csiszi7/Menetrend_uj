@@ -31,7 +31,7 @@ const scheduleSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        kortabla :[{
+        kortablak :[{
             type: String,
             required: true
         }],
