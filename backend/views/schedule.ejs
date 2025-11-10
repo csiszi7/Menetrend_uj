@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/schedules/schedules.css" />
+        <link rel="stylesheet" href="/schedules/css/schedule.css" />
         <title>Menetrend</title>
     </head>
     <body>
@@ -11,33 +11,78 @@
         <div id="menetrend-kontener">
             <h1>Menetrend</h1>
             <div class="menetrend-kontener">
-                <form>
-                    <input type="hidden" id="id" value="<%= cake._id %>" />
-                    <table>
-                        <tr>
-                            <td>Név:</td>
-                            <td><input type="text" id="nev" value="<%= schedule.nev %>" /></td>
-                        </tr>
-                        <tr>
-                            <td>Ár:</td>
-                            <td><input type="number" id="ar" value="<%= schedule.ar %>" /></td>
-                        </tr>
-                        <tr>
-                            <td>Leírás:</td>
-                            <td><textarea id="leiras"><%= schedule.leiras %></textarea></td>
-                        </tr>
-                        <tr>
-                            <td>Kép 1:</td>
-                            <td><input type="text" id="kep1" value="<%= schedule.kepek[0] %>" /></td>
-                        </tr>
-                        <tr>
-                            <td>Kép 2:</td>
-                            <td><input type="text" id="kep2" value="<%= schedule.kepek[1] %>" /></td>
-                        </tr>
-                        <tr>
-                            <td>Kép 3:</td>
-                            <td><input type="text" id="kep3" value="<%= schedule.kepek[2] %>" /></td>
-                        </tr>
+                    <form>
+                <table>
+                    <tr>
+                        <td>Tipus:</td>
+                        <td><input type="text" id="tipus" /></td>
+                    </tr>
+                    <tr>
+                        <td>Indulóállomás:</td>
+                        <td><input type="text" id="induloallomas" /></td>
+                    </tr>
+                    <tr>
+                        <td>Célállomás:</td>
+                        <td><input type="text-area" id="celallomas" /></td>
+                    </tr>
+                    <tr>
+                        <td>Időpontok:</td>
+                        <td><textarea id="idopontok" cols="20" rows="6"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Érintő állomás:</td>
+                        <td><textarea id="erintoallomas" cols="20" rows=""></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Életkor:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Kedvezmény:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                    <td>Klíma</td>
+                    <td>
+                        <label for="klima_igen">Van</label>
+                        <input type="radio" id="klima_igen" name="klima" value="true" checked>
+
+                        <label for="klima_nem">Nincs</label>
+                        <input type="radio" id="klima_nem" name="klima" value="false">
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>Helyjegy</td>
+                    <td>
+                        
+                        <label for="helyjegy_igen">Van</label>
+                        <input type="radio" id="helyjegy_igen" name="helyjegy" value="true" checked>
+
+                        <label for="helyjegy_nem">Nincs</label>
+                        <input type="radio" id="helyjegy_nem" name="helyjegy" value="false">
+                        
+                    </td>
+                    <!-- </tr>
+                        <td>Ár:</td>
+                        <td><input type="number" id="ar" /></td>
+                    </tr>
+                    <tr>
+                        <td>Leírás:</td>
+                        <td><textarea id="leiras"></textarea></td>
+                    </tr> -->
+                    <tr>
+                        <td>Kép 1:</td>
+                        <td><input type="text" id="kep1" /></td>
+                    </tr>
+                    <tr>
+                        <td>Kép 2:</td>
+                        <td><input type="text" id="kep2" /></td>
+                    </tr>
+                    <tr>
+                        <td>Kép 3:</td>
+                        <td><input type="text" id="kep3" /></td>
+                    </tr>
+                    <tr>
                         <tr>
                             <td><button onclick="modositas(event)">Módosítás</button></td>
                             <td></td>
