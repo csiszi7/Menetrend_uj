@@ -3,7 +3,7 @@
 let jarat = ['busz', 'vonat'];
 
 // Állomások
-let allomasok = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc'];
+let allomasok = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba'];
 
 // Kedvezmények (%)
 let kedvezmenyek = [' BKK bérletek és jegyek (csak HÉV utazáshoz)', 'BKK munkavállaló 2. kocsiosztály', 'BKV munkavállaló 2. kocsiosztály', 'Ellátottak utazási utalványa','Ellátottak utazási utalványa', 'FIP igazolvány 1. oszt.', 'Fogyatékossággal élők igazolványa', 'GYSEV igazolvány 1. oszt.', 'GYSEV igazolvány 2. oszt.', 'GYSEV igazolvány-családtag 1. oszt.', 'GYSEV igazolvány-családtag 2. oszt.Díjmentes','Magyar Igazolvány, Magyar hozzátartozói Igazolvány Díjmentes','Magyarország24 jegyDíjmentes','MÁV-START igazolvány 1. oszt. Díjmentes',
@@ -31,11 +31,11 @@ let kortablak = ['Kisgyerek (0-3 éves)',
 
 // Időtartamok (példa)
 let idopontok = [
-  '3:25', '4:30', '5:46', '6:44', '7:44', '8:44', '9:44', '10:44', '11:44', '12:44', '13:44', '14:44', '15:44', '16:44', '17:44', '18:44', '19:44', '20:44'
+  '3:25', '4:30', '5:46', '6:44', '7:44', '8:44', '9:44', '10:44', '11:44', '12:44', '13:44', '14:44', '15:44', '16:44', '17:44', '18:44', '19:44', '20:44', '5:28', '6:28', '7:28', '8:28', '9:28','10:28','11:28','12:28','13:28','14:28','15:28','16:28','17:28','18:28','19:28','20:28','22:28','6:07','8:11','15:11','18:11',
 ];
 
-// Például indulási és visszaidő minták
-let idotartam = ['2:30'];
+// szeged-> bp(Ic), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz) indulások
+let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)'];
 
 // helyegy
 let helyegy=[
@@ -44,11 +44,12 @@ let helyegy=[
 
 // indulo állomások
 let induloallomas = [
-'Szeged', 'Szatymaz', 'kistelek', 'Kiskunfélegyháza', 'Kecsekmét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba'
+'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes'
 ];
 // célállomások
 let celallomas =[
-'budapest-nyugati', 'budapest-keleti', 'budapest-déli'
+'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes',
+  'budapest-keleti', 'budapest-déli'
 ];
 
 // klíma
