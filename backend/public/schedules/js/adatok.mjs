@@ -35,7 +35,7 @@ let idopontok = [
 ];
 
 // Például indulási és visszaidő minták
-let idotartam = [2:30];
+let idotartam = ['2:30'];
 
 // helyegy
 let helyegy=[
@@ -58,7 +58,7 @@ let klima = [
 
 // visszaido
 let visszaideje =[
-
+'munkara var'
 ];
 
 module.exports = {
