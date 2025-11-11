@@ -34,7 +34,7 @@ let idopontok = [
   '3:25', '4:30', '5:46', '6:44', '7:44', '8:44', '9:44', '10:44', '11:44', '12:44', '13:44', '14:44', '15:44', '16:44', '17:44', '18:44', '19:44', '20:44', '5:28', '6:28', '7:28', '8:28', '9:28','10:28','11:28','12:28','13:28','14:28','15:28','16:28','17:28','18:28','19:28','20:28','22:28','6:07','8:11','15:11','18:11',
 ];
 
-// szeged-> bp(Ic), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz) indulások
+// szeged-> bp(Ic, S), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz) indulások
 let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)'];
 
 // helyegy
@@ -59,7 +59,7 @@ let klima = [
 
 // visszaido
 let visszaideje =[
-'munkara var'
+    
 ];
 
 module.exports = {
