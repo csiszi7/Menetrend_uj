@@ -13,63 +13,64 @@
             <form>
                 <table>
                     <tr>
-                        <td>Tipus:</td>
-                        <td><input type="text" id="tipus" /></td>
-                    </tr>
-                    <tr>
-                        <td>Indulóállomás:</td>
-                        <td><input type="text" id="induloallomas" /></td>
+                        <td>Járat:</td>
+                        <td>
+                            <select id="jarat">
+                                <% jarat.forEach(elem => { %>
+                                    <option value="<%= elem %>"><%= elem %></option>
+                                    <% }) %>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Indulóállomás:</td>
+                            <td>
+                                <select id="induloallomas">
+                                    <% allomasok.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Célállomás:</td>
-                        <td><input type="text-area" id="celallomas" /></td>
+                        <td><select id="celallomas">
+                                    <% allomasok.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
                     </tr>
                     <tr>
-                        <td>Időpontok:</td>
-                        <td><textarea id="idopontok" cols="20" rows="6"></textarea></td> 
-                    </tr>
-                    <tr>
-                        <td>Érintő állomás:</td>
-                        <td><textarea id="erintoallomas" cols="20" rows=""></textarea></td>
+                        <td>Kedvezmények:</td>
+                        <td><select id="kedvezmeny">
+                                    <% kedvezmeny.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
                     </tr>
                     <tr>
                         <td>Életkor:</td>
-                         <td><input type="text" id="kortabla" /></td>
+                        <td><select id="kortablak">
+                                    <% kortablak.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
                     </tr>
                     <tr>
-                        <td>Kedvezmény:</td>
-                        <td>
-<select  id="kedvezmenyek">
-  <option value="BKK_bérletek_jegyek">BKK bérletek és jegyek (csak HÉV utazáshoz)</option>
-  <option value="BKK_munkavallalo_2_kocsiosztaly">BKK munkavállaló 2. kocsiosztály</option>
-  <option value="BKV_munkavallalo_2_kocsiosztaly">BKV munkavállaló 2. kocsiosztály</option>
-  <option value="Ellatottak_utazasi_utalvanya">Ellátottak utazási utalványa</option>
-  <option value="FIP_igazolvany_1_oszt">FIP igazolvány 1. oszt.</option>
-  <option value="Fogyatekkal_elok_igazolvanya">Fogyatékossággal élők igazolványa</option>
-  <option value="GYSEV_igazolvany_1_oszt">GYSEV igazolvány 1. oszt.</option>
-  <option value="GYSEV_igazolvany_2_oszt">GYSEV igazolvány 2. oszt.</option>
-  <option value="GYSEV_igazolvany_csaladtag_1_oszt">GYSEV igazolvány-családtag 1. oszt.</option>
-  <option value="GYSEV_igazolvany_csaladtag_2_oszt_dijmentes">GYSEV igazolvány-családtag 2. oszt. Díjmentes</option>
-  <option value="Magyar_Igazolvany_hozzatarozoi_dijmentes">Magyar Igazolvány, Magyar hozzátartozói Igazolvány Díjmentes</option>
-  <option value="Magyarorszag24_jegy_dijmentes">Magyarország24 jegyDíjmentes</option>
-  <option value="MAV_START_igazolvany_1_oszt_dijmentes">MÁV-START igazolvány 1. oszt. Díjmentes</option>
-  <option value="MAV_START_igazolvany_2_oszt_dijmentes">MÁV-START igazolvány 2. oszt. Díjmentes</option>
-  <option value="MAV_START_igazolvany_csaladtag_1_oszt_dijmentes">MÁV-START igazolvány-családtag 1. oszt. Díjmentes</option>
-  <option value="MAV_START_igazolvany_csaladtag_2_oszt_dijmentes">MÁV-START igazolvány-családtag 2. oszt. Díjmentes</option>
-  <option value="Menekultek_igazolasa_dijmentes">Menekültek igazolása Díjmentes</option>
-  <option value="Nagycsalad_tagja_dijmentes">Nagcsalád tagja Díjmentes</option>
-  <option value="Nemzetkozi_berlet_1_oszt_dijmentes">Nemzetközi bérlet, menetjegy 1. o. Díjmentes</option>
-  <option value="Nemzetkozi_berlet_2_oszt_dijmentes">Nemzetközi bérlet, menetjegy 2. o. Díjmentes</option>
-  <option value="Orszagbérlet">Országbérlet</option>
-  <option value="OSZZSD_igazolvany_magancelu_dijmentes">OSZZSD igazolvány magáncélú Díjmentes</option>
-  <option value="Rendor_keszenleti_igazolvany_dijmentes">Rendőr - készenléti igazolvány (203) Díjmentes</option>
-  <option value="START_Klub_VIP_kartya_dijmentes">START Klub VIP kártya Díjmentes</option>
-  <option value="U_jelu_utazasi_igazolvany_dijmentes">U jelű, vagy azzal egyenértékű utazási igazolvány Díjmentes</option>
-  <option value="VOLAN_szabadjegy_dijmentes">VOLÁN szabadjegy (országos) Díjmentes</option>
-</select>
-
-                        </td>
-                        
+                        <td>Időtartam:</td>
+                        <td><select id="idotartam">
+                                    <% idotartam.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
+                    </tr>
+                    <tr>
+                        <td>Időpontok:</td>
+                        <td><select id="idopontok">
+                                    <% idopontok.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
                     </tr>
                     <tr>
                     <td>Klíma</td>

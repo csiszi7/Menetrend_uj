@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const scheduleSchema = new mongoose.Schema(
     {
-        tipus: {
+        jarat: {
             type: String,
             required: true,
         },

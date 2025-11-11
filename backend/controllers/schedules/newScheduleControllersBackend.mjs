@@ -1,9 +1,19 @@
 import ScheduleModel from "../../models/Schedule.mjs";
+import {
+        jarat, 
+        allomasok, 
+        kedvezmeny, 
+        kortablak, 
+        idotartam, 
+        idopontok, 
+        induloallomas, 
+        celallomas 
+} from "../../public/schedules/js/adatok.mjs";
 
 export const getNewSchedule = (req, res) => {
     try {
         res.statusCode = 200;
-        return res.render('new-schedule.ejs');
+        return res.render('new-schedule.ejs', {jarat, allomasok, kedvezmeny, kortablak, idotartam, idopontok, induloallomas, celallomas});
     } catch (error) {
         res.statusCode = 404;
         return res.render('404.ejs');
