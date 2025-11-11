@@ -1,0 +1,89 @@
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  transition: border 0.2s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+form p {
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #444;
+}
+
+form button {
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem 0.3rem 0 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+form button[type="reset"] {
+  background: #f87171;
+  color: #fff;
+}
+
+form button#keres {
+  background: #2563eb;
+  color: white;
+}
+
+form button#keres:hover {
+  background: #1d4ed8;
+}
+
+form button[name="+Utas"] {
+  background: #10b981;
+  color: white;
+}
+
+form button[name="+Utas"]:hover {
+  background: #059669;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+  }
+  
+  form input,
+  form select {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    width: 100%;
+    margin: 0.4rem 0;
+  }
+}
