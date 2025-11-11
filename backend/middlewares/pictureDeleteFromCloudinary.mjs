@@ -15,11 +15,9 @@ const pictureDeleter = async (req, res, next) => {
     const torolKep = await Schedule.findById({ _id: id });
     const kep1 = torolKep.kepek[0].split('/')[6].split('?')[0];
     const kep2 = torolKep.kepek[1].split('/')[6].split('?')[0];
-    const kep3 = torolKep.kepek[2].split('/')[6].split('?')[0];
 
     await cloudinary.uploader.destroy(kep1.toString());
     await cloudinary.uploader.destroy(kep2.toString());
-    await cloudinary.uploader.destroy(kep3.toString());
 
     next();
 };

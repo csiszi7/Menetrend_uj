@@ -11,6 +11,12 @@ const scheduleSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        allomasok: [
+            {
+                type: String,
+                required: true,
+            }
+        ],
             celallomas: {
             type: String,
             required: true,
@@ -20,13 +26,7 @@ const scheduleSchema = new mongoose.Schema(
                 type: String,
                 required: true,
             }
-        ],
-        allomasok: [
-            {
-                type: String,
-                required: true,
-            }
-        ],
+        ],   
         kedvezmeny: {
             type: String,
             required: true
@@ -47,8 +47,10 @@ const scheduleSchema = new mongoose.Schema(
         helyjegy: {
             type: Boolean,
             default: false
-        } 
-
+        },
+        kepek: [{
+            type: String,
+        }] 
     },
     {timestamps: true}
 )

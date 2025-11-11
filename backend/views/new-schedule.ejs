@@ -41,6 +41,14 @@
                                     </select></td>
                     </tr>
                     <tr>
+                        <td>Állomások:</td>
+                        <td><select id="allomasok" multiple size="10">
+                                    <% allomasok.forEach(elem => { %>
+                                        <option value="<%= elem %>"><%= elem %></option>
+                                        <% }) %>
+                                    </select></td>
+                    </tr>
+                    <tr>
                         <td>Kedvezmények:</td>
                         <td><select id="kedvezmeny">
                                     <% kedvezmeny.forEach(elem => { %>
@@ -108,10 +116,6 @@
                     <tr>
                         <td>Kép 2:</td>
                         <td><input type="text" id="kep2" /></td>
-                    </tr>
-                    <tr>
-                        <td>Kép 3:</td>
-                        <td><input type="text" id="kep3" /></td>
                     </tr>
                     <tr>
                         <td><button onclick="feltoltes(event)">Feltöltés</button></td>

@@ -9,15 +9,13 @@ cloudinary.config({
 });
 
 const pictureUploader = async (req, res, next) => {
-    const { kep1, kep2, kep3 } = req.body;
+    const { kep1, kep2 } = req.body;
     const results1 = await cloudinary.uploader.upload(kep1);
     const url1 = cloudinary.url(results1.public_id);
     const results2 = await cloudinary.uploader.upload(kep2);
     const url2 = cloudinary.url(results2.public_id);
-    const results3 = await cloudinary.uploader.upload(kep3);
-    const url3 = cloudinary.url(results3.public_id);
 
-    req.body.kepek = [url1, url2, url3];
+    req.body.kepek = [url1, url2];
 
     next();
 };
