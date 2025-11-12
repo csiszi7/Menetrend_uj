@@ -2,9 +2,9 @@
     "name": "backend",
     "version": "1.0.0",
     "description": "Könyvesbolt szerveroldali része.",
-    "main": "server.js",
+    "main": "server.mjs",
     "scripts": {
-        "start": "node server.js"
+        "dev": "node server.mjs"
     },
     "keywords": [
         "express",
