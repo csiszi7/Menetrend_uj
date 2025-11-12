@@ -1,6 +1,6 @@
-import Schedule from '../../models/Schedule.mjs';
+const Schedule = require('../../models/Schedule.js');
 
-export const getAllSchedulesBackend = async (req, res) => {
+exports.getAllSchedulesBackend = async (req, res) => {
     try {
         const schedules = await Schedule.find({});
         res.statusCode = 200;
@@ -11,7 +11,7 @@ export const getAllSchedulesBackend = async (req, res) => {
     }
 };
 
-export const getOneScheduleBackend = async (req, res) => {
+exports.getOneScheduleBackend = async (req, res) => {
     try {
         const { id } = req.params;
         const schedule = await Schedule.findById({ _id: id });
@@ -23,7 +23,7 @@ export const getOneScheduleBackend = async (req, res) => {
     }
 };
 
-export const deleteOneScheduleBackend = async (req, res) => {
+exports.deleteOneScheduleBackend = async (req, res) => {
     try {
         const { id } = req.params;
         const cake = await Schedule.findByIdAndDelete({ _id: id });

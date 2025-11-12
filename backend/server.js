@@ -1,19 +1,18 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
 
-import path from 'node:path';
-import express from 'express';
-import ejs from 'ejs';
+const path = require('node:path');
+const express = require('express');
+const ejs = require('ejs');
 
 const PORT = process.env.PORT || 3500;
 const app = express();
 
-const dir = import.meta.dirname;
-app.use(express.static(path.resolve(dir, 'public')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('view engine', ejs);
 app.use(express.json());
 
-import dbConnect from './utils/dbConnection.mjs';
+const dbConnect = require('./utils/dbConnection.js');
 
 dbConnect()
     .then(() => {
@@ -26,17 +25,17 @@ dbConnect()
         console.error(`A hiba oka: ${error.message}`);
     });
 
-import mainRouter from './routes/mainRoutesBackend.mjs';
+const mainRouter = require('./routes/mainRoutesBackend.js');
 app.use('/api', mainRouter);
 
 
-import schedulesRouter from './routes/schedules/schedulesRouteBackend.mjs';
+const schedulesRouter = require('./routes/schedules/schedulesRouteBackend.js');
 app.use('/api/schedules-backend', schedulesRouter);
 
-import newScheduleRouter from './routes/schedules/newScheduleRouteBackend.mjs';
+const newScheduleRouter = require('./routes/schedules/newScheduleRouteBackend.js');
 app.use('/api/new-schedule', newScheduleRouter);
 
-import oneScheduleRouter from './routes/schedules/oneScheduleRouteBackend.mjs';
+const oneScheduleRouter = require('./routes/schedules/oneScheduleRouteBackend.js');
 app.use('/api/one-cake-backend', oneScheduleRouter);
 
 app.use((req, res) => {

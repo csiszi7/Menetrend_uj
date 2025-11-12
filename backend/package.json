@@ -2,9 +2,9 @@
     "name": "backend",
     "version": "1.0.0",
     "description": "Könyvesbolt szerveroldali része.",
-    "main": "server.mjs",
+    "main": "server.js",
     "scripts": {
-        "dev": "node server.mjs"
+        "dev": "node server.js"
     },
     "keywords": [
         "express",
@@ -13,7 +13,6 @@
     ],
     "author": "SZBI Szeged 13/a",
     "license": "MIT",
-    "type": "module",
     "dependencies": {
         "bcrypt": "^6.0.0",
         "cloudinary": "^2.7.0",

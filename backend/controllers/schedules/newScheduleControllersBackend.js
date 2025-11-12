@@ -1,5 +1,5 @@
-import ScheduleModel from "../../models/Schedule.mjs";
-import {
+const Schedule = require("../../models/Schedule.js");
+const {
         jarat, 
         allomasok, 
         kedvezmeny, 
@@ -8,9 +8,9 @@ import {
         idopontok, 
         induloallomas, 
         celallomas 
-} from "../../public/schedules/js/adatok.mjs";
+} = require("../../public/schedules/js/adatok.js");
 
-export const getNewSchedule = (req, res) => {
+exports.getNewSchedule = (req, res) => {
     try {
         res.statusCode = 200;
         return res.render('new-schedule.ejs', {jarat, allomasok, kedvezmeny, kortablak, idotartam, idopontok, induloallomas, celallomas});
@@ -20,11 +20,11 @@ export const getNewSchedule = (req, res) => {
     }
 };
 
-export const postNewSchedule = async (req, res) => {
+exports.postNewSchedule = async (req, res) => {
     try {
         const { nev, ar, leiras, kepek } = req.body;
 
-        const newSchedule = new Cake({ nev, ar, leiras, kepek });
+        const newSchedule = new Schedule({ nev, ar, leiras, kepek });
         await newSchedule.save();
 
         res.statusCode = 201;

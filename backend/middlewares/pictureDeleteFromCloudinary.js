@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-import { v2 as cloudinary } from 'cloudinary';
-import Schedule from '../models/Schedule.mjs';
+const cloudinary = require('cloudinary').v2;
+const Schedule = require('../models/Schedule.js');
 
 
 cloudinary.config({
@@ -22,4 +22,4 @@ const pictureDeleter = async (req, res, next) => {
     next();
 };
 
-export default pictureDeleter;
+module.exports = pictureDeleter;

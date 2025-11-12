@@ -1,4 +1,4 @@
-export const getMain = (req, res) => {
+exports.getMain = (req, res) => {
     try {
         res.statusCode = 200;
         return res.render('index.ejs');

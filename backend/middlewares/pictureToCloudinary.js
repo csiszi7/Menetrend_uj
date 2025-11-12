@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-import { v2 as cloudinary } from 'cloudinary';
+const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_API_CLOUD_NAME,
@@ -20,4 +20,4 @@ const pictureUploader = async (req, res, next) => {
     next();
 };
 
-export default pictureUploader;
+module.exports = pictureUploader;

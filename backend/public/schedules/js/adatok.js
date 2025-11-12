@@ -46,7 +46,7 @@ let kortablak = ['Kisgyerek (0-3 éves)',
 let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)'];
 
 
-export {
+module.exports = {
         jarat, 
         allomasok, 
         kedvezmeny, 
