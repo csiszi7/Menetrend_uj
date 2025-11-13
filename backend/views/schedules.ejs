@@ -19,7 +19,9 @@
           <h2>Járat: <%= elem.jarat %></h2>
 
           <h4>Induló állomás: <%= elem.induloallomas %></h4>
+          <p><img src="<%= elem.kepek[0] %>" /></p>
           <h4>Célállomás: <%= elem.celallomas %></h4>
+          <p><img src="<%= elem.kepek[1] %>" /></p>
           <h4>Állomások:</h4>
           <ul>
             <% elem.allomasok.forEach(elem => { %>
@@ -57,6 +59,7 @@
           <h4>Nincs helyjegy</h4>
           <% } %>
 
+
           <!-- <div id="menetrend-gombok">
             <a href="/api/schedules-backend/<\%= elem._id %>">Lekérés</a>
             <button onclick="torol('<\%= elem._id %>')">Törlés</button>
@@ -66,6 +69,6 @@
       </div>
     </div>
 
-    <script src="/js/menetrendek.js"></script>
+    <!-- <script src="/schedules/js/menetrendek.js"></script> -->
   </body>
 </html>
