@@ -26,7 +26,8 @@ exports.getOneScheduleBackend = async (req, res) => {
 exports.deleteOneScheduleBackend = async (req, res) => {
     try {
         const { id } = req.params;
-        const cake = await Schedule.findByIdAndDelete({ _id: id });
+
+        await Schedule.findByIdAndDelete({ _id: id });
         res.statusCode = 200;
         return res.json({ msg: 'Sikeres törlés!' });
     } catch (error) {

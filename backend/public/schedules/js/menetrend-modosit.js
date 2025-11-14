@@ -1,10 +1,12 @@
-let feltoltesGomb = document.querySelector('#feltoltes');
-feltoltesGomb.addEventListener('click', (event) => feltoltes(event));
+let modositasGomb = document.querySelector('#modositas');
+modositasGomb.addEventListener('click', (event) => modositas(event));
 
-async function feltoltes(event) {
+async function modositas(event) {
     event.preventDefault();
 
     try {
+        const m_id = document.querySelector('#m_id').value;
+
         // Alap mezők beolvasása
         const jarat = document.querySelector('#jarat').value;
         const induloallomas = document.querySelector('#induloallomas').value;
@@ -47,6 +49,7 @@ async function feltoltes(event) {
         const kep2 = document.querySelector('#kep2').value;
 
         console.log({
+            m_id,
             jarat,
             induloallomas,
             celallomas,
@@ -62,8 +65,8 @@ async function feltoltes(event) {
         });
 
         // Küldés backend felé
-        const response = await fetch(`/api/new-schedule`, {
-            method: 'POST',
+        const response = await fetch(`/api/one-schedule-backend/${m_id}`, {
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 jarat,

@@ -1,9 +1,75 @@
 const Schedule = require('../../models/Schedule.js');
+const {
+    jarat,
+    allomasok,
+    kedvezmeny,
+    kortablak,
+    idotartam,
+    idopontok,
+    induloallomas,
+    celallomas,
+} = require('../../public/schedules/js/adatok.js');
+
+exports.getOneScheduleBackend = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const schedule = await Schedule.findById({ _id: id });
+
+        res.statusCode = 200;
+        return res.render('schedule.ejs', {
+            schedule,
+            jarat,
+            allomasok,
+            kedvezmeny,
+            kortablak,
+            idotartam,
+            idopontok,
+            induloallomas,
+            celallomas,
+        });
+    } catch (error) {
+        res.statusCode = 500;
+        return res.json({ msg: 'Valami hiba!' + error.message });
+    }
+};
 
 exports.updateOneScheduleBackend = async (req, res) => {
     try {
-        const { id, nev, ar, leiras, kepek } = req.body;
-        const schedule = await Schedule.findByIdAndUpdate({ _id: id }, { nev, ar, leiras, kepek });
+        const { id } = req.params;
+
+        const {
+            jarat,
+            induloallomas,
+            celallomas,
+            allomasok,
+            kedvezmeny,
+            kortablak,
+            idotartam,
+            idopontok,
+            klima,
+            helyjegy,
+            kep1,
+            kep2,
+        } = req.body;
+
+        const kepek = [kep1, kep2];
+
+        const schedule = await Schedule.findByIdAndUpdate(
+            { _id: id },
+            {
+                jarat,
+                induloallomas,
+                celallomas,
+                allomasok,
+                kedvezmeny,
+                kortablak,
+                idotartam,
+                idopontok,
+                klima,
+                helyjegy,
+                kepek,
+            }
+        );
 
         res.statusCode = 201;
         return res.json({ msg: 'Sikeres módosítás!' });
