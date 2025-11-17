@@ -23,7 +23,7 @@ let kedvezmeny = [' BKK bérletek és jegyek (csak HÉV utazáshoz)', 'BKK munka
   'MÁV-START igazolvány-családtag 1. oszt. Díjmentes',
   'MÁV-START igazolvány-családtag 2. oszt. Díjmentes',
   'Menekültek igazolása Díjmentes',
-  'Nagcsalád tagja Díjmentes',
+  'Nagycsalád tagja Díjmentes',
   'Nemzetközi bérlet, menetjegy 1. o.Díjmentes',
   'Nemzetközi bérlet, menetjegy 2. o. Díjmentes',
   'Országbérlet',
