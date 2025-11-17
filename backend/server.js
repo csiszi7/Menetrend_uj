@@ -4,6 +4,7 @@ dotenv.config();
 const path = require('node:path');
 const express = require('express');
 const ejs = require('ejs');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3500;
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('view engine', ejs);
 app.use(express.json());
+app.use(cors());
 
 const dbConnect = require('./utils/dbConnection.js');
 
@@ -28,8 +30,11 @@ dbConnect()
 const mainRouter = require('./routes/mainRoutesBackend.js');
 app.use('/api', mainRouter);
 
-const schedulesRouter = require('./routes/schedules/schedulesRouteBackend.js');
-app.use('/api/schedules-backend', schedulesRouter);
+const schedulesBackendRouter = require('./routes/schedules/schedulesRouteBackend.js');
+app.use('/api/schedules-backend', schedulesBackendRouter);
+
+const schedulesFrontendRouter = require('./routes/schedules/schedulesRoutesFrontend.js');
+app.use('/api/schedules-frontend', schedulesFrontendRouter);
 
 const newScheduleRouter = require('./routes/schedules/newScheduleRouteBackend.js');
 app.use('/api/new-schedule', newScheduleRouter);

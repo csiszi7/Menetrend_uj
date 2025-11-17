@@ -1,0 +1,51 @@
+.menetrend-form {
+max-width: 420px;
+margin: 30px auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 12px;
+background: #fafafa;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.icons {
+font-size: 22px;
+margin-bottom: 14px;
+}
+
+
+.field {
+margin-bottom: 14px;
+display: flex;
+flex-direction: column;
+}
+
+
+.field input {
+width: 100%;
+padding: 10px;
+border-radius: 6px;
+border: 1px solid #ccc;
+margin-top: 6px;
+background: white;
+}
+
+
+.row {
+display: flex;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+
+.submit-btn {
+width: 100%;
+padding: 12px 0;
+background: #ffdd33;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
