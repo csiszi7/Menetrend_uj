@@ -14,7 +14,30 @@ let idopontok = [
 
 // Állomások
 let allomasok = [
-'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep'
+'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep','Budapest-Déli',
+'Budapest-Kelenföld',
+'Budaörs',
+'Törökbálint',
+'Biatorbágy',
+'Herceghalom',
+'Bicske alsó',
+'Bicske',
+'Szár',
+'Szárliget',
+'Alsógalla',
+'Tatabánya',
+'Vérteszőlős',
+'Tóvároskert',
+'Tata',
+'Almásfüzitő',
+'Almásfüzitő felső',
+'Szőny',
+'Komárom',
+'Ács',
+'Nagyszentjános',
+'Győrszentiván',
+'Győr-Gyárváros',
+'Győr'
 ];
 
 // Kedvezmények (%)
@@ -43,7 +66,7 @@ let kortablak = ['Kisgyerek (0-3 éves)',
 
 
 // szeged-> bp(Ic, S), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz) indulások
-let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)'];
+let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)','1:50(S10)'];
 
 
 module.exports = {
