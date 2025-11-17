@@ -1,4 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+// const inputStyle = {
+//   width: "100%",
+//   padding: "10px",
+//   borderRadius: 6,
+//   border: "1px solid #ccc",
+//   marginTop: 6,
+// };
 
 export default function Menetrend() {
   const [from, setFrom] = useState("");
@@ -6,6 +14,24 @@ export default function Menetrend() {
   const [to, setTo] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [time, setTime] = useState("00:00");
+
+  let allomasok = [
+'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep'
+];
+
+  useEffect(() => {
+    const leker = async () => {
+      const response = await fetch('http://localhost:3500/api/schedules-frontend');
+
+      const valasz = await response.json();
+
+      console.log(valasz);
+      
+    }
+
+    leker();
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +71,7 @@ export default function Menetrend() {
       </div>
 
       {/* Érintve */}
-      <div style={{ marginBottom: 12 }}>
+      {/* <div style={{ marginBottom: 12 }}>
         <label htmlFor="via">Érintve</label>
         <input
           id="via"
@@ -54,7 +80,7 @@ export default function Menetrend() {
           placeholder="(opcionális)"
           style={{ width: "100%", padding: 8, marginTop: 6 }}
         />
-      </div>
+      </div> */}
 
       {/* Hova */}
       <div style={{ marginBottom: 12 }}>
@@ -79,7 +105,7 @@ export default function Menetrend() {
             style={{ width: "100%", padding: 8, marginTop: 6 }}
           />
         </div>
-        <div style={{ flex: 1 }}>
+        {/* <div style={{ flex: 1 }}>
           <label htmlFor="time">Hánykor?</label>
           <input
             id="time"
@@ -88,7 +114,7 @@ export default function Menetrend() {
             onChange={(e) => setTime(e.target.value)}
             style={{ width: "100%", padding: 8, marginTop: 6 }}
           />
-        </div>
+        </div> */}
       </div>
 
       {/* keresés */}

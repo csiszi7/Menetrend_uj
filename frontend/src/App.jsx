@@ -5,7 +5,7 @@ import Navbar from "./components/navbar";
 import Jegy from "./components/Jegy";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Menetrend from "./components/menetrend";
+import Menetrend from "./pages/menetrend";
 
 function App() {
   return (
