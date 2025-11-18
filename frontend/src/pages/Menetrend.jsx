@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-// const inputStyle = {
-//   width: "100%",
-//   padding: "10px",
-//   borderRadius: 6,
-//   border: "1px solid #ccc",
-//   marginTop: 6,
-// };
+import "./Menetrend.css";
 
 export default function Menetrend() {
   const [from, setFrom] = useState("");
@@ -16,22 +9,24 @@ export default function Menetrend() {
   const [time, setTime] = useState("00:00");
 
   let allomasok = [
-'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep'
-];
+    'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös',
+    'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati',
+    'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás',
+    'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás',
+    'Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás',
+    'Vilmaszállás', 'Őszeszék', 'Balástya', 'Kapitányság', 'Kisteleki-szőlők',
+    'Csengele', 'Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás',
+    'Városföld', 'Nyársapát','Üllő','Katonatelep'
+  ];
 
   useEffect(() => {
     const leker = async () => {
       const response = await fetch('http://localhost:3500/api/schedules-frontend');
-
       const valasz = await response.json();
-
       console.log(valasz);
-      
     }
-
     leker();
   }, []);
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,44 +48,43 @@ export default function Menetrend() {
       {/* közlekedési eszközök */}
       <div style={{ marginBottom: 12 }}>
         <label>Közlekedési eszköz: </label>
-        <span role="img" aria-label="train">🚆</span>{" "}
-        <span role="img" aria-label="bus">🚌</span>{" "}
-        <span role="img" aria-label="tram">🚋</span>
+        🚆 🚌 🚋
       </div>
 
       {/* Honnan */}
       <div style={{ marginBottom: 12 }}>
         <label htmlFor="from">Honnan?</label>
-        <input
+        <select
           id="from"
           value={from}
           onChange={(e) => setFrom(e.target.value)}
-          placeholder="(Szeged)"
           style={{ width: "100%", padding: 8, marginTop: 6 }}
-        />
+        >
+          <option value="">Válassz...</option>
+          {allomasok.map((allomas) => (
+            <option key={allomas} value={allomas}>
+              {allomas}
+            </option>
+          ))}
+        </select>
       </div>
-
-      {/* Érintve */}
-      {/* <div style={{ marginBottom: 12 }}>
-        <label htmlFor="via">Érintve</label>
-        <input
-          id="via"
-          value={via}
-          onChange={(e) => setVia(e.target.value)}
-          placeholder="(opcionális)"
-          style={{ width: "100%", padding: 8, marginTop: 6 }}
-        />
-      </div> */}
 
       {/* Hova */}
       <div style={{ marginBottom: 12 }}>
         <label htmlFor="to">Hova?</label>
-        <input
+        <select
           id="to"
           value={to}
           onChange={(e) => setTo(e.target.value)}
           style={{ width: "100%", padding: 8, marginTop: 6 }}
-        />
+        >
+          <option value="">Válassz...</option>
+          {allomasok.map((allomas) => (
+            <option key={allomas} value={allomas}>
+              {allomas}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Mikor */}
@@ -102,19 +96,9 @@ export default function Menetrend() {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            style={{ width: "100%", padding: 8, marginTop: 6 }}
+            style={{ width: "95%", padding: 8, marginTop: 6 }}
           />
         </div>
-        {/* <div style={{ flex: 1 }}>
-          <label htmlFor="time">Hánykor?</label>
-          <input
-            id="time"
-            type="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            style={{ width: "100%", padding: 8, marginTop: 6 }}
-          />
-        </div> */}
       </div>
 
       {/* keresés */}
