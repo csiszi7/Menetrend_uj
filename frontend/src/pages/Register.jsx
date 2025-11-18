@@ -3,7 +3,7 @@ import React from "react";
 export default function Register() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <form action="/login" className="w-full max-w-md bg-white p-6 rounded-lg shadow">
+      <form className="w-full max-w-md bg-white p-6 rounded-lg shadow">
         <h1 className="text-2xl font-semibold mb-6 text-blue-700">Regisztráció</h1>
 
         <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-800">E-mail cím</label>
