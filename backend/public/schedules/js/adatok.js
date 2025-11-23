@@ -46,7 +46,7 @@ let kortablak = ['Kisgyerek (0-3 éves)',
   'Nyugdíjas/senior (65+ éves)'];
 
 
-// szeged-> bp(Ic, S), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz) indulások
+// szeged-> bp(Ic, S), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz), bp->győr(IC), bp->pécs(IC)
 let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)'];
 
 
