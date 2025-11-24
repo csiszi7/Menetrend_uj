@@ -30,7 +30,7 @@ let allomasok = [
  'Budapest-Déli','Budapest-Kelenföld','Budaörs','Törökbálint','Biatorbágy','Herceghalom','Bicske alsó','Bicske','Szár','Szárliget','Alsógalla','Tatabánya','Vérteszőlős','Tóvároskert','Tata','Almásfüzitő','Almásfüzitő felső','Szőny','Komárom','Ács','Nagyszentjános','Győrszentiván','Győr-Gyárváros','Győr',
  'Budapest-Keleti','Sárbogárd','Dombóvár','Szentlőrinc','Pécs',
  'kőbánya-alsó', 'Pestszentlőrinc', 'Szemeretelep','Vecsés','Vecsés-Kertekalja','Hosszúberek-Péteri', 'Monor', 'Monorierdő','Pilis','Albertirsa','Ceglédbercel','Ceglédbercel-Cserő','Budai út', 'Abony','Szolnok', 'Szajol', 'Törökszentmiklós', 'Fegyvernek-Örményes', 'Kisújszállás', 'Karcag', 'Püspökladány','Kaba' ,'Hajdúszoboszló','Ebes','Debrecen',
-  'Rákoshegy','Nyíregyháza','Tokaj','Szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospécs','Demecser',
+  'Rákoshegy','Nyíregyháza','Tokaj','Szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospécs','Demecser','Mezőkövesd','Nyékládháza','Kőbánya-felső','Rákos','Akadémiaújtelep','Rákosliget','Rákoscsaba-Újtelep','Pécel','Isaszeg','Gödöllő,','Máriabesnyő','Bag','Aszód','Tura','Vámosgyörk','Adács','Karácsond','Ludas','Nagyút','Kál-Kápolna','Szilhalom','Mezőkövesd-felső','Mezőkeresztes-Mezőnyárád','Csincse','Emőd'
 
 ];
 
@@ -59,8 +59,42 @@ let kortablak = ['Kisgyerek (0-3 éves)',
   'Nyugdíjas/senior (65+ éves)'];
 
 
-// szeged-> bp(Ic, S), szeged->Békéscsaba(Sz), szeged-> kiskunfélegyháza(Sz), bp->győr(IC), bp->pécs(IC)
-let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)', '1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)'];
+//Szeged-> bp-nyugati(Ic,S),
+//Szeged-> Békéscsaba(Sz),
+//Szeged-> kiskunfélegyháza(Sz),
+//Bp-Keleti-> pécs(IC),
+//Bp-Nyugati-> debrecen(IC,SZ,IR), 
+//Bp-Keleti-> debrecen(IC,EC),
+//Bp-Nyugati-> miskolc(IC),
+//Bp-Keleti-> miskolc(IC,S,SZ),
+//Bp-Déli-> győr(S10),
+let idotartam = ['2:39(S)',
+  '2:34(Ic)',
+  '2:23(Ic)',
+  '2:25(Ic)',
+   '1:11(Sz)',
+   '1:42(Sz)',
+   '1:50(S10)',
+   '2:45(IC)',
+   '3:28(SZ)',
+   '3:13(IC)',
+   '3:38(SZ)',
+   '3:07(IC)',
+   '3:00(IC)',
+   '2:58(IR)',
+   '3:37(IC)',
+   '2:47(IC)',
+   '2:49(EC)',
+   '2:45(IC)',
+   '4:49(IC)',
+   '4:34(IC)',
+   '4:40(IC)',
+   '2:49(SZ)',
+   '2:02(IC)',
+   '2:04(IC)',
+   '2:06(IC)',
+   '2:29(S)',
+  ];
 
 
 module.exports = {
