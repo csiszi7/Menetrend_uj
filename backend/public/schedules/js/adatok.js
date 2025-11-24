@@ -30,12 +30,12 @@ let allomasok = [
  'Budapest-Déli','Budapest-Kelenföld','Budaörs','Törökbálint','Biatorbágy','Herceghalom','Bicske alsó','Bicske','Szár','Szárliget','Alsógalla','Tatabánya','Vérteszőlős','Tóvároskert','Tata','Almásfüzitő','Almásfüzitő felső','Szőny','Komárom','Ács','Nagyszentjános','Győrszentiván','Győr-Gyárváros','Győr',
  'Budapest-Keleti','Sárbogárd','Dombóvár','Szentlőrinc','Pécs',
  'kőbánya-alsó', 'Pestszentlőrinc', 'Szemeretelep','Vecsés','Vecsés-Kertekalja','Hosszúberek-Péteri', 'Monor', 'Monorierdő','Pilis','Albertirsa','Ceglédbercel','Ceglédbercel-Cserő','Budai út', 'Abony','Szolnok', 'Szajol', 'Törökszentmiklós', 'Fegyvernek-Örményes', 'Kisújszállás', 'Karcag', 'Püspökladány','Kaba' ,'Hajdúszoboszló','Ebes','Debrecen',
-  'Rákoshegy','Nyíregyháza','Tokaj','Szerencs','Miskolc-Tiszai','Füzesabony','Hatvan',
+  'Rákoshegy','Nyíregyháza','Tokaj','Szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospécs','Demecser',
 
 ];
 
 // Kedvezmények (%)
-let kedvezmeny = [' BKK bérletek és jegyek (csak HÉV utazáshoz)', 'BKK munkavállaló 2. kocsiosztály', 'BKV munkavállaló 2. kocsiosztály', 'Ellátottak utazási utalványa','Ellátottak utazási utalványa', 'FIP igazolvány 1. oszt.', 'Fogyatékossággal élők igazolványa', 'GYSEV igazolvány 1. oszt.', 'GYSEV igazolvány 2. oszt.', 'GYSEV igazolvány-családtag 1. oszt.', 'GYSEV igazolvány-családtag 2. oszt.Díjmentes','Magyar Igazolvány, Magyar hozzátartozói Igazolvány Díjmentes','Magyarország24 jegyDíjmentes','MÁV-START igazolvány 1. oszt. Díjmentes',
+let kedvezmeny = [' BKK bérletek és jegyek (csak HÉV utazásahoz)', 'BKK munkavállaló 2. kocsiosztály', 'BKV munkavállaló 2. kocsiosztály', 'Ellátottak utazási utalványa','Ellátottak utazási utalványa', 'FIP igazolvány 1. oszt.', 'Fogyatékossággal élők igazolványa', 'GYSEV igazolvány 1. oszt.', 'GYSEV igazolvány 2. oszt.', 'GYSEV igazolvány-családtag 1. oszt.', 'GYSEV igazolvány-családtag 2. oszt.Díjmentes','Magyar Igazolvány, Magyar hozzátartozói Igazolvány Díjmentes','Magyarország24 jegyDíjmentes','MÁV-START igazolvány 1. oszt. Díjmentes',
   'MÁV-START igazolvány 2. oszt. Díjmentes',
   'MÁV-START igazolvány-családtag 1. oszt. Díjmentes',
   'MÁV-START igazolvány-családtag 2. oszt. Díjmentes',
