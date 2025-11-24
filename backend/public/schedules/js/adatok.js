@@ -12,13 +12,26 @@ let idopontok = [
   '3:25(S)', '4:30(IC)', '5:46(IC)', '6:44(IC)', '7:44(IC)', '8:44(IC)', '9:44(IC)', '10:44(IC)', '11:44(IC)', '12:44(IC)', '13:44(IC)', '14:44(IC)', '15:44(IC)', '16:44(IC)', '17:44(IC)', '18:44(IC)', '19:44(IC)', '20:44(IC)',
   '5:28(SZ)', '6:28(SZ)', '7:28(SZ)', '8:28(SZ)', '9:28(SZ)','10:28(SZ)','11:28(SZ)','12:28(SZ)','13:28(SZ)','14:28(SZ)','15:28(SZ)','16:28(SZ)','17:28(SZ)','18:28(SZ)','19:28(SZ)','20:28(SZ)','22:28(SZ)',
   '6:07(SZ)','8:11(SZ)','15:11(SZ)','18:11(SZ)'
-  ,'03:10(S10)','04:30(S10)','05:25(S10)','06:25(S10)','07:25(S10)','08:25(S10)','09:25(S10)','10:25(S10)','11:25(S10)','12:25(S10)','13:25(S10)','14:25(S10)','15:25(S10)','16:25(S10)','17:25(S10)','18:25(S10)','19:25(S10)','20:25(S10)','22:25(S10)','5:53(IC)','6:53(IC)','7:53(IC)','8:53(IC)','9:53(IC)','10:53(IC)','11:53(IC)','12:53(IC)','13:53(IC)','14:53(IC)','15:53(IC)','16:53(IC)','17:53(IC)','19:53(IC)'
+  ,'03:10(S10)','04:30(S10)','05:25(S10)','06:25(S10)','07:25(S10)','08:25(S10)','09:25(S10)','10:25(S10)','11:25(S10)','12:25(S10)','13:25(S10)','14:25(S10)','15:25(S10)','16:25(S10)','17:25(S10)','18:25(S10)','19:25(S10)','20:25(S10)','22:25(S10)','5:53(IC)','6:53(IC)','7:53(IC)','8:53(IC)','9:53(IC)','10:53(IC)','11:53(IC)','12:53(IC)','13:53(IC)','14:53(IC)','15:53(IC)','16:53(IC)','17:53(IC)','19:53(IC)',
+ '02:30(Sz)','03:40(IC)','03:45(Sz)','04:55(IC)','05:25(IC)','05:55(IC)','06:25(IR)','06:40(IC)','06:55(IC)','07:25(IC)','07:25(IR)','07:55(IC)','08:25(IR)','08:55(IC)','09:25(IC)','09:25(IR)','09:55(IC)','10:25(IR)','10:55(IC)','11:25(IC)','11:25(IR)','11:55(IC)','12:25(IR)','12:55(IC)','13:25(IC)','13:25(IR)','13:40(IC)','13:40(EC)','13:55(IC)'
+ ,'14:25(IR)','14:55(IC)','15:25(IC)','15:25(IR)','15:55(IC)','16:25(IR)','16:55(IC)','17:25(IC)','17:25(IR)','17:40(IC)','17:55(IC)','18:25(IR)','18:55(IC)','19:25(IR)','19:40(ER)','19:55(IC)','20:25(IR)','21:25(IR)','22:25(IR)',
+'03:40(IC)','04:00(SZ)','05:25(IC)','05:25(IC)','05:25(IC)','05:55(IC)','06:25(IC)','07:25(IC)','07:55(IC)','08:25(IC)','09:25(IC)','09:55(IC)','10:25(IC)','11:25(IC)','11:55(IC)','12:25(IC)','13:25(IC)','13:55(IC)','14:25(IC)','15:25(IC)','15:55(IC)','16:25(IC)','17:25(IC)','17:55(IC)','18:25(IC)','19:25(IC)','20:25(IC)','22:00(S)'
 
 ];
 
 // Állomások
 let allomasok = [
-'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest', 'Zugló', 'Budapest-Nyugati', 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes','Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep','Budapest-Déli','Budapest-Kelenföld','Budaörs','Törökbálint','Biatorbágy','Herceghalom','Bicske alsó','Bicske','Szár','Szárliget','Alsógalla','Tatabánya','Vérteszőlős','Tóvároskert','Tata','Almásfüzitő','Almásfüzitő felső','Szőny','Komárom','Ács','Nagyszentjános','Győrszentiván','Győr-Gyárváros','Győr','Budapest-Keleti','Sárbogárd','Dombóvár','Szentlőrinc','Pécs'
+  //szegedi oldal
+'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest(KÖKI)', 'Zugló', 'Budapest-Nyugati',
+ 'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Békéscsaba', 
+ 'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes',
+ 'Kunsszállás','Városföld', 'Nyársapát','Üllő','Katonatelep',
+ //győr,pécs,debrecen,Miskolc oldal
+ 'Budapest-Déli','Budapest-Kelenföld','Budaörs','Törökbálint','Biatorbágy','Herceghalom','Bicske alsó','Bicske','Szár','Szárliget','Alsógalla','Tatabánya','Vérteszőlős','Tóvároskert','Tata','Almásfüzitő','Almásfüzitő felső','Szőny','Komárom','Ács','Nagyszentjános','Győrszentiván','Győr-Gyárváros','Győr',
+ 'Budapest-Keleti','Sárbogárd','Dombóvár','Szentlőrinc','Pécs',
+ 'kőbánya-alsó', 'Pestszentlőrinc', 'Szemeretelep','Vecsés','Vecsés-Kertekalja','Hosszúberek-Péteri', 'Monor', 'Monorierdő','Pilis','Albertirsa','Ceglédbercel','Ceglédbercel-Cserő','Budai út', 'Abony','Szolnok', 'Szajol', 'Törökszentmiklós', 'Fegyvernek-Örményes', 'Kisújszállás', 'Karcag', 'Püspökladány','Kaba' ,'Hajdúszoboszló','Ebes','Debrecen',
+  'Rákoshegy','Nyíregyháza','Tokaj','Szerencs','Miskolc-Tiszai','Füzesabony','Hatvan',
+
 ];
 
 // Kedvezmények (%)
