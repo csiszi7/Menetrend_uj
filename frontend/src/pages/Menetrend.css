@@ -49,3 +49,16 @@ font-size: 16px;
 font-weight: bold;
 cursor: pointer;
 }
+
+.a {
+  display: block;          /* <<< KÜLÖN SORBA TESZI A LINKEKET */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;          /* <<< TÁVOLSÁG A LINKEK KÖZÖTT */
+  line-height: 1.8;        /* <<< SORKÖZ */
+}
+
+.a:hover {
+  color: #66aaff;
+}

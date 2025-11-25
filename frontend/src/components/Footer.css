@@ -1,0 +1,25 @@
+footer {
+  background-color: #003366;
+  padding: 25px;
+  display: flex;          /* vízszintes elrendezés */
+  flex-direction: row;    /* biztos, ami biztos */
+  gap: 20px;              /* távolság a linkek között */
+  text-align: center;
+  width: 100%;           /* teljes szélesség */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer a {
+  display: block;          /* <<< KÜLÖN SORBA TESZI A LINKEKET */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;          /* <<< TÁVOLSÁG A LINKEK KÖZÖTT */
+  line-height: 1.8;        /* <<< SORKÖZ */
+}
+
+footer a:hover {
+  color: #66aaff;
+}

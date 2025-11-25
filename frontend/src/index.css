@@ -1,5 +1,14 @@
 body{
   background-image: url(../public/images/mav_bg_01_x1.c6fd527786b963116113.png);
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px; */
+  min-height: 100vh;
+}
+
+* {
+  /* border: 1px solid black; */
 }
 
 :root {
@@ -24,14 +33,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {

@@ -1,0 +1,18 @@
+.register {
+  background-color: #003366;
+  padding: 25px;
+  text-align: center;
+}
+
+.register a {
+  display: block;          /* <<< KÜLÖN SORBA TESZI A LINKEKET */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 10px 0;          /* <<< TÁVOLSÁG A LINKEK KÖZÖTT */
+  line-height: 1.8;        /* <<< SORKÖZ */
+}
+
+.register a:hover {
+  color: #66aaff;
+}
