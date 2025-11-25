@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Register.css';
 export default function Register() {
-  const [vezetekNev, setKeresztNev] = useState('');
-  const [KeresztNev, setVezetekNev ] = useState('');
+  const [keresztNev, setKeresztNev] = useState('');
+  const [vezetekNev, setVezetekNev ] = useState('');
 	const [email, setEmail] = useState('');
 	const [jelszo, setJelszo] = useState('');
 	const [jelszoUjra, setJelszoUjra] = useState('');
@@ -42,6 +42,7 @@ export default function Register() {
           placeholder="E-mail cím"
           id="email"
           name="email"
+          value={email}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -53,6 +54,7 @@ export default function Register() {
           placeholder="jelszó"
           id="password"
           name="password"
+          value={jelszo}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setJelszo(e.target.value)}
           required
@@ -64,6 +66,7 @@ export default function Register() {
           placeholder="Jelszó ismétlés"
           id="passwordConfirm"
           name="passwordConfirm"
+          value={jelszoUjra}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setJelszoUjra(e.target.value)}
           required
@@ -75,6 +78,7 @@ export default function Register() {
           placeholder="Vezetéknév"
           id="lastName"
           name="lastName"
+          value={vezetekNev}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setVezetekNev(e.target.value)}
         />
@@ -85,6 +89,7 @@ export default function Register() {
           placeholder="Keresztnév"
           id="firstName"
           name="firstName"
+          value={keresztNev}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setKeresztNev(e.target.value)}
         />
@@ -94,6 +99,7 @@ export default function Register() {
           type="date"
           id="birthDate"
           name="birthDate"
+          value={szuletesiDatum}
           className="w-full mb-3 p-2 border border-gray-300 rounded text-gray-900"
           onChange={(e) => setszuletesiDatum(e.target.value)}
         />
@@ -115,7 +121,6 @@ export default function Register() {
         <button
           type="submit"
           className="w-full py-2 rounded bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
-          onClick={regisztracio}
         >
           Regisztráció
         </button>
