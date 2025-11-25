@@ -1,16 +1,16 @@
 footer {
   background-color: #003366;
-  padding: 10px 0;
+  padding: 5px 0;
   display: flex;          /* vízszintes elrendezés */
   flex-direction: row;    /* biztos, ami biztos */
-  gap: 20px;              /* távolság a linkek között */
+  gap: 10px;              /* távolság a linkek között */
   justify-content: center;
   align-items: center;
   width: 100%;           /* teljes szélesség */
-  /* position: fixed;
+  position: fixed;
   bottom: 0;
-  left: 0; */
-  font-size: 14px;
+  left: 0;
+  font-size: 12px;
 }
 
 footer a {
@@ -19,7 +19,7 @@ footer a {
   text-decoration: none;
   font-size: 18px;
   margin: 10px 0;          /* <<< TÁVOLSÁG A LINKEK KÖZÖTT */
-  line-height: 1.8;        /* <<< SORKÖZ */
+  line-height: 1.0     /* <<< SORKÖZ */
 }
 
 footer a:hover {
