@@ -71,9 +71,25 @@
     border-radius: 0.25rem; /* rounded */
     color: #111827; /* text-gray-900 */
 }
-.register-form input[type="checkbox"] {
-    display: inline;
+
+.jelolo {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    padding: 0px;
 }
+
+.jelolo input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+    width: 20px !important;
+}
+
+.check-kontener {
+    display: flex;
+    align-items: center;
+}
+
 /* Checkbox sorok */
 .register-form .flex.items-center {
   display: flex;
