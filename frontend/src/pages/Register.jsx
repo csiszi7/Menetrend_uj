@@ -24,20 +24,20 @@ export default function Register() {
       return;
     }
 
-    // const response = await fetch('http://localhost:3500/api/register-frontend', {
-    // 	method: 'POST',
-    // 	headers: { 'Content-Type': 'application/json' },
-    // 	body: JSON.stringify({ nev, email, jelszo })
-    // });
+    const response = await fetch('http://localhost:3500/api/register-frontend', {
+    	method: 'POST',
+    	headers: { 'Content-Type': 'application/json' },
+    	body: JSON.stringify({ nev, email, jelszo })
+    });
 
-    // const valasz = await response.json();
+    const valasz = await response.json();
 
-    // if (response.ok) {
-    // 	window.alert(valasz.msg);
-    // 	window.location.href = '/login';
-    // } else {
-    // 	window.alert(valasz.msg);
-    // }
+    if (response.ok) {
+    	window.alert(valasz.msg);
+    	window.location.href = '/login';
+    } else {
+    	window.alert(valasz.msg);
+    }
   }
 
   const handleLogin = (e) => {
@@ -170,7 +170,13 @@ export default function Register() {
 
         <button
           type="submit"
-          className="w-full py-2 rounded bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+          style={{
+            flex: 1,
+            color: "black",
+            padding: "10px 12px",
+            background: "transparent",
+            border: "1px solid #ccc",
+          }}
           onClick={regisztracio}
         >
           Regisztráció
@@ -180,6 +186,7 @@ export default function Register() {
           onClick={handleLogin}
           style={{
             flex: 1,
+            color: "black",
             padding: "10px 12px",
             background: "transparent",
             border: "1px solid #ccc",
