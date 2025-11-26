@@ -4,8 +4,36 @@ import './Login.css'
 
 export default function Login() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setJelszo] = useState("");
   const [error, setError] = useState("");
+  
+  async function bejelentkezes(event) {
+    event.preventDefault();
+    console.log({
+      email,
+      jelszo,
+    });
+
+    if (jelszo !== jelszoUjra) {
+      window.alert("A jelszavak nem egyeznek!");
+      return;
+    }
+
+    // const response = await fetch('http://localhost:3500/api/register-frontend', {
+    // 	method: 'POST',
+    // 	headers: { 'Content-Type': 'application/json' },
+    // 	body: JSON.stringify({ nev, email, jelszo })
+    // });
+
+    // const valasz = await response.json();
+
+    // if (response.ok) {
+    // 	window.alert(valasz.msg);
+    // 	window.location.href = '/login';
+    // } else {
+    // 	window.alert(valasz.msg);
+    // }
+  }
 
   const validate = () => {
     if (!email.trim()) return "Kérlek add meg az e-mail címet.";
@@ -87,7 +115,7 @@ export default function Login() {
           type="password"
           placeholder="Jelszó"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setJelszo(e.target.value)}
           required
           aria-required="true"
           style={{ width: "100%", padding: 8, marginTop: 6 }}
