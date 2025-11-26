@@ -7,7 +7,9 @@ let induloallomas = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskol
 // célállomások
 let celallomas =['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba'];
 
-// Időtartamok (példa)
+// Időtartamok (példa) 
+//Jelmagyarázat: IC(InterCity) IR(Interregio) S(Sebesvonat) SZ(Szemelyvonat) EC(EuroCity)
+
 let idopontok = [
   '3:25(S)', '4:30(IC)', '5:46(IC)', '6:44(IC)', '7:44(IC)', '8:44(IC)', '9:44(IC)', '10:44(IC)', '11:44(IC)', '12:44(IC)', '13:44(IC)', '14:44(IC)', '15:44(IC)', '16:44(IC)', '17:44(IC)', '18:44(IC)', '19:44(IC)', '20:44(IC)',
   '5:28(SZ)', '6:28(SZ)', '7:28(SZ)', '8:28(SZ)', '9:28(SZ)','10:28(SZ)','11:28(SZ)','12:28(SZ)','13:28(SZ)','14:28(SZ)','15:28(SZ)','16:28(SZ)','17:28(SZ)','18:28(SZ)','19:28(SZ)','20:28(SZ)','22:28(SZ)',
@@ -59,16 +61,16 @@ let kortablak = ['Kisgyerek (0-3 éves)',
   'Nyugdíjas/senior (65+ éves)'];
 
 
-//Szeged-> bp-nyugati(Ic,S),
-//Szeged-> Békéscsaba(Sz),
-//Szeged-> kiskunfélegyháza(Sz),
-//Bp-Keleti-> pécs(IC),
-//Bp-Nyugati-> debrecen(IC,SZ,IR), 
-//Bp-Keleti-> debrecen(IC,EC),
-//Bp-Nyugati-> miskolc(IC),
-//Bp-Keleti-> miskolc(IC,S,SZ),
-//Bp-Déli-> győr(S10),
-let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)','1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)','3:28(SZ)','3:13(IC)','3:38(SZ)','3:07(IC)','3:00(IC)','2:58(IR)','3:37(IC)','2:47(IC)','2:49(EC)','2:45(IC)','4:49(IC)','4:34(IC)','4:40(IC)','2:49(SZ)','2:02(IC)','2:04(IC)','2:06(IC)','2:29(S)','3:28(SZ)'];
+//Szeged-> BP-Nyugati(Ic,S),       |kesz|
+//Szeged-> Békéscsaba(Sz),         |kesz|
+//Szeged-> Kiskunfélegyháza(Sz),   |kesz|
+//Bp-Keleti-> Pécs(IC),            |kesz|
+//Bp-Nyugati-> Debrecen(IC,SZ,IR), |kesz|
+//Bp-Keleti-> Debrecen(IC,EC),     |kesz|
+//Bp-Nyugati-> Miskolc(IC),        |kesz|
+//Bp-Keleti-> Miskolc(IC,S,SZ),    |kesz|
+//Bp-Déli-> Győr(S10),             |kesz|
+let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)','1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)','3:28(SZ)','3:13(IC)','3:38(SZ)','3:07(IC)','3:00(IC)','2:58(IR)','3:37(IC)','2:47(IC)','2:49(EC)','2:45(IC)','4:49(IC)','4:34(IC)','4:40(IC)','2:49(SZ)','2:02(IC)','2:04(IC)','2:06(IC)','2:29(S)','3:28(SZ)','2:42(EC)'];
 
 
 module.exports = {
