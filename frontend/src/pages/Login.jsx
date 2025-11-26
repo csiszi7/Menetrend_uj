@@ -14,10 +14,6 @@ export default function Login() {
       jelszo,
     });
 
-    if (jelszo !== jelszoUjra) {
-      window.alert("A jelszavak nem egyeznek!");
-      return;
-    }
 
     // const response = await fetch('http://localhost:3500/api/register-frontend', {
     // 	method: 'POST',
@@ -108,12 +104,12 @@ export default function Login() {
       </div>
 
       <div>
-        <label htmlFor="password">Jelszó</label>
+        <label htmlFor="jelszo">Jelszó</label>
         <input
-          id="password"
-          name="password"
+          id="jelszo"
+          name="jelszo"
           type="password"
-          placeholder="Jelszó"
+          placeholder="Írja be a jelszavát."
           value={password}
           onChange={(e) => setJelszo(e.target.value)}
           required
@@ -129,8 +125,8 @@ export default function Login() {
       )}
 
       <div style={{ display: "flex", gap: 8 }}>
-        <button type="submit"  style={{ flex: 1, padding: "10px 12px" }}>
-          Bejelentkezés
+        <button type="submit"  style={{ flex: 1, padding: "10px 12px" }} onClick={bejelentkezes}>
+          Bejelentkezés 
         </button>
 
         <button

@@ -171,6 +171,7 @@ export default function Register() {
         <button
           type="submit"
           className="w-full py-2 rounded bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+          onClick={regisztracio}
         >
           Regisztráció
         </button>
