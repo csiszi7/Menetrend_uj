@@ -1,0 +1,54 @@
+.jegy-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+}
+
+.jegy-intro {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.jegy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.jegy-input,
+.jegy-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.jegy-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jegy-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.keres-btn {
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.keres-btn:hover {
+  background-color: #0050cc;
+}

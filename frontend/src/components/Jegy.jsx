@@ -1,5 +1,5 @@
-import React from 'react'
-import busz from '../../public/images/busz.png'
+import { Link } from "react-router-dom";
+import './Jegy.css';
 
 
 const Jegy = () => {

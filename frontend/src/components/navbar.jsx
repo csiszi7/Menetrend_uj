@@ -3,7 +3,6 @@ import './Navbar.css';
 import { useState } from "react";
 import { useEffect } from "react";
 
-
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
