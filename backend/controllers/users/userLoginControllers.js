@@ -5,6 +5,8 @@ const loginUser = async (req, res) => {
   try {
     const { email, jelszo } = req.body;
 
+    console.log({ email, jelszo });
+    
     const users = await User.find({});
 
     const letezoUser = users.filter((elem) => elem.email === email);

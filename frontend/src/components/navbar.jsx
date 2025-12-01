@@ -34,8 +34,7 @@ const Navbar = () => {
     <div className="navbar-kontener">
             <div>
               <Link to='/'>Home</Link>
-               <Link to='/register'>Regisztráció</Link>
-               <Link to='/login'>Bejelentkezés</Link>
+               
               <Link to='/menetrend'>Menetrend</Link>
             </div>
             {isLoggedIn ? 
@@ -45,6 +44,8 @@ const Navbar = () => {
             
             :
             <div>
+              <Link to='/register'>Regisztráció</Link>
+               <Link to='/login'>Bejelentkezés</Link>
             </div>
             }
             { isAdmin ? <div>
