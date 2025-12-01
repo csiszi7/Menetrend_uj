@@ -42,6 +42,16 @@ app.use('/api/new-schedule', newScheduleRouter);
 const oneScheduleRouter = require('./routes/schedules/oneScheduleRouteBackend.js');
 app.use('/api/one-schedule-backend', oneScheduleRouter);
 
+const usersRouter = require("./routes/users/usersRoutesBackend.js");
+app.use("/api/users-backend", usersRouter);
+
+const userRegisterRouter = require('./routes/users/userRegisterRoutes.js') ;
+app.use("/api/register-frontend", userRegisterRouter);
+
+const userLoginRouter = require("./routes/users/userLoginRoutes.js");
+app.use("/api/login-frontend", userLoginRouter);
+
+
 app.use((req, res) => {
     try {
         res.statusCode = 404;
