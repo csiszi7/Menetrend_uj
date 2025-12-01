@@ -3,10 +3,10 @@ import "./Menetrend.css";
 
 export default function Menetrend() {
   const [from, setFrom] = useState("");
-  const [via, setVia] = useState("");
+  // const [via, setVia] = useState("");
   const [to, setTo] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-  const [time, setTime] = useState("00:00");
+  // const [time, setTime] = useState("00:00");
 
   let allomasok = [
     'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös',
@@ -30,7 +30,7 @@ export default function Menetrend() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ from, via, to, date, time });
+    console.log({ from, to, date});
   };
 
   return (

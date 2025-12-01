@@ -2,54 +2,26 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    jarat: {
+    keresztNev: {
       type: String,
       required: true,
     },
-    induloallomas: {
+    vezetekNev: {
       type: String,
       required: true,
     },
-    celallomas: {
+    email: {
       type: String,
       required: true,
     },
-    allomasok: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
-    idopontok: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
-    kedvezmeny: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
-    kortablak: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
-    idotartam: {
+    jelszo: {
       type: String,
       required: true,
     },
-    klima: {
-      type: String,
+    admin: {
+      type: Boolean,
       default: false,
-    },
-    helyjegy: {
-      type: String,
-      default: false,
-    },
+    }
   },
   { timestamps: true }
 );

@@ -3,9 +3,17 @@ const bcrypt = require("bcrypt");
 
 const registerUser = async (req, res) => {
   try {
-    const { nev, email, jelszo } = req.body;
+    const { keresztNev,
+      vezetekNev,
+      email,
+      jelszo, } = req.body;
 
     const users = await User.find({});
+    console.log({ keresztNev,
+      vezetekNev,
+      email,
+      jelszo, });
+    
 
     const letezoUser = users.filter((elem) => elem.email === email);
 
@@ -16,14 +24,19 @@ const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(jelszo, salt);
 
-    const newUser = new User({ nev, email, jelszo: hashedPassword });
+    const newUser = new User({ keresztNev,
+      vezetekNev,
+      email, jelszo: hashedPassword });
+
+      console.log(newUser);
+      
     await newUser.save();
 
     res.statusCode = 201;
     return res.json({ msg: "Sikeres regisztráció!" });
   } catch (error) {
     res.statusCode = 500;
-    return res.json({ msg: error.message });
+    return res.json({ msg: "Valami hiba: " + error.message });
   }
 };
 

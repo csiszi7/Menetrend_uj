@@ -6,9 +6,12 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [jelszo, setJelszo] = useState("");
   const [jelszoUjra, setJelszoUjra] = useState("");
-  // const [szuletesiDatum, setszuletesiDatum] = useState("");
+  const [terms, setTerms] = useState(false);
+  const [privacy, setPrivacy] = useState(false);
 
   async function regisztracio(event) {
+    console.log(terms, privacy);
+    
     event.preventDefault();
     console.log({
       keresztNev,
@@ -24,10 +27,15 @@ export default function Register() {
       return;
     }
 
+    if (terms === false || privacy === false) {
+      window.alert("El kell fogadni a feltételeket és az adatkezelési tájékoztatót!");
+      return;
+    }
+
     const response = await fetch('http://localhost:3500/api/register-frontend', {
     	method: 'POST',
     	headers: { 'Content-Type': 'application/json' },
-    	body: JSON.stringify({ nev, email, jelszo })
+    	body: JSON.stringify({ keresztNev, vezetekNev, email, jelszo})
     });
 
     const valasz = await response.json();
@@ -36,18 +44,12 @@ export default function Register() {
     	window.alert(valasz.msg);
     	window.location.href = '/login';
     } else {
-    	window.alert(valasz.msg);
+    	window.alert('Hiba itt van: ' + valasz.msg);
     }
   }
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (typeof onLogin === "function") {
-      onLogin({ email, jelszo });
-    } else {
-      // alapértelmezett: átirányítás regisztrációs oldalra
-      window.location.href = "/login";
-    }
+  const handleLogin = () => {
+    window.location.href = "/login";
   };
 
   return (
@@ -154,7 +156,7 @@ export default function Register() {
         /> */}
 
         <div className="jelolo">
-          <input type="checkbox" id="privacy" name="privacy" className="mr-2" />
+          <input type="checkbox" id="privacy" name="privacy" className="mr-2" onChange={() => setTerms(!terms)} />
           <label htmlFor="privacy" className="text-sm text-gray-700">
             Az Adatkezelési tájékoztatót elfogadom, az abban foglalt
             adatkezeléshez hozzájárulok
@@ -162,14 +164,13 @@ export default function Register() {
         </div>
 
         <div className="jelolo">
-          <input type="checkbox" id="terms" name="terms" className="mr-2" />
+          <input type="checkbox" id="terms" name="terms" className="mr-2" onChange={() => setPrivacy(!privacy)} />
           <label htmlFor="terms" className="text-sm text-gray-700">
             A felhasználási feltételeket elfogadom
           </label>
         </div>
 
         <button
-          type="submit"
           style={{
             flex: 1,
             color: "black",
@@ -177,12 +178,12 @@ export default function Register() {
             background: "transparent",
             border: "1px solid #ccc",
           }}
-          onClick={regisztracio}
+          onClick={(event) => regisztracio(event)}
         >
           Regisztráció
         </button>
+        <p>Ha már regisztrált: </p>
         <button
-          type="button"
           onClick={handleLogin}
           style={{
             flex: 1,

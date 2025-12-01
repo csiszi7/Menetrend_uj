@@ -4,8 +4,8 @@ import './Login.css'
 
 export default function Login() {
   const [email, setEmail] = useState("");
-  const [password, setJelszo] = useState("");
-  const [error, setError] = useState("");
+  const [jelszo, setJelszo] = useState("");
+  // const [error, setError] = useState("");
   
   async function bejelentkezes(event) {
     event.preventDefault();
@@ -15,67 +15,62 @@ export default function Login() {
     });
 
 
-    // const response = await fetch('http://localhost:3500/api/register-frontend', {
-    // 	method: 'POST',
-    // 	headers: { 'Content-Type': 'application/json' },
-    // 	body: JSON.stringify({ nev, email, jelszo })
-    // });
+    const response = await fetch('http://localhost:3500/api/login-frontend', {
+    	method: 'POST',
+    	headers: { 'Content-Type': 'application/json' },
+    	body: JSON.stringify({ email, jelszo })
+    });
 
-    // const valasz = await response.json();
+    const valasz = await response.json();
 
-    // if (response.ok) {
-    // 	window.alert(valasz.msg);
-    // 	window.location.href = '/login';
-    // } else {
-    // 	window.alert(valasz.msg);
-    // }
+    if (response.ok) {
+    	window.alert(valasz.msg);
+      localStorage.setItem('isLoggedIn', JSON.stringify(1)); 
+      localStorage.setItem('user', JSON.stringify(valasz.letezoUser)); 
+    	window.location.href = '/';
+    } else {
+    	window.alert(valasz.msg);
+    }
   }
 
-  const validate = () => {
-    if (!email.trim()) return "Kérlek add meg az e-mail címet.";
-    // egyszerű e-mail ellenőrzés
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) return "Érvényes e-mail címet adj meg.";
-    if (password.length < 6) return "A jelszónak legalább 6 karakter hosszúnak kell lennie.";
-    return "";
-  };
+  // const validate = () => {
+  //   if (!email.trim()) return "Kérlek add meg az e-mail címet.";
+  //   // egyszerű e-mail ellenőrzés
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailRegex.test(email)) return "Érvényes e-mail címet adj meg.";
+  //   if (jelszo.length < 6) return "A jelszónak legalább 6 karakter hosszúnak kell lennie.";
+  //   return "";
+  // };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const err = validate();
-    if (err) {
-      setError(err);
-      return;
-    }
-    setError("");
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   const err = validate();
+  //   if (err) {
+  //     setError(err);
+  //     return;
+  //   }
+  //   setError("");
 
-     if (email === "markus.rego.benedek@szbiszeged.hu" && password === '123456789')
-      {
-        window.location.href = '/jegy';
-      }
+  //    if (email === "markus.rego.benedek@szbiszeged.hu" && jelszo === '123456789')
+  //     {
+  //       window.location.href = '/jegy';
+  //     }
     // ha nincs onLogin prop, alapértelmezett konzol-üzenet
     // if (typeof onLogin === "function") {
-    //   // onLogin({ email, password });
+    //   // onLogin({ email, jelszo });
      
     // } else {
-    //   console.log("Login:", { email, password });
+    //   console.log("Login:", { email, jelszo });
     // }
-  };
+  // };
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    // regisztrációhoz lehet más logika; itt továbbküldjük az adatokat callback-be
-    if (typeof onRegister === "function") {
-      onRegister({ email, password });
-    } else {
-      // alapértelmezett: átirányítás regisztrációs oldalra
-      window.location.href = "/register";
-    }
+  const handleRegister = () => {
+    window.location.href = "/register";
   };
 
   return (
     <form
-      onSubmit={handleLogin}
+      onSubmit={(event) => {bejelentkezes(event)}}
       aria-labelledby="login-heading"
       style={{
         maxWidth: 400,
@@ -108,9 +103,9 @@ export default function Login() {
         <input
           id="jelszo"
           name="jelszo"
-          type="password"
+          type="jelszo"
           placeholder="Írja be a jelszavát."
-          value={password}
+          value={jelszo}
           onChange={(e) => setJelszo(e.target.value)}
           required
           aria-required="true"
@@ -118,26 +113,26 @@ export default function Login() {
         />
       </div>
 
-      {error && (
+      {/* {error && (
         <div role="alert" aria-live="polite" style={{ color: "crimson" }}>
           {error}
         </div>
-      )}
+      )} */}
 
       <div style={{ display: "flex", gap: 8 }}>
         <button type="submit"  style={{ flex: 1, padding: "10px 12px" }} onClick={bejelentkezes}>
           Bejelentkezés 
         </button>
-
+        <p>Ha még nem regisztrált:</p>
         <button
           type="button"
           onClick={handleRegister}
-          style={{
-            flex: 1,
-            padding: "10px 12px",
-            background: "transparent",
-            border: "1px solid #ccc",
-          }}
+          // style={{
+          //   flex: 1,
+          //   padding: "10px 12px",
+          //   background: "transparent",
+          //   border: "1px solid #ccc",
+          // }}
         >
           Regisztráció
         </button>
