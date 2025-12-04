@@ -30,28 +30,28 @@ const Navbar = () => {
   };
   return (
     <div className="navbar-kontener">
-      <div>
-        <Link to="/">Home</Link>
-
-        <Link to="/menetrend">Menetrend</Link>
-      </div>
-      {isLoggedIn ? (
-        <div>
-          <button onClick={kijelenkezes}>Kijelentkezés</button>
-        </div>
-      ) : (
-        <div>
-          <Link to="/register">Regisztráció</Link>
-          <Link to="/login">Bejelentkezés</Link>
-        </div>
-      )}
-      {isAdmin ? (
-        <div>
-          <Link to="http://localhost:3500/api">Szerver</Link>
-        </div>
-      ) : (
-        <div></div>
-      )}
+            <div>
+              <Link to='/'>Home</Link>
+               
+              <Link to='/menetrend'>Menetrend</Link>
+            </div>
+            {isLoggedIn ? 
+            <div>
+              <button onClick={kijelenkezes}>Kijelentkezés</button>
+            </div>  
+            
+            :
+            <div>
+              <Link to='/register'>Regisztráció</Link>
+               <Link to='/login'>Bejelentkezés</Link>
+            </div>
+            }
+            { isAdmin ? <div>
+              <Link to='http://localhost:3500/api'>Szerver</Link>
+              
+             </div>   : <div>
+            </div>}
+            
     </div>
   );
 };
