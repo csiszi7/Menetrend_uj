@@ -46,6 +46,8 @@ const Navbar = () => {
             <div>
               <Link to='/register'>Regisztráció</Link>
                <Link to='/login'>Bejelentkezés</Link>
+               <Link to='https://mavplusz.hu/#/' target="_blank">Élő térkép</Link>
+               
             </div>
             }
             { isAdmin ? <div>
