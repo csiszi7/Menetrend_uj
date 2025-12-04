@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import "./Viszonylat.css"; // Feltételezve, hogy használnál CSS-t
+// 1. 👈 Importáljuk a useNavigate hook-ot a React Router-ből
+import { useNavigate } from "react-router-dom";
+import "./Viszonylat.css";
 
 const Viszonylat = () => {
+  // 2. 👈 Inicializáljuk a navigációs funkciót a komponensen belül
+  const navigate = useNavigate();
+
   // Példa állapotok
   const [honnan, setHonnan] = useState("SZEGED*");
   const [hova, setHova] = useState("BUDAPEST*");
@@ -27,19 +32,27 @@ const Viszonylat = () => {
     // Keresési logika ide
     console.log(`Keresés: ${honnan} -> ${hova}, Dátum: ${datum}, Idő: ${ido}`);
   };
-  <button 
-    className="search-button" 
-    onClick={handleSearch} // Ezzel hívjuk meg a függvényt!
-  >
-    Útvonal keresése
-  </button>
 
-  
+  // 3. 👈 A Jegyek gombhoz tartozó navigációs függvény
+  const handleTicketClick = (routeData) => {
+    console.log("Jegyek gomb lenyomva. Navigálás a /jegy oldalra.");
+    // Átirányítás a /jegy útvonalra.
+    // Átadjuk a járat adatait (result), ami hasznos lehet a jegyvásárló oldalon.
+    navigate("/jegy", { state: { data: routeData } });
+  };
+
+  const handleMainClick = (routeData) => {
+    console.log("Navigálás a / oldalra.");
+    // Átirányítás a /jegy útvonalra.
+    // Átadjuk a járat adatait (result), ami hasznos lehet a jegyvásárló oldalon.
+    navigate("/", { state: { data: routeData } });
+  };
+  // 4. ❗ SZINTAKTIKAI HIBA KIJAVÍTVA: A JSX elemeknek a return() belsejében kell lenniük!
+  // A keresőgombot a megfelelő helyre, a beállítások oszlopába helyezzük.
 
   return (
     <div className="route-planner-container">
       <header className="header">
-        <button className="back-button">← Vissza</button>
         <h1>Útvonal beállítás</h1>
         <h2>SZEGED* &gt; BUDAPEST*</h2>
       </header>
@@ -83,6 +96,11 @@ const Viszonylat = () => {
             <summary>Súgó</summary>
             <p>Segítség az útvonaltervezéshez...</p>
           </details>
+
+          {/* A keresőgomb a beállítások oszlopának aljára került a hiba kijavítása után */}
+          <button className="search-button" onClick={handleSearch}>
+            Útvonal keresése
+          </button>
         </aside>
 
         {/* Eredmény megjelenítő oszlop */}
@@ -141,26 +159,42 @@ const Viszonylat = () => {
 
               {/* Információk és jegyváltás alsó sáv */}
               <div className="bottom-info-bar">
-                
                 <div className="info-block">
                   <h4>Információ</h4>
                   <p>Távolság: 191 km</p>
                   <p>Menetidő: 02:25</p>
                   <p>Átszállások: 0</p>
                 </div>
-                
+
                 <div className="ticket-info">
                   <h4>Jegyvételek:</h4>
-                  
+                  {/* Ez a link elhagyható, ha csak a gomb kell */}
+                  {/* <a href={result.infoLink}>Szeged &gt; Budapest-Nyugati</a> */}
+
                   {/* A Jegyek gomb itt van elhelyezve, a box jobb alján */}
-                  <button className="bottom-right-ticket-button">Jegyek</button>
-                  
+                  <button
+                    className="bottom-right-ticket-button"
+                    // 4. 👈 A Jegyek gombhoz rendeljük az átirányítást
+                    onClick={() => handleTicketClick(result)}
+                  >
+                    Jegyek
+                  </button>
+                  <h4>Vissza a főoldalra:</h4>
+                  {/* Ez a link elhagyható, ha csak a gomb kell */}
+                  {/* <a href={result.infoLink}>Szeged &gt; Budapest-Nyugati</a> */}
+
+                  {/* A Jegyek gomb itt van elhelyezve, a box jobb alján */}
+                  <button
+                    className="bottom-right-ticket-button"
+                    // 4. 👈 A Jegyek gombhoz rendeljük az átirányítást
+                    onClick={() => handleMainClick(result)}
+                  >
+                    Vissza
+                  </button>
                 </div>
-                
               </div>
             </div>
           ))}
-          
         </main>
       </div>
     </div>
