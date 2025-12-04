@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    // A home-kontener-nek továbbra is szüksége van magasságra és position: relative-re!
     <div className="home-kontener">
-      {/* Az üdvözlő doboz a form stílusát kapja, és inline stílussal középre kerül */}
       <div
         className="welcome-box"
         style={{
@@ -16,6 +14,19 @@ const Home = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
+
+        {/* --- 8 KÉP EGY SORBAN --- */}
+        <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
+          <img src="/images/traxx_480 023.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/csörgő.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/kiss .jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/Máv kiss keleti.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/máv bd.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/oroshaza.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/samu.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+        </div>
+        {/* --- /KÉPSOR --- */}
+
         <h1 className="welcome-title-style">Szép napot!</h1>
         <p className="welcome-text-style">
           Itt mindent megtalálsz, amire a kényelmes utazáshoz szükséged van.
