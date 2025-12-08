@@ -103,7 +103,7 @@ export default function Login() {
         <input
           id="jelszo"
           name="jelszo"
-          type="jelszo"
+          type="password"
           placeholder="Írja be a jelszavát."
           value={jelszo}
           onChange={(e) => setJelszo(e.target.value)}

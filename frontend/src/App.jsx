@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Jegy from "./components/Jegy";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Menetrend from "./pages/menetrend";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
+import Viszonylat from "./pages/Viszonylat";
+import Menetrend from "./pages/Menetrend";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/jegy" element={<Jegy />} />
         <Route path="/menetrend" element={<Menetrend />} />
+        <Route path="/viszonylat" element={<Viszonylat />} />
       </Routes>
       <Footer />
       
