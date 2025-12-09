@@ -54,7 +54,7 @@ const Viszonylat = () => {
     <div className="route-planner-container">
       <header className="header">
         <h1>Útvonal beállítás</h1>
-        <h2>SZEGED* &gt; BUDAPEST*</h2>
+        <h2></h2>
       </header>
 
       <div className="content-wrapper">
@@ -136,9 +136,9 @@ const Viszonylat = () => {
               <div className="details-expanded">
                 <div className="detail-header">
                   <span className="departure-time">{result.indul}</span>
-                  <span className="train-info">**IC** {result.jarat}</span>
+                  <span className="train-info"> {result.jarat}</span>
                   <div className="ticket-actions">
-                    <span className="seat-count">4</span>
+                    <span className="seat-count"></span>
                   </div>
                 </div>
 
@@ -148,7 +148,7 @@ const Viszonylat = () => {
                     <div className="timeline-dot"></div>
                     <div className="station-name">{result.kezdoallomas}</div>
                   </div>
-                  <div className="journey-info">2 óra 25 perc menetidővel</div>
+                  <div className="journey-info"></div>
                   <div className="station-row">
                     <div className="timeline-dot"></div>
                     <div className="station-name">{result.vegallomas}</div>
@@ -160,10 +160,10 @@ const Viszonylat = () => {
               {/* Információk és jegyváltás alsó sáv */}
               <div className="bottom-info-bar">
                 <div className="info-block">
-                  <h4>Információ</h4>
-                  <p>Távolság: 191 km</p>
-                  <p>Menetidő: 02:25</p>
-                  <p>Átszállások: 0</p>
+                  <h4></h4>
+                  <p></p>
+                  <p></p>
+                  <p></p>
                 </div>
 
                 <div className="ticket-info">
