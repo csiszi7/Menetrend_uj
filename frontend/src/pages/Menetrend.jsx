@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Menetrend.css";
 import { Link } from "react-router-dom";
+// import { MenetrendContext } from '../context/MenetrendContext.jsx';
 
 export default function Menetrend() {
   const [from, setFrom] = useState("");
@@ -9,6 +10,7 @@ export default function Menetrend() {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [menetrendek, setMenetrendek] = useState([]);
   // const [time, setTime] = useState("00:00");
+  // const { setViszonylatok } = useContext(MenetrendContext);
 
   let allomasok = [
 "Szeged", "Szatymaz", "Kistelek", "Kiskunfélegyháza", "Kecskemét", "Nagykőrös", "Cegléd", "Ferihegy", "Kőbánya-kispest(KÖKI)", "Zugló", "Budapest-Nyugati",
@@ -39,16 +41,21 @@ export default function Menetrend() {
   const feldolgoz = (e) => {
     e.preventDefault();
     console.log({ from, to, date });
+    let viszonyok = [];
     menetrendek.forEach((elem) => {
       let tartalmaz = elem.allomasok.filter((item) => item === to);
       if (
         elem.induloallomas === from &&
         (elem.celallomas === to || tartalmaz.length > 0)
       ) {
-        console.log(elem);
-        window.location.href = `/viszonylat`;
+        // console.log(elem);
+        viszonyok.push(elem);
       }
     });
+    console.log(viszonyok);
+    localStorage.setItem("viszonylatok", JSON.stringify(viszonyok));
+    // setViszonylatok(viszonyok);
+    window.location.href = `/viszonylat`;
   };
 
   return (

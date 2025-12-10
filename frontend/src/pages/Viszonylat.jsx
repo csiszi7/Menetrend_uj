@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // 1. 👈 Importáljuk a useNavigate hook-ot a React Router-ből
 import { useNavigate } from "react-router-dom";
 import "./Viszonylat.css";
+// import { MenetrendContext } from '../context/MenetrendContext.jsx';
 
 const Viszonylat = () => {
   // 2. 👈 Inicializáljuk a navigációs funkciót a komponensen belül
   const navigate = useNavigate();
-
+  // const { viszonylatok } = useContext(MenetrendContext);
+  // console.log(viszonylatok);
+  const [viszonylatok, setViszonylatok] = useState(
+    JSON.parse(localStorage.getItem("viszonylatok")) || []
+  );
+  
   // Példa állapotok
-  const [honnan, setHonnan] = useState("SZEGED*");
-  const [hova, setHova] = useState("BUDAPEST*");
-  const [datum, setDatum] = useState("Ma");
-  const [ido, setIdo] = useState("15:47");
+  // const [honnan, setHonnan] = useState("SZEGED*");
+  // const [hova, setHova] = useState("BUDAPEST*");
+  // const [datum, setDatum] = useState("Ma");
+  // const [ido, setIdo] = useState("15:47");
+  
+  
 
   // Példa a megjelenített eredményekre
   const results = [
@@ -28,10 +36,10 @@ const Viszonylat = () => {
     },
   ];
 
-  const handleSearch = () => {
-    // Keresési logika ide
-    console.log(`Keresés: ${honnan} -> ${hova}, Dátum: ${datum}, Idő: ${ido}`);
-  };
+  // const handleSearch = () => {
+  
+  //   console.log(`Keresés: ${honnan} -> ${hova}, Dátum: ${datum}, Idő: ${ido}`);
+  // };
 
   // 3. 👈 A Jegyek gombhoz tartozó navigációs függvény
   const handleTicketClick = (routeData) => {
@@ -59,12 +67,11 @@ const Viszonylat = () => {
 
       <div className="content-wrapper">
         {/* Útvonal beállítás oszlop */}
-        <aside className="settings-column">
+        {/* <aside className="settings-column">
           <div className="input-group">
             <label>Honnan?</label>
             <select value={honnan} onChange={(e) => setHonnan(e.target.value)}>
               <option>SZEGED*</option>
-              {/* További opciók */}
             </select>
           </div>
 
@@ -72,7 +79,6 @@ const Viszonylat = () => {
             <label>Hová?</label>
             <select value={hova} onChange={(e) => setHova(e.target.value)}>
               <option>BUDAPEST*</option>
-              {/* További opciók */}
             </select>
           </div>
 
@@ -80,7 +86,6 @@ const Viszonylat = () => {
             <label>Mikor?</label>
             <select value={datum} onChange={(e) => setDatum(e.target.value)}>
               <option>Ma</option>
-              {/* További opciók */}
             </select>
           </div>
 
@@ -88,7 +93,6 @@ const Viszonylat = () => {
             <label>Hánykor?</label>
             <select value={ido} onChange={(e) => setIdo(e.target.value)}>
               <option>15:47</option>
-              {/* További opciók */}
             </select>
           </div>
 
@@ -97,23 +101,22 @@ const Viszonylat = () => {
             <p>Segítség az útvonaltervezéshez...</p>
           </details>
 
-          {/* A keresőgomb a beállítások oszlopának aljára került a hiba kijavítása után */}
           <button className="search-button" onClick={handleSearch}>
             Útvonal keresése
           </button>
-        </aside>
+        </aside> */}
 
         {/* Eredmény megjelenítő oszlop */}
         <main className="results-column">
-          <nav className="filter-tabs">
+          {/* <nav className="filter-tabs">
             <button className="active">Indulás</button>
             <button>Érkezés</button>
             <button>Menetidő</button>
             <button>Átszállás</button>
             <button>Szolgáltatások</button>
-          </nav>
+          </nav> */}
 
-          {results.map((result, index) => (
+          {viszonylatok.map((result, index) => (
             <div key={index} className="route-card">
               <div className="summary-row">
                 <span className="time">{result.indul}</span>
