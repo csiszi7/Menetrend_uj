@@ -69,6 +69,7 @@ export default function Login() {
   };
 
   return (
+    <div id="fedo">
     <form
       onSubmit={(event) => {bejelentkezes(event)}}
       aria-labelledby="login-heading"
@@ -94,7 +95,7 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
           aria-required="true"
-          style={{ width: "100%", padding: 8, marginTop: 6 }}
+          style={{ width: "100%", padding: 6, marginTop: 7 }}
         />
       </div>
 
@@ -109,7 +110,7 @@ export default function Login() {
           onChange={(e) => setJelszo(e.target.value)}
           required
           aria-required="true"
-          style={{ width: "100%", padding: 8, marginTop: 6 }}
+          style={{ width: "100%", padding: 6, marginTop: 7 }}
         />
       </div>
 
@@ -138,5 +139,6 @@ export default function Login() {
         </button>
       </div>
     </form>
+    </div>
   );
 }

@@ -59,6 +59,7 @@ export default function Menetrend() {
   };
 
   return (
+    <div id="fedo">
     <form
       style={{
         maxWidth: 450,
@@ -142,5 +143,6 @@ export default function Menetrend() {
         🔍 Keresés
       </button>
     </form>
+    </div>
   );
 }

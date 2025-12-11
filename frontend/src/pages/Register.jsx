@@ -53,6 +53,7 @@ export default function Register() {
   };
 
   return (
+    <div id="fedo">
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <form className="w-full max-w-md bg-white p-6 rounded-lg shadow">
         <h1 className="text-center">Regisztráció</h1>
@@ -196,6 +197,7 @@ export default function Register() {
           Bejelentkezés
         </button>
       </form>
+    </div>
     </div>
   );
 }

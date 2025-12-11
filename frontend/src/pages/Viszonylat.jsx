@@ -66,6 +66,7 @@ const Viszonylat = () => {
       </header>
 
       <div className="content-wrapper">
+        <div id="fedo"></div>
         {/* Útvonal beállítás oszlop */}
         {/* <aside className="settings-column">
           <div className="input-group">

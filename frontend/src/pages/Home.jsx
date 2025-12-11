@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
+    <div id="fedo">
     <div className="home-kontener">
       <div
         className="welcome-box"
@@ -38,6 +39,7 @@ const Home = () => {
           &nbsp; menüpontban!
         </p>
       </div>
+    </div>
     </div>
   );
 };
