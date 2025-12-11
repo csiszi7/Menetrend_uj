@@ -1,31 +1,31 @@
-.footer {
-background-color: #0a2a66;
-color: #ffffff;
-padding: 20px 0;
-text-align: center;
+/* Footer.css */
+
+.footer { /* Használhatod a footer tag-et közvetlenül is, ha nincs .footer osztály */
+  background-color: #0a2a66;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-
-.footer-links {
-display: flex;
-flex-direction: column;
-gap: 10px;
-align-items: center;
+/* 👈 ÚJ BLOKK: Csak a footer tag-en belüli <a> tag-ekre vonatkozzon */
+footer a {
+  /* Helyezi el a linkeket egymás mellett a space-between vagy gap használatához, ha a footer flexbox */
+  margin: 0 10px; 
+  /* A többi stílus a megadott listádból */
+  color: rgb(21, 1, 1);
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.2s;
+  flex-direction: column;
 }
 
-
-.footer-links a {
-color: #ffffff;
-text-decoration: none;
-font-size: 14px;
-transition: color 0.2s;
+footer a:hover {
+  color: #8bb8ff;
 }
 
-
-.footer-links a:hover {
-color: #8bb8ff;
-}
-
-a {
-    margin: 0 10px 0 10px;
+/* Ha a linkeket egymás mellé akarod rendezni: */
+footer {
+    display: flex;
+    justify-content: center; /* Vagy space-around */
+    gap: 20px;
 }
