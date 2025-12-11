@@ -11,7 +11,7 @@ const Jegy = () => {
     <p>
       VÁSÁROLJA MEG JEGYÉT ONLINE! 
       <br />
-      Belföldi és nemzetközi menetjegyét online is megvásárolhatja ezen a weboldalon vagy a MÁV applikációkban. Az online vásárlás nem csupán kényelmesebb és gyorsabb, de bizonyos díjtermékek esetén olcsóbb is, mint az automatából vagy a jegypénztárból vásárolva. Azonos felhasználói fiókkal a böngészőben megvásárolt jegyek a MÁV és MÁV+ app-ban is elérhetők.
+      Belföldi és nemzetközi menetjegyét online is megvásárolhatja ezen a weboldalon vagy a MÁV applikációkban. Az online vásárlás nem csupán kényelmesebb és gyorsabb, <br /> de bizonyos díjtermékek esetén olcsóbb is, mint az automatából vagy a jegypénztárból vásárolva. Azonos felhasználói fiókkal a böngészőben megvásárolt jegyek a MÁV és MÁV+ app-ban is elérhetők.
     </p>
     <form action="#"> 
    <select name="Közlekedési eszközök" id="kozeszk"> 

@@ -1,4 +1,4 @@
-.jegy-wrapper {
+.jegy-wrapper:hover {
   max-width: 700px;
   margin: 40px auto;
   padding: 30px;
@@ -8,7 +8,7 @@
   line-height: 1.8;
 }
 
-.jegy-intro {
+.jegy-intro:hover {
   margin-bottom: 20px;
   font-size: 16px;
 }
@@ -19,8 +19,8 @@
   gap: 15px;
 }
 
-.jegy-input,
-.jegy-select {
+.jegy-input:hover,
+.jegy-select:hover {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -33,7 +33,7 @@
   gap: 10px;
 }
 
-.jegy-buttons {
+.jegy-buttons:hover {
   display: flex;
   gap: 10px;
   margin-top: 10px;
@@ -51,4 +51,9 @@
 
 .keres-btn:hover {
   background-color: #0050cc;
+}
+
+p {
+  text-align: center;
+  color: black;
 }

@@ -1,31 +1,30 @@
-/* Footer.css */
+footer {
+  width: 100%;
+  background-color: #1e3a8a; /* szép kék */
+  padding: 12px 0;
+  position: fixed;     /* mindig alul marad */
+  bottom: 0;
+  left: 0;
 
-.footer { /* Használhatod a footer tag-et közvetlenül is, ha nincs .footer osztály */
-  background-color: #0a2a66;
-  color: #ffffff;
-  padding: 20px 0;
-  text-align: center;
+  display: flex;
+  justify-content: center; /* középre rakja a linkeket */
+  gap: 30px;               /* távolság a linkek között */
+
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
 }
 
-/* 👈 ÚJ BLOKK: Csak a footer tag-en belüli <a> tag-ekre vonatkozzon */
 footer a {
-  /* Helyezi el a linkeket egymás mellett a space-between vagy gap használatához, ha a footer flexbox */
-  margin: 0 10px; 
-  /* A többi stílus a megadott listádból */
-  color: rgb(21, 1, 1);
+  color: white;
   text-decoration: none;
-  font-size: 24px;
-  transition: color 0.2s;
-  flex-direction: column;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.2s ease;
 }
 
 footer a:hover {
-  color: #8bb8ff;
+  color: #93c5fd;   /* világoskék hover */
 }
 
-/* Ha a linkeket egymás mellé akarod rendezni: */
-footer {
-    display: flex;
-    justify-content: center; /* Vagy space-around */
-    gap: 20px;
+body {
+  padding-bottom: 60px; /* hogy a footer ne takarja ki a tartalmat */
 }

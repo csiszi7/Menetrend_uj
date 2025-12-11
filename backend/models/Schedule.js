@@ -20,6 +20,12 @@ const scheduleSchema = new mongoose.Schema(
         required: true,
       },
     ],
+    idotartamAllomasig: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
     idopontok: [
       {
         type: String,

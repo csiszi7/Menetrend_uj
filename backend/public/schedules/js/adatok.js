@@ -8,7 +8,7 @@ let induloallomas = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskol
 let celallomas =['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba'];
 
 // Időtartamok (példa) 
-//Jelmagyarázat: IC(InterCity) IR(Interregio) S(Sebesvonat) SZ(Szemelyvonat) EC(EuroCity)
+//Jelmagyarázat: IC(InterCity) IR(Interregio) S(Sebesvonat) SZ(Szemelyvonat) EC(EuroCity), s10(személy)
 
 let idopontok = [
   '3:25(S)', '4:30(IC)', '5:46(IC)', '6:44(IC)', '7:44(IC)', '8:44(IC)', '9:44(IC)', '10:44(IC)', '11:44(IC)', '12:44(IC)', '13:44(IC)', '14:44(IC)', '15:44(IC)', '16:44(IC)', '17:44(IC)', '18:44(IC)', '19:44(IC)', '20:44(IC)',
