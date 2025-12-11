@@ -14,20 +14,30 @@ body {
   background-color: #fff;
 }
 
+header {
+  justify-content: center;
+  text-align: center;
+}
+
 /* 2. Fő Konténer és Oszlopok (CSS Grid) */
 .route-planner-container {
   max-width: 1200px; /* Vagy az általad kívánt szélesség */
   margin: 0 auto;
   padding: 20px;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .content-wrapper {
-  display: grid;
+  display: block;
+  margin: 0 auto 0 auto; 
+  max-width: 500px;
   /* A bal oldali oszlop keskenyebb (pl. 300px), a jobb oldali foglalja a maradékot */
-  grid-template-columns: 300px 1fr;
   gap: 30px;
   color: #ffc107;
 }
+
+
 
 /* 3. Bal Oldali Beállítások Oszlop */
 .settings-column {
@@ -66,8 +76,22 @@ body {
 
 /* 4. Eredmény Oszlop és Szűrők */
 .results-column {
-  padding-left: 20px;
+/* RoutePlanner.css (4. Eredmény Oszlop és Szűrők szekcióban) */
+    /* Flexbox a tartalom középre igazításához */
+    display: grid;
+    grid-template-columns: 1fr;
+    /* flex-direction: column; Az elemeket (szűrők, kártyák) egymás alá rendezzük */
+    /* align-items: center; 👈 EZ RAKJA KÖZÉPRE A TARTALMAT VÍZSZINTESEN */
+
+    justify-items: center; /* Középre igazítás vízszintesen */
+    
+    padding: 20px;
+    background-color: white; 
+    border-radius: 8px; 
+
 }
+
+
 
 .filter-tabs {
   display: flex;
@@ -91,11 +115,28 @@ body {
 
 /* 5. Útvonal Kártya Stílus (Route Card) */
 .route-card {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+/* Max szélesség, hogy ne nyúljon szét az egész oszlopon */
+    max-width: 750px; 
+    width: 100%; /* Hogy kis képernyőn se legyen túl kicsi */
+    
+    /* Ha a fenti .results-column beállítás nem működne, 
+       a margin auto helyettesítő megoldás lehet, de az align-items: center a jobb: */
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
+
+    margin: 0 auto 15px auto;
+    
+    
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    
 }
+
 
 .summary-row {
   display: flex;
@@ -197,4 +238,3 @@ body {
   border-top: 1px dotted var(--border-color);
   justify-content: space-between; /* A két blokk elválasztása */
 }
-/* ... további stilizálás ... */

@@ -116,6 +116,7 @@ const Viszonylat = () => {
             <button>Átszállás</button>
             <button>Szolgáltatások</button>
           </nav> */}
+          
 
           {viszonylatok.map((result, index) => (
             <div key={index} className="route-card">
