@@ -2,22 +2,17 @@ import { useState, createContext } from 'react';
 
 export const MenetrendContext = createContext();
 
-const ContextProvider = (props) => {
+const MenetrendProvider = (props) => {
     const [viszonylatok, setViszonylatok] = useState([]);
-
-    // useEffect(() => {
-    //     if (JSON.parse(localStorage.getItem('reservedBooks'))) {
-    //         let tomb = JSON.parse(localStorage.getItem('reservedBooks'));
-
-    //         setSzamlalo(tomb.length);
-    //     }
-    // }, []);
+    const [honnan, setHonnan] = useState('');
 
     return (
         <MenetrendContext.Provider
             value={{
                 viszonylatok,
                 setViszonylatok,
+                honnan,
+                setHonnan,
             }}
         >
             {props.children}
@@ -25,4 +20,4 @@ const ContextProvider = (props) => {
     );
 };
 
-export default ContextProvider;
+export default MenetrendProvider;
