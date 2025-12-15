@@ -1,40 +1,34 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 // 1. 👈 Importáljuk a useNavigate hook-ot a React Router-ből
 import { useNavigate } from "react-router-dom";
 import "./Viszonylat.css";
-// import { MenetrendContext } from '../context/MenetrendContext.jsx';
+import { MenetrendContext } from '../context/MenetrendContext.jsx';
 
 const Viszonylat = () => {
   // 2. 👈 Inicializáljuk a navigációs funkciót a komponensen belül
   const navigate = useNavigate();
   // const { viszonylatok } = useContext(MenetrendContext);
-  // console.log(viszonylatok);
   const [viszonylatok, setViszonylatok] = useState(
-    JSON.parse(localStorage.getItem("viszonylatok")) || []
-  );
+      JSON.parse(localStorage.getItem("viszonylatok")) || []
+    );
+    
+  //   useEffect(() => {
+  //     console.log(viszonylatok);
+  // }, [])
   
   // Példa állapotok
-  // const [honnan, setHonnan] = useState("SZEGED*");
-  // const [hova, setHova] = useState("BUDAPEST*");
+  const [honnan, setHonnan] = useState("");
+  const [hova, setHova] = useState("");
   // const [datum, setDatum] = useState("Ma");
   // const [ido, setIdo] = useState("15:47");
   
-  
+  useEffect(() => {
+    setHonnan();
+    setHova();
+  }, [])
+    
 
-  // Példa a megjelenített eredményekre
-  const results = [
-    {
-      indul: "15:44",
-      erkez: "18:09",
-      menetido: "02:25",
-      atszallas: 0,
-      jarat: "713 NAPFÉNY INTERCITY",
-      kezdoallomas: "Szeged",
-      vegallomas: "Budapest-Nyugati",
-      infoLink: "#",
-      jegyLink: "#",
-    },
-  ];
+
 
   // const handleSearch = () => {
   
@@ -151,13 +145,13 @@ const Viszonylat = () => {
                   {/* Ez a rész a vonalak és állomások diagramja lenne */}
                   <div className="station-row">
                     <div className="timeline-dot"></div>
-                    <div className="station-name">{result.kezdoallomas}</div>
+                    <div className="station-name">{result.induloallomas}</div>
                   </div>
                   <div className="journey-info"></div>
                   <div className="station-row">
                     <div className="timeline-dot"></div>
-                    <div className="station-name">{result.vegallomas}</div>
-                    <span className="arrival-time">18:09</span>
+                    <div className="station-name">{result.celallomas}</div>
+                    {/* <span className="arrival-time">18:09</span> */}
                   </div>
                 </div>
               </div>
