@@ -1,210 +1,135 @@
-import { useContext, useState, useEffect } from 'react';
-// 1. 👈 Importáljuk a useNavigate hook-ot a React Router-ből
-import { useNavigate } from 'react-router-dom';
-import './Viszonylat.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Viszonylat.css";
+
+
 
 const Viszonylat = () => {
-    // 2. 👈 Inicializáljuk a navigációs funkciót a komponensen belül
-    const navigate = useNavigate();
-    const [viszonylatok, setViszonylatok] = useState(
-        JSON.parse(localStorage.getItem('viszonylatok')) || []
-    );
-    const [honnan, setHonnan] = useState(
-        JSON.parse(localStorage.getItem('honnan'))
-    );
-    const [hova, setHova] = useState(JSON.parse(localStorage.getItem('hova')));
+  const navigate = useNavigate();
+  const hon = localStorage.getItem('honnan');
+  const hov = localStorage.getItem('hova');
+  const viszony = localStorage.getItem('viszonylatok');
 
-    // Példa állapotok
-    // const [honnan, setHonnan] = useState('');
-    // const [hova, setHova] = useState('');
-    // const [datum, setDatum] = useState("Ma");
-    // const [ido, setIdo] = useState("15:47");
+  // 👉 EZ AZ EGYETLEN ÁLLAPOT, AMI KELL
+  const [ajanlatok, setAjanlatok] = useState([]);
+  const [nyitottSor, setNyitottSor] = useState(null);
+  const [viszonylatok, setViszonylatok] = useState(null);
+  const [honnan, setHonnan] = useState('');
+  const [hova, setHova] = useState('');
 
-    // const handleSearch = () => {
+  // 👉 ITT BONTJUK FEL A MONGODB ADATOT
+  useEffect(() => {
+    setHonnan(hon);
+    setHova(hov);
+    setViszonylatok(viszony);
+    let ora = 0;
+  let perc = 0;
+  function erkezesiIdoSzamol(kezdo, tartam) {
+    let kezdoIdoOra = +kezdo.split(':')[0];    
+    let kezdoIdoPerc = +kezdo.split(':')[1];    
+    let tartamIdoOra = +tartam.split(':')[0];
+    let tartamIdoPerc = +tartam.split(':')[1];
 
-    //   console.log(`Keresés: ${honnan} -> ${hova}, Dátum: ${datum}, Idő: ${ido}`);
-    // };
+    ora =  kezdoIdoOra + tartamIdoOra;
+    perc = kezdoIdoPerc + tartamIdoPerc;
 
-    // 3. 👈 A Jegyek gombhoz tartozó navigációs függvény
-    const handleTicketClick = (routeData) => {
-        console.log('Jegyek gomb lenyomva. Navigálás a /jegy oldalra.');
-        // Átirányítás a /jegy útvonalra.
-        // Átadjuk a járat adatait (result), ami hasznos lehet a jegyvásárló oldalon.
-        navigate('/jegy', { state: { data: routeData } });
-    };
+    if ((kezdoIdoPerc + tartamIdoPerc) > 60) {
+      ora += 1
+      perc = kezdoIdoPerc + tartamIdoPerc - 60;
+    }
+    
+    let idopont = '';
 
-    const handleMainClick = (routeData) => {
-        console.log('Navigálás a / oldalra.');
-        // Átirányítás a /jegy útvonalra.
-        // Átadjuk a járat adatait (result), ami hasznos lehet a jegyvásárló oldalon.
-        navigate('/', { state: { data: routeData } });
-    };
-    // 4. ❗ SZINTAKTIKAI HIBA KIJAVÍTVA: A JSX elemeknek a return() belsejében kell lenniük!
-    // A keresőgombot a megfelelő helyre, a beállítások oszlopába helyezzük.
+    if (perc < 10) {
+      idopont = `${ora}:0${perc}`
+    } else {
+      idopont = `${ora}:${perc}`
+    }
 
-    return (
-        <div className="route-planner-container">
-            <header className="header">
-                <h1>Útvonal beállítás</h1>
-                <h2></h2>
-            </header>
+    return idopont;     
+  }
+    const viszonylatok = JSON.parse(localStorage.getItem("viszonylatok"));
+    if (!viszonylatok || viszonylatok.length === 0) return;
+    console.log(viszonylatok);
+    
+    const visz = viszonylatok[0]; // most csak a Szeged vonal
 
-            <div className="content-wrapper">
-                <div id="fedo"></div>
-                {/* Útvonal beállítás oszlop */}
-                {/* <aside className="settings-column">
-          <div className="input-group">
-            <label>Honnan?</label>
-            <select value={honnan} onChange={(e) => setHonnan(e.target.value)}>
-              <option>SZEGED*</option>
-            </select>
-          </div>
+    const ujAjanlatok = visz.idopontok.map((ido) => ({
+      indul: ido.split('(')[0],
+      erkez: erkezesiIdoSzamol(ido.split('(')[0], visz.idotartam.split('(')[0]),                // később számolható
+      menetido: visz.idotartam.split('(')[0],  // pl. 2:34(IC)
+      atszallas: 0,
+      ar: 3190,                  // ideiglenes ár
+      jarat: visz.jarat,
+      honnan: visz.induloallomas,
+      hova: visz.celallomas,
+    }));
 
-          <div className="input-group">
-            <label>Hová?</label>
-            <select value={hova} onChange={(e) => setHova(e.target.value)}>
-              <option>BUDAPEST*</option>
-            </select>
-          </div>
+    setAjanlatok(ujAjanlatok);
+  }, []);
 
-          <div className="input-group">
-            <label>Mikor?</label>
-            <select value={datum} onChange={(e) => setDatum(e.target.value)}>
-              <option>Ma</option>
-            </select>
-          </div>
+  // 👉 Jegyek gomb
+  const handleTicketClick = (ajanlat) => {
+    navigate("/jegy", { state: { data: ajanlat } });
+  };
 
-          <div className="input-group">
-            <label>Hánykor?</label>
-            <select value={ido} onChange={(e) => setIdo(e.target.value)}>
-              <option>15:47</option>
-            </select>
-          </div>
+  return (
+    <div className="route-planner-container">
+      <header className="header">
+        <h1>{honnan} {hova}</h1>
+      </header>
 
-          <details className="help-section">
-            <summary>Súgó</summary>
-            <p>Segítség az útvonaltervezéshez...</p>
-          </details>
+      <div className="results-header">
+        <span>Indulás</span>
+        <span>Érkezés</span>
+        <span>Menetidő</span>
+        {/* <span>Átszállás</span> */}
+        <span>Ár</span>
+        <span></span>
+      </div>
 
-          <button className="search-button" onClick={handleSearch}>
-            Útvonal keresése
-          </button>
-        </aside> */}
+      <main className="results-column">
+        {ajanlatok.map((a, index) => (
+          <div className="route-card" key={index}>
+            
+            <div className="summary-row">
+              {nyitottSor === index && (
+  <div className="row-details">
+    <p><strong>Járat:</strong> {a.jarat}</p>
+    <p><strong>Útvonal:</strong> {a.honnan} → {a.hova}</p>
+  </div>
+)}
+              <span className="time">{a.indul}</span>
+            
+              <div className="timeline-segment">
+                <div className="timeline-bar"></div>
+              <span className="time">{a.erkez}</span>
+              </div>
 
-                {/* Eredmény megjelenítő oszlop */}
-                <main className="results-column">
-                    {/* <nav className="filter-tabs">
-            <button className="active">Indulás</button>
-            <button>Érkezés</button>
-            <button>Menetidő</button>
-            <button>Átszállás</button>
-            <button>Szolgáltatások</button>
-          </nav> */}
+                <span className="duration">{a.menetido}</span>
+              {/* <span className="transfers">{a.atszallas} átszállás</span> */}
 
-                    {viszonylatok.map((result, index) => (
-                        <div
-                            key={index}
-                            className="route-card"
-                        >
-                            <div className="summary-row">
-                                <span className="time">{result.indul}</span>
-                                <div className="timeline-segment">
-                                    <div className="timeline-bar"></div>
-                                    <span className="duration">
-                                        {result.menetido}
-                                    </span>
-                                </div>
-                                <span className="time">{result.erkez}</span>
-                                <span className="transfers">
-                                    {result.atszallas}
-                                </span>
-                                <div className="service-icons">
-                                    {/* Ikonok helye */}
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
+              <button
+                className="price-button"
+                onClick={() => handleTicketClick(a)}
+              >
+                {a.ar} Ft
+              </button>
 
-                            {/* Részletes járat információ - Ez lenne a lenyitott rész */}
-                            <div className="details-expanded">
-                                <div className="detail-header">
-                                    <span className="departure-time">
-                                        {result.indul}
-                                    </span>
-                                    <span className="train-info">
-                                        {' '}
-                                        {result.jarat}
-                                    </span>
-                                    <div className="ticket-actions">
-                                        <span className="seat-count"></span>
-                                    </div>
-                                </div>
-
-                                <div className="route-timeline">
-                                    {/* Ez a rész a vonalak és állomások diagramja lenne */}
-                                    <div className="station-row">
-                                        <div className="timeline-dot"></div>
-                                        <div className="station-name">
-                                            {honnan}
-                                        </div>
-                                    </div>
-                                    <div className="journey-info"></div>
-                                    <div className="station-row">
-                                        <div className="timeline-dot"></div>
-                                        <div className="station-name">
-                                            {hova}
-                                        </div>
-                                        {/* <span className="arrival-time">18:09</span> */}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Információk és jegyváltás alsó sáv */}
-                            <div className="bottom-info-bar">
-                                <div className="info-block">
-                                    <h4></h4>
-                                    <p></p>
-                                    <p></p>
-                                    <p></p>
-                                </div>
-
-                                <div className="ticket-info">
-                                    <h4>Jegyvételek:</h4>
-                                    {/* Ez a link elhagyható, ha csak a gomb kell */}
-                                    {/* <a href={result.infoLink}>Szeged &gt; Budapest-Nyugati</a> */}
-
-                                    {/* A Jegyek gomb itt van elhelyezve, a box jobb alján */}
-                                    <button
-                                        className="bottom-right-ticket-button"
-                                        // 4. 👈 A Jegyek gombhoz rendeljük az átirányítást
-                                        onClick={() =>
-                                            handleTicketClick(result)
-                                        }
-                                    >
-                                        Jegyek
-                                    </button>
-                                    <h4>Vissza a főoldalra:</h4>
-                                    {/* Ez a link elhagyható, ha csak a gomb kell */}
-                                    {/* <a href={result.infoLink}>Szeged &gt; Budapest-Nyugati</a> */}
-
-                                    {/* A Jegyek gomb itt van elhelyezve, a box jobb alján */}
-                                    <button
-                                        className="bottom-right-ticket-button"
-                                        // 4. 👈 A Jegyek gombhoz rendeljük az átirányítást
-                                        onClick={() => handleMainClick(result)}
-                                    >
-                                        Vissza
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </main>
+<span
+  className="row-arrow"
+  onClick={() =>
+    setNyitottSor(nyitottSor === index ? null : index)
+  }
+>
+  ▾ 
+</span>
             </div>
-        </div>
-    );
+          </div>
+        ))}
+      </main>
+    </div>
+  );
 };
 
 export default Viszonylat;

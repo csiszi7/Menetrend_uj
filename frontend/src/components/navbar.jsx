@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./navbar.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,6 +22,9 @@ const Navbar = () => {
       setIsAdmin(true);
     }
   }, []);
+
+
+
 
   const kijelenkezes = () => {
     window.alert("Sikeres kijelentkezés!");
@@ -46,12 +51,19 @@ const Navbar = () => {
                <Link to='/login'>Bejelentkezés</Link>
             </div>
             }
-            { isAdmin ? <div>
-              <Link to='http://localhost:3500/api'>Szerver</Link>
-              
-             </div>   : <div>
-            </div>}
-            
+            <div className="navbar-right">
+              <span style={{ color: "yellow" }}></span>
+  {isAdmin && (
+    <Link to="http://localhost:3500/api">Szerver</Link>
+    
+  )}
+
+  <FaShoppingCart
+    className="cart-icon"
+    title="Jegyek"
+    onClick={() => window.location.href = "/jegy"}
+  />
+        </div>
     </div>
   );
 };

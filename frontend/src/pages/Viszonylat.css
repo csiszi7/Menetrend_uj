@@ -1,4 +1,4 @@
-/* RoutePlanner.css */
+
 
 /* 1. Alapvető resztek */
 :root {
@@ -6,6 +6,12 @@
   --secondary-color: #f0f0f0; /* Világosszürke háttér */
   --border-color: #ccc;
   --font-family: sans-serif; /* Használj fontot, ami a képen van, pl. Roboto, Open Sans */
+   --route-grid:
+    90px      /* Indulás */
+    1fr       /* Timeline / Menetidő */
+    90px      /* Érkezés */
+    120px     /* Átszállás */
+    100px;    /* Ár */
 }
 
 body {
@@ -17,6 +23,7 @@ body {
 header {
   justify-content: center;
   text-align: center;
+ 
 }
 
 /* 2. Fő Konténer és Oszlopok (CSS Grid) */
@@ -40,45 +47,17 @@ header {
 
 
 /* 3. Bal Oldali Beállítások Oszlop */
-.settings-column {
-  padding-right: 20px;
-  border-right: 1px solid var(--border-color); /* Vertikális vonal a képen látható */
-}
 
-.input-group {
-  margin-bottom: 20px;
-  position: relative;
-}
 
-.input-group label {
-  display: block;
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 5px;
-}
 
-.input-group select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: #fff;
-  /* A nyíl ikon és a szegély stilizálása a képen látható módon */
-}
 
-.exchange-button {
-  position: absolute;
-  right: -25px; /* Áthúzva a két input közé, a vonalra */
-  top: 50%;
-  transform: translateY(-50%);
-  /* ... stilizálás (pl. sárga háttér, kerek forma) */
-}
+
 
 /* 4. Eredmény Oszlop és Szűrők */
 .results-column {
 /* RoutePlanner.css (4. Eredmény Oszlop és Szűrők szekcióban) */
     /* Flexbox a tartalom középre igazításához */
-    display: grid;
+    display: grid;  
     grid-template-columns: 1fr;
     /* flex-direction: column; Az elemeket (szűrők, kártyák) egymás alá rendezzük */
     /* align-items: center; 👈 EZ RAKJA KÖZÉPRE A TARTALMAT VÍZSZINTESEN */
@@ -93,31 +72,14 @@ header {
 
 
 
-.filter-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 20px;
-}
 
-.filter-tabs button {
-  background: none;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  color: #555;
-}
 
-.filter-tabs button.active {
-  color: var(--primary-color);
-  border-bottom: 3px solid var(--primary-color);
-  font-weight: bold;
-}
 
 /* 5. Útvonal Kártya Stílus (Route Card) */
 .route-card {
   
 /* Max szélesség, hogy ne nyúljon szét az egész oszlopon */
-    max-width: 750px; 
+    max-width: 1200px; 
     width: 100%; /* Hogy kis képernyőn se legyen túl kicsi */
     
     /* Ha a fenti .results-column beállítás nem működne, 
@@ -131,49 +93,33 @@ header {
     
     
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 6px;
+    margin-bottom: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     
 }
 
 
 .summary-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 
+    80px          /* Indulás */
+    1fr           /* Timeline / menetidő */
+    80px          /* Érkezés */
+    120px         /* Átszállás */
+    100px;        /* Ár */
   align-items: center;
-  padding: 15px;
-  justify-content: space-between;
+  color: #555;
   gap: 15px;
-  /* A felső sor a legrövidebb idővel, átszállással */
+
 }
 
-.timeline-segment {
-  flex-grow: 1;
-  text-align: center;
-  position: relative;
-}
 
-.timeline-bar {
-  height: 5px;
-  background-color: var(--secondary-color);
-  border-radius: 5px;
-  margin-bottom: 5px;
-  /* Ide kell még a vonal diagram vizuális része */
-}
 
-.duration {
-  font-size: 0.8em;
-  color: #777;
-}
+
 
 /* 6. Részletes Információk (Expanded Details) */
-.details-expanded {
-  border-top: 1px dotted var(--border-color); /* Pontozott vonal a képen */
-  padding: 15px;
-  background-color: var(
-    --secondary-color
-  ); /* Világosszürke háttér a részleteknek */
-}
+
 
 
 .detail-header {
@@ -187,54 +133,54 @@ header {
   color: var(--primary-color);
 }
 
-.ticket-button {
-  background-color: #ffc107; /* Például egy sárga szín */
+.price-button {
+  background-color: #a88519; /* Például egy sárga szín */
   color: #333;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   font-weight: bold;
-
 }
 
 /* 7. Idővonal (route-timeline) - a legtrükkösebb rész */
-.route-timeline {
-  padding: 10px 0;
-  /* A vasúti állomások vizuális elrendezése itt történik. */
-}
 
-.station-row {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 15px;
-}
 
-.timeline-dot {
-  width: 10px;
-  height: 10px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  margin-right: 10px;
-  z-index: 2;
-}
+
 
 /* Az összekötő vonal a pontok között - ez a kulcs a vizuális élményhez */
-.station-row:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  left: 4px; /* A pont közepére igazítás */
-  top: 10px;
-  bottom: -15px;
-  width: 2px;
-  background-color: #888; /* A vonal színe */
-  z-index: 1;
-}
+
 
 /* 8. Alsó Információs Sáv */
-.bottom-info-bar {
-  display: flex;
-  padding: 15px;
-  border-top: 1px dotted var(--border-color);
-  justify-content: space-between; /* A két blokk elválasztása */
+
+
+
+.results-header {
+  display: grid;
+  grid-template-columns: var(--route-grid);
+  align-items:center;
+  padding: 4px 12px;
+  margin-bottom: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.row-arrow {
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: #444;
+  opacity: 0.7;
+}
+
+.row-arrow:hover {
+  opacity: 1;
+}
+
+.row-details {
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
 }

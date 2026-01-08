@@ -50,3 +50,20 @@
     text-align: left; /* balra igazítva a szöveg */
   }
 }
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto; /* EZ tolja ki jobbra */
+}
+
+.cart-icon {
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.cart-icon:hover {
+  color: #ffd500;
+}
