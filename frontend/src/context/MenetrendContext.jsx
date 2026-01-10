@@ -1,11 +1,23 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 
 export const MenetrendContext = createContext();
 
 const MenetrendProvider = (props) => {
     const [viszonylatok, setViszonylatok] = useState([]);
     const [honnan, setHonnan] = useState('');
+    const [hova, setHova] = useState('');
 
+    const hon = localStorage.getItem('honnan');
+
+    useEffect(() => {
+        const visz = JSON.parse(localStorage.getItem('viszonylatok'));
+        setViszonylatok(visz);
+        const hon = JSON.parse(localStorage.getItem('honnan'));
+        setHonnan(hon);
+        const hov = JSON.parse(localStorage.getItem('hova'));
+        setHova(hov);
+    }, []);
+    
     return (
         <MenetrendContext.Provider
             value={{
@@ -13,6 +25,8 @@ const MenetrendProvider = (props) => {
                 setViszonylatok,
                 honnan,
                 setHonnan,
+                hova,
+                setHova,
             }}
         >
             {props.children}

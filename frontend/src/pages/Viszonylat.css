@@ -14,6 +14,29 @@
     100px;    /* Ár */
 }
 
+.viszonylat-tarto {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.tartalom {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 100%;
+}
+
+.jobb-tarto {
+  padding: 1em;
+  width: 100%;
+}
+
+.allomasok {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 body {
   font-family: var(--font-family);
   margin: 0;

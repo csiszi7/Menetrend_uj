@@ -8,6 +8,7 @@ import Navbar from './components/navbar';
 import Footer from './components/Footer';
 import Viszonylat from './pages/Viszonylat';
 import Menetrend from './pages/Menetrend';
+import Foglalas from './pages/Foglalas';
 
 function App() {
     return (
@@ -41,6 +42,10 @@ function App() {
                 <Route
                     path="/viszonylat"
                     element={<Viszonylat />}
+                />
+                <Route
+                    path="/foglalas"
+                    element={<Foglalas />}
                 />
             </Routes>
             <Footer />
