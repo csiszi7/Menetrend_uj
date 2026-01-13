@@ -14,6 +14,10 @@ const scheduleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    ar: {
+      type: Number,
+      required: true,
+    },
     allomasok: [
       {
         type: String,

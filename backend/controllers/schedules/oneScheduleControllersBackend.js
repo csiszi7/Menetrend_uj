@@ -8,6 +8,7 @@ const {
     idopontok,
     induloallomas,
     celallomas,
+    ar,
 } = require('../../public/schedules/js/adatok.js');
 
 exports.getOneScheduleBackend = async (req, res) => {
@@ -26,6 +27,7 @@ exports.getOneScheduleBackend = async (req, res) => {
             idopontok,
             induloallomas,
             celallomas,
+            ar,
         });
     } catch (error) {
         res.statusCode = 500;
@@ -50,6 +52,7 @@ exports.updateOneScheduleBackend = async (req, res) => {
             helyjegy,
             kep1,
             kep2,
+            ar,
         } = req.body;
 
         const kepek = [kep1, kep2];
@@ -68,6 +71,7 @@ exports.updateOneScheduleBackend = async (req, res) => {
                 klima,
                 helyjegy,
                 kepek,
+                ar,
             }
         );
 

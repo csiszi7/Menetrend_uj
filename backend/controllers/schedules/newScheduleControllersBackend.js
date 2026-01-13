@@ -8,6 +8,7 @@ const {
     idopontok,
     induloallomas,
     celallomas,
+    ar,
 } = require('../../public/schedules/js/adatok.js');
 
 exports.getNewSchedule = (req, res) => {
@@ -22,6 +23,7 @@ exports.getNewSchedule = (req, res) => {
             idopontok,
             induloallomas,
             celallomas,
+            ar,
         });
     } catch (error) {
         res.statusCode = 404;
@@ -44,6 +46,7 @@ exports.postNewSchedule = async (req, res) => {
             helyjegy,
             kep1,
             kep2,
+            ar,
         } = req.body;
 
         const kepek = [kep1, kep2];
@@ -73,6 +76,7 @@ exports.postNewSchedule = async (req, res) => {
             klima,
             helyjegy,
             kepek,
+            ar,
         });
         console.log(newSchedule);
 

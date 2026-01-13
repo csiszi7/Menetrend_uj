@@ -43,6 +43,11 @@ async function feltoltes(event) {
         if (helyjegyek[0].checked) helyjegy = helyjegyek[0].value;
         else helyjegy = helyjegyek[1].value;
 
+        const arak = document.getElementsByName('ar');
+        let ar = '';
+        if (arak[0].checked) ar = arak[0].value;
+        else ar = arak[1].value;
+
         const kep1 = document.querySelector('#kep1').value;
         const kep2 = document.querySelector('#kep2').value;
 
@@ -59,6 +64,7 @@ async function feltoltes(event) {
             helyjegy,
             kep1,
             kep2,
+            ar
         });
 
         // Küldés backend felé
@@ -78,6 +84,7 @@ async function feltoltes(event) {
                 helyjegy,
                 kep1,
                 kep2,
+                ar
             }),
         });
 
