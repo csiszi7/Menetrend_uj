@@ -101,22 +101,23 @@ const Viszonylat = () => {
 		<div className="viszonylat-tarto">
 			<div className="cim">{ honnan } ↪  { hova }</div>
 			<div className="tartalom">
-				<div className="bal-tarto" style={ { backgroundColor: 'green' } }>
+				<div className="bal-tarto" style={ { backgroundColor: 'rgba(0, 129, 0, 0.8)', paddingRight: '1em' } }>
 					<table>
 						<tbody>
 							{viszonylatok.map((elem, index) => {
 								return(
 									<tr key={index}>
-										<td style={ { textAlign: 'right' } }>{ elem.allomas }</td>
 										{ honnanIndex - 1 < index && index < hovaIndex + 1 ? 
 											<>
+												<td style={ { textAlign: 'right', fontSize: '28px' } }>{ elem.allomas }</td>
 												<td>🔴</td>
-												<td style={{color: 'red'}}>{elem.tartam}</td>
+												<td style={{ fontSize: '28px'}}>{elem.tartam}</td>
 											</>
 											:
 											<>
+												<td style={ { textAlign: 'right', fontSize: '12px' } }>{ elem.allomas }</td>
 												<td>🔵</td>
-												<td style={{color: 'blue'}}>{elem.tartam}</td>
+												<td style={{ fontSize: '12px'}}>{elem.tartam}</td>
 											</>
 										}
 									</tr>
@@ -125,7 +126,7 @@ const Viszonylat = () => {
 						</tbody>
 					</table>
 				</div>
-				<div className="jobb-tarto" style={ { backgroundColor: 'blue' } }>
+				<div className="jobb-tarto" style={ { backgroundColor: 'rgba(0, 0, 100, 0.83)' } }>
 					<div className="allomasok">
 						<span>Viszonylat Honnan</span>
 						<span>Honnan</span>
