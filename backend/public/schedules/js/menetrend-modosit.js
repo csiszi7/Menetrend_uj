@@ -62,6 +62,7 @@ async function modositas(event) {
             helyjegy,
             kep1,
             kep2,
+            ar
         });
 
         // Küldés backend felé
@@ -81,6 +82,7 @@ async function modositas(event) {
                 helyjegy,
                 kep1,
                 kep2,
+                ar
             }),
         });
 

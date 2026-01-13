@@ -95,6 +95,9 @@ form button[name="+Utas"]:hover {
     margin: 0.4rem 0;
   }
 
+  .welcome-text-style {
+      color: white;
+  }
 
 }
 

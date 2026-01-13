@@ -29,7 +29,11 @@ const Home = () => {
         {/* --- /KÉPSOR --- */}
 
         <h1 className="welcome-title-style">Szép napot!</h1>
-        <p className="welcome-text-style">
+        <p className="welcome-text-style" style={
+          {
+            color: "white",
+          }
+        }>
           Itt mindent megtalálsz, amire a kényelmes utazáshoz szükséged van.
           <br />
           Kezdésként nézz szét a &nbsp;
