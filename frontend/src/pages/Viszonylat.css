@@ -17,12 +17,14 @@
 .viszonylat-tarto {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  padding-top: 64px; /* ⬅️ Navbar magassága */
 }
 
 .tartalom {
   display: grid;
-  grid-template-columns: 20% 80%;
+  font-weight: bolder;
+  font-size: larger;
+  grid-template-columns: 35% 65%;
   width: 100%;
 }
 
@@ -32,9 +34,25 @@
 }
 
 .allomasok {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns:
+    140px   /* Viszonylat honnan */
+    120px   /* Honnan */
+    140px   /* Hova */
+    160px   /* Viszonylat hova */
+    100px   /* Ár */
+    90px;   /* Foglalás */
+
+  align-items: center;     /* ⬅️ függőleges igazítás */
+  column-gap: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.allomasok.header {
+  font-weight: 600;
+  font-size: 12px;
+  opacity: 0.9;
 }
 
 body {
@@ -56,6 +74,7 @@ header {
   padding: 20px;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .content-wrapper {
