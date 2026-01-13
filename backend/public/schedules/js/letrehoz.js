@@ -34,14 +34,21 @@ async function feltoltes(event) {
         ); // ezt kell
 
         const klimak = document.getElementsByName('klima');
+        
         let klima = '';
         if (klimak[0].checked) klima = klimak[0].value;
         else klima = klimak[1].value;
+        console.log(klima);
 
         const helyjegyek = document.getElementsByName('helyjegy');
+        
         let helyjegy = '';
         if (helyjegyek[0].checked) helyjegy = helyjegyek[0].value;
         else helyjegy = helyjegyek[1].value;
+        console.log(helyjegy);
+
+        const arak = document.getElementById('ar');
+        let ar = arak.value;
 
         const kep1 = document.querySelector('#kep1').value;
         const kep2 = document.querySelector('#kep2').value;
@@ -59,6 +66,7 @@ async function feltoltes(event) {
             helyjegy,
             kep1,
             kep2,
+            ar
         });
 
         // Küldés backend felé
@@ -78,6 +86,7 @@ async function feltoltes(event) {
                 helyjegy,
                 kep1,
                 kep2,
+                ar
             }),
         });
 

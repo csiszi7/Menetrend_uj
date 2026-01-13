@@ -1,3 +1,5 @@
+const { ar } = require("./adatok");
+
 let modositasGomb = document.querySelector('#modositas');
 modositasGomb.addEventListener('click', (event) => modositas(event));
 
@@ -44,6 +46,11 @@ async function modositas(event) {
         let helyjegy = '';
         if (helyjegyek[0].checked) helyjegy = helyjegyek[0].value;
         else helyjegy = helyjegyek[1].value;
+
+        const arak = document.getElementsByName('ar');
+        let ar = '';
+        if (arak[0].checked) ar = arak[0].value;
+        else ar = arak[1].value;
 
         const kep1 = document.querySelector('#kep1').value;
         const kep2 = document.querySelector('#kep2').value;
