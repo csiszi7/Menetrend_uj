@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { MenetrendContext } from "../context/MenetrendContext";
+import { useEffect, useState } from "react";
+// import { MenetrendContext } from "../context/MenetrendContext";
 import './Viszonylat.css';
 
 const Viszonylat = () => {
@@ -12,6 +12,7 @@ const Viszonylat = () => {
 	const [idoIntervallumok, setIdoIntervallumok] = useState(['0:00']);
 	const [indulo, setIndulo] = useState('');
 	const [cel, setCel] = useState('');
+	const [ar, setAr] = useState(0);
 	const [honnan, setHonnan] = useState('');
 	const [honnanIndex, setHonnanIndex] = useState(0);
 	const [hova, setHova] = useState('');
@@ -67,13 +68,19 @@ const Viszonylat = () => {
 		}
 
 		let tomb = [];
+		let arany = 0;
 
 		for (let i = 0; i < viszony[0].idopontok.length; i++) {
-			const indIdo = erkezesiIdoSzamol(viszony[0].idopontok[i].split('(')[0], idoIntervallumok[0]);
+			const indIdo = erkezesiIdoSzamol(viszony[0].idopontok[i].split('(')[0], idoIntervallumok[0]);			
 			const indIdoHonnan = erkezesiIdoSzamol(viszony[0].idopontok[i].split('(')[0], idoIntervallumok[viszony[0].allomasok.indexOf(hon)]);
 			const erkIdoHova = erkezesiIdoSzamol(viszony[0].idopontok[i].split('(')[0], idoIntervallumok[viszony[0].allomasok.indexOf(hov)]);
 			const erkIdo = erkezesiIdoSzamol(viszony[0].idopontok[i].split('(')[0], idoIntervallumok[idoIntervallumok.length - 1]);
 			const idopontObj = { indIdo, indIdoHonnan, erkIdoHova, erkIdo };
+			const erkIdoSzam = +erkIdo.split(':')[0] * 60 + +erkIdo.split(':')[1];
+			const indIdoHonnanSzam = +indIdoHonnan.split(':')[0] * 60 + +indIdoHonnan.split(':')[1];
+			const erkIdoHovaSzam = +erkIdoHova.split(':')[0] * 60 + +erkIdoHova.split(':')[1];
+			const indIdoSzam = +indIdo.split(':')[0] * 60 + +indIdo.split(':')[1];
+			arany = (erkIdoHovaSzam - indIdoHonnanSzam) / (erkIdoSzam - indIdoSzam);
 			tomb.push(idopontObj);
 		}
 
@@ -84,6 +91,7 @@ const Viszonylat = () => {
 		setIdopontok(tomb);
 		setIndulo(viszony[0].induloallomas)
 		setCel(viszony[0].celallomas)
+		setAr(viszony[0].ar * arany);
 		// setIdopontok(viszony[0].idopontok);
 		setHonnan(hon);
 		setHonnanIndex(viszony[0].allomasok.indexOf(hon))
@@ -91,9 +99,9 @@ const Viszonylat = () => {
 		setHovaIndex(viszony[0].allomasok.indexOf(hov))
 	}, []);
 
-	const foglalas = (tetel) => {
+	const foglalas = (tetel, ar) => {
 		console.log(tetel);
-		localStorage.setItem('foglalas', JSON.stringify({ viszonylat: viszony[0], idopont: tetel.indIdo }));
+		localStorage.setItem('foglalas', JSON.stringify({ viszonylat: viszony[0], idopont: tetel.indIdo, ar: ar.toFixed(0) }));
 		window.location.href = `/foglalas`;
 	}
 
@@ -150,8 +158,8 @@ const Viszonylat = () => {
 								<span>{elem.indIdoHonnan}</span>
 								<span>{elem.erkIdoHova}</span>
 								<span>{elem.erkIdo}</span>
-								<span>3500 Ft</span>
-								<span><button onClick={() => foglalas(elem)}>Foglalás</button></span>
+								<span>{ar.toFixed(0)} Ft</span>
+								<span><button onClick={() => foglalas(elem, ar)}>Foglalás</button></span>
 							</div>
 						)
 					})}
