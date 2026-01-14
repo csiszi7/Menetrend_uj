@@ -3,9 +3,9 @@
 let jarat = ['busz', 'vonat'];
 
 // indulo állomások
-let induloallomas = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba'];
+let induloallomas = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba', 'Kál-Kápolna'];
 // célállomások
-let celallomas =['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba'];
+let celallomas =['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba','Kisújszállás'];
 
 // Időtartamok (példa) 
 //Jelmagyarázat: IC(InterCity) IR(Interregio) S(Sebesvonat) SZ(Szemelyvonat) EC(EuroCity), s10(személy)
@@ -17,13 +17,16 @@ let idopontok = [
   ,'03:10(S10)','04:30(S10)','05:25(S10)','06:25(S10)','07:25(S10)','08:25(S10)','09:25(S10)','10:25(S10)','11:25(S10)','12:25(S10)','13:25(S10)','14:25(S10)','15:25(S10)','16:25(S10)','17:25(S10)','18:25(S10)','19:25(S10)','20:25(S10)','22:25(S10)','5:53(IC)','6:53(IC)','7:53(IC)','8:53(IC)','9:53(IC)','10:53(IC)','11:53(IC)','12:53(IC)','13:53(IC)','14:53(IC)','15:53(IC)','16:53(IC)','17:53(IC)','19:53(IC)',
  '02:35(SZ)','03:40(IC)','03:45(Sz)','04:55(IC)','05:25(IC)','05:55(IC)','06:25(IR)','06:40(IC)','06:55(IC)','07:25(IC)','07:25(IR)','07:55(IC)','08:25(IR)','08:55(IC)','09:25(IC)','09:25(IR)','09:55(IC)','10:25(IR)','10:55(IC)','11:25(IC)','11:25(IR)','11:55(IC)','12:25(IR)','12:55(IC)','13:25(IC)','13:25(IR)','13:40(IC)','13:40(EC)','13:55(IC)'
  ,'14:25(IR)','14:55(IC)','15:25(IC)','15:25(IR)','15:55(IC)','16:25(IR)','16:55(IC)','17:25(IC)','17:25(IR)','17:40(IC)','17:55(IC)','18:25(IR)','18:55(IC)','19:25(IR)','19:40(EC)','19:55(IC)','20:25(IR)','21:25(IR)','22:25(IR)',
-'03:40(IC)','04:00(SZ)','05:25(IC)','05:25(IC)','05:25(IC)','05:55(IC)','06:25(IC)','07:25(IC)','07:55(IC)','08:25(IC)','09:25(IC)','09:55(IC)','10:25(IC)','11:25(IC)','11:55(IC)','12:25(IC)','13:25(IC)','13:55(IC)','14:25(IC)','15:25(IC)','15:55(IC)','16:25(IC)','17:25(IC)','17:55(IC)','18:25(IC)','19:25(IC)','20:25(IC)','22:00(S)'
-
+'03:40(IC)','04:00(SZ)','05:25(IC)','05:25(IC)','05:25(IC)','05:55(IC)','06:25(IC)','07:25(IC)','07:55(IC)','08:25(IC)','09:25(IC)','09:55(IC)','10:25(IC)','11:25(IC)','11:55(IC)','12:25(IC)','13:25(IC)','13:55(IC)','14:25(IC)','15:25(IC)','15:55(IC)','16:25(IC)','17:25(IC)','17:55(IC)','18:25(IC)','19:25(IC)','20:25(IC)','22:00(S)',
+//Kál-Kápolna-> Kisújszállás
+'04:12(SZ)','06:37(SZ)','09:37(SZ)','12:37(SZ)','14:37(SZ)','17:37(SZ)',
+//Kisújszállás-> Kál-Kápolna
+'06:12(SZ)','09:38(SZ)','12:28(SZ)','14:38(SZ)','17:28(SZ)','20:42(SZ)'
 ];
 
 // Állomások
 let allomasok = [
-  //szegedi oldal
+//szegedi oldal
 'Szeged', 'Szatymaz', 'Kistelek', 'Kiskunfélegyháza', 'Kecskemét', 'Nagykőrös', 'Cegléd', 'Ferihegy', 'Kőbánya-kispest(KÖKI)', 'Zugló', 'Budapest-Nyugati',
  'Szeged-Rókus','Hódmezővásárhelyi-Népkert ', 'Hódmezővásárhely Vasútállomás', 'Kútvölgy', 'Székkutas', 'Orosháza', 'Orosházi-tanyák', 'Csorvás','Csorvás-alsó', 'Telekgerendás', 'Fürjes', 'Békéscsaba', 
  'Kiskundorozsma', 'Jánosszállás', 'Vilmaszállás', 'Őszeszék', 'Balástya','Kapitányság', 'Kisteleki-szőlők','Csengele','Petőfiszállási-tanyák','Petőfiszállás', 'Selymes',
@@ -32,8 +35,9 @@ let allomasok = [
  'Budapest-Déli','Budapest-Kelenföld','Budaörs','Törökbálint','Biatorbágy','Herceghalom','Bicske alsó','Bicske','Szár','Szárliget','Alsógalla','Tatabánya','Vérteszőlős','Tóvároskert','Tata','Almásfüzitő','Almásfüzitő felső','Szőny','Komárom','Ács','Nagyszentjános','Győrszentiván','Győr-Gyárváros','Győr',
  'Budapest-Keleti','Sárbogárd','Dombóvár','Szentlőrinc','Pécs',
  'kőbánya-alsó', 'Pestszentlőrinc', 'Szemeretelep','Vecsés','Vecsés-Kertekalja','Hosszúberek-Péteri', 'Monor', 'Monorierdő','Pilis','Albertirsa','Ceglédbercel','Ceglédbercel-Cserő','Budai út', 'Abony','Szolnok', 'Szajol', 'Törökszentmiklós', 'Fegyvernek-Örményes', 'Kisújszállás', 'Karcag', 'Püspökladány','Kaba' ,'Hajdúszoboszló','Ebes','Debrecen',
-  'Rákoshegy','Nyíregyháza','Tokaj','szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospécs','Demecser','Mezőkövesd','Nyékládháza','Kőbánya-felső','Rákos','Akadémiaújtelep','Rákosliget','Rákoscsaba-Újtelep','Pécel','Isaszeg','Gödöllő,','Máriabesnyő','Bag','Aszód','Tura','Vámosgyörk','Adács','Karácsond','Ludas','Nagyút','Kál-Kápolna','Szilhalom','Mezőkövesd-felső','Mezőkeresztes-Mezőnyárád','Csincse','Emőd','Rakamaz','Rákoscsaba','Sásd'
-
+  'Rákoshegy','Nyíregyháza','Tokaj','szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospécs','Demecser','Mezőkövesd','Nyékládháza','Kőbánya-felső','Rákos','Akadémiaújtelep','Rákosliget','Rákoscsaba-Újtelep','Pécel','Isaszeg','Gödöllő,','Máriabesnyő','Bag','Aszód','Tura','Vámosgyörk','Adács','Karácsond','Ludas','Nagyút','Kál-Kápolna','Szilhalom','Mezőkövesd-felső','Mezőkeresztes-Mezőnyárád','Csincse','Emőd','Rakamaz','Rákoscsaba','Sásd',
+  //Kál-Kápolna-> Kisújszállás
+  'Kál-Kápolna','Erdőtelek','Heves','Hevesvezekény','Kisköre','Kisköre-Tiszahíd','Abádszalók','Kunhegyes','Kenderes','Kisújszállás'
 ];
 
 // Kedvezmények (%)
@@ -70,7 +74,9 @@ let kortablak = ['Kisgyerek (0-3 éves)',
 //Bp-Nyugati-> Miskolc(IC),        |kesz|
 //Bp-Keleti-> Miskolc(IC,S,SZ),    |kesz|
 //Bp-Déli-> Győr(S10),             |kesz|
-let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)','1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)','3:28(SZ)','3:13(IC)','3:38(SZ)','3:07(IC)','3:00(IC)','2:58(IR)','3:37(IC)','2:47(IC)','2:49(EC)','2:45(IC)','4:49(IC)','4:34(IC)','4:40(IC)','2:49(SZ)','2:02(IC)','2:04(IC)','2:06(IC)','2:29(S)','3:28(SZ)','2:42(EC)'];
+//Kál-Kápolna-> Kisújszállás       |kesz|
+//Kisújszállás-> Kál-Kápolna       |kesz|
+let idotartam = ['2:39(S)','2:34(Ic)','2:23(Ic)','2:25(Ic)','1:11(Sz)','1:42(Sz)','1:50(S10)','2:45(IC)','3:28(SZ)','3:13(IC)','3:38(SZ)','3:07(IC)','3:00(IC)','2:58(IR)','3:37(IC)','2:47(IC)','2:49(EC)','2:45(IC)','4:49(IC)','4:34(IC)','4:40(IC)','2:49(SZ)','2:02(IC)','2:04(IC)','2:06(IC)','2:29(S)','3:28(SZ)','2:42(EC)','1:36(SZ)','1:37(SZ)','1:59(SZ)'];
 
 let ar = [2990, 3490, 3990, 4500, 1990, 2490, 1590, 4990, 5990, 5490, 6290, 5790, 5200, 5100, 6490, 4290, 4390, 4590, 6990, 7990, 7490, 4390, 3890, 3990, 4090, 2790, 5990, 4490];
 
