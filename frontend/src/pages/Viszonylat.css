@@ -31,6 +31,8 @@
 .jobb-tarto {
   padding: 1em;
   width: 100%;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
 }
 
 .allomasok {
@@ -221,8 +223,29 @@ header {
 }
 
 .row-details {
+  margin: 6px 12px 10px;
   padding: 12px 16px;
-  background: #f9fafb;
-  border-top: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
   font-size: 13px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.details-header {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.details-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.details-services {
+  display: flex;
+  gap: 12px;
+  opacity: 0.85;
 }

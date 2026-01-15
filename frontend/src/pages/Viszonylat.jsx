@@ -6,7 +6,8 @@ const Viszonylat = () => {
 	const hon = JSON.parse(localStorage.getItem('honnan'));
   	const hov = JSON.parse(localStorage.getItem('hova'));
 	const viszony = JSON.parse(localStorage.getItem('viszonylatok'));
-	
+	const [nyitottIndex, setNyitottIndex] = useState(null);
+
 	const [viszonylatok, setViszonylatok] = useState([]);
 	const [idopontok, setIdopontok] = useState([]);
 	const [idoIntervallumok, setIdoIntervallumok] = useState(['0:00']);
@@ -142,6 +143,7 @@ const Viszonylat = () => {
 						<span>Viszonylat Hova</span>
 						<span>Teljes Ár</span>
 						<span>Foglalás</span>
+						  <span></span> {/* nyíl oszlopa */}
 					</div>
 					<div className="allomasok">
 						<span>{indulo}</span>
@@ -151,18 +153,66 @@ const Viszonylat = () => {
 						<span></span>
 						<span></span>
 					</div>
-					{idopontok.map((elem, index) => {
-						return (
-							<div className="allomasok" key={ index }>
-								<span>{elem.indIdo}</span>
-								<span>{elem.indIdoHonnan}</span>
-								<span>{elem.erkIdoHova}</span>
-								<span>{elem.erkIdo}</span>
-								<span>{ar.toFixed(0)} Ft</span>
-								<span><button onClick={() => foglalas(elem, ar)}>Foglalás</button></span>
-							</div>
-						)
-					})}
+					{idopontok.map((elem, index) => (
+  <div key={index}>
+    {/* FŐ SOR */}
+    <div className="allomasok">
+      <span>{elem.indIdo}</span>
+      <span>{elem.indIdoHonnan}</span>
+      <span>{elem.erkIdoHova}</span>
+      <span>{elem.erkIdo}</span>
+      <span>{ar.toFixed(0)} Ft</span>
+
+      {/* Foglalás + nyíl */}
+      <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <button onClick={() => foglalas(elem, ar)}>
+          Foglalás
+        </button>
+
+        <span
+          className="row-arrow"
+          onClick={() =>
+            setNyitottIndex(nyitottIndex === index ? null : index)
+          }
+        >
+          {nyitottIndex === index ? '▲' : '▼'}
+        </span>
+      </span>
+    </div>
+
+    {/* LENYÍLÓ RÉSZ */}
+    {nyitottIndex === index && (
+      <div className="row-details">
+        <div className="details-header">
+          <strong>{viszony[0].jarat?.toUpperCase() || 'InterCity'}</strong> 
+          <span>
+            {indulo} → {cel}
+          </span>
+        </div>
+
+        <div className="details-row">
+          <span>
+            Indulás: <strong>{elem.indIdoHonnan}</strong>
+          </span>
+          <span>
+            Érkezés: <strong>{elem.erkIdoHova}</strong>
+          </span>
+          <span>
+            Menetidő: <strong>{viszony[0].idotartam}</strong>
+          </span>
+        </div>
+
+        <div className="details-services">
+          <span>🚆 IC</span>
+          <span>❄️ Klíma</span>
+          <span>💺 Helyjegy</span>
+          <span>🔌 Konnektor</span>
+        </div>
+      </div>
+    )}
+  </div>
+))}
+
 				</div>
 			</div>
 		</div>
