@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './Menetrend.css';
-import { Link } from 'react-router-dom';
+import './Menetrend.css'
 import allomasok from '../../public/js/adatok';
 import { MenetrendContext } from '../context/MenetrendContext';
 
@@ -22,7 +21,7 @@ const Menetrend = () => {
                 'http://localhost:3500/api/schedules-frontend'
             );
             const valasz = await response.json();
-            // console.log(valasz.schedules);
+            console.log(valasz.schedules);
 
             if (response.ok) {
                 setMenetrendek(valasz.schedules);
@@ -52,10 +51,10 @@ const Menetrend = () => {
         setJaratok(jaratokLeszur);
     }
 
-    const feldolgozMegnyit = (e) => { 
-        setMivel(e);
-        setKereses(1);
-    };
+    // const feldolgozMegnyit = (e) => { 
+    //     setMivel(e);
+    //     setKereses(1);
+    // };
     
     const feldolgoz = (e) => {
         e.preventDefault();

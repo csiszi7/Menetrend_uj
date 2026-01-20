@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './Jegy.css';
 
 
+
 const Jegy = () => {
 
   return (
