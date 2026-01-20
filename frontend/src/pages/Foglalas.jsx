@@ -1,73 +1,76 @@
 import { useEffect, useState } from "react";
 import './Foglalas.css';
 
-const Foglalas = () => {
-	const hon = JSON.parse(localStorage.getItem('honnan'));
-  const hov = JSON.parse(localStorage.getItem('hova'));
-	const foglalas = JSON.parse(localStorage.getItem('foglalas'))
+const Foglalas = (tetel, ar) => {
+    const foglalasObj = {
+    honnan: honnan,
+    hova: hova,
+    indulIdo: tetel.indIdoHonnan,
+    erkezIdo: tetel.erkIdoHova,
+    menetido: viszony[0].idotartam,
+    ar: Number(ar.toFixed(0)),
+    kepek: viszony[0].kepek
+  };
 
 
-	// const [viszonylat, setViszonylat] = useState({});
-	const [honnan, setHonnan] = useState('');
-	const [hova, setHova] = useState('');
-	const [idopont, setIdopont] = useState('');
-	const [ar, setAr] = useState(0);
-	const [elsoKep, setElsoKep] = useState('');
-	const [masodikKep, setMasodikKep] = useState('');
+  if (!jegy) return null;
 
-	useEffect(() => { 
-		setHonnan(hon);
-		setHova(hov);
-		setIdopont(foglalas.idopont);
-		// setViszonylat(foglalas.viszony);
-		setElsoKep(foglalas.viszonylat.kepek[0]);
-		setMasodikKep(foglalas.viszonylat.kepek[1]);
-    setAr(foglalas.ar);
-	}, []);
+  
+  return (
+    <div
+      className="foglalas-tarto"
+      style={{
+        padding: '35px',
+        borderRadius: '16px',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        maxWidth: '1200px',
+        margin: '80px auto',
+        backgroundColor: '#f9f9f9',
+      }}
+    >
+      <h2 className="cim">
+        {jegy.honnan} ↪ {jegy.hova}
+      </h2>
 
-	return (
-		<div className="foglalas-tarto" style={ { padding: '35px', borderRadius: '16px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', maxWidth: '1500px', margin: '80px auto', backgroundColor: '#f9f9f9', } }>
-			<div className="cim">{ honnan } ↪  { hova }</div>
-			<p>Időpont: {idopont}</p>
-      			<span>Viszonylat Honnan {hon.indIdo}  </span>
-						<span>Honnan {hon}</span>
-						<span>Hova {hov}</span>
-						<span>Viszonylat Hova {hov}</span>
-						<span>Teljes Ár {ar} </span>
-						<span><button onClick={() => foglalas(foglalas)}>Foglalás</button></span>
-			<div
-  className="kepek-sor"
-  style={{
-    display: 'flex',
-    gap: '16px',
-    margin: '16px 0',
-    justifyContent: 'center'
-  }}
->
-  <img
-    src={elsoKep}
-    alt="Induló állomás"
-    style={{
-      width: '320px',
-      height: '200px',
-      objectFit: 'cover',
-      borderRadius: '8px'
-    }}
-  />
+      <div style={{ marginBottom: '16px' }}>
+        <p><strong>Indulás:</strong> {jegy.indulIdo}</p>
+        <p><strong>Érkezés:</strong> {jegy.erkezIdo}</p>
+        <p><strong>Menetidő:</strong> {jegy.menetido}</p>
+        <p><strong>Ár:</strong> {jegy.ar} Ft</p>
+      </div>
 
-  <img
-    src={masodikKep}
-    alt="Érkező állomás"
-    style={{
-      width: '320px',
-      height: '200px',
-      objectFit: 'cover',
-      borderRadius: '8px'
-    }}
-  />
-</div>
-		</div>
-	);
+      <div
+        className="kepek-sor"
+        style={{
+          display: 'flex',
+          gap: '16px',
+          justifyContent: 'center'
+        }}
+      >
+        <img
+          src={jegy.kepek[0]}
+          alt="Induló állomás"
+          style={{
+            width: '320px',
+            height: '200px',
+            objectFit: 'cover',
+            borderRadius: '8px'
+          }}
+        />
+
+        <img
+          src={jegy.kepek[1]}
+          alt="Érkező állomás"
+          style={{
+            width: '320px',
+            height: '200px',
+            objectFit: 'cover',
+            borderRadius: '8px'
+          }}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Foglalas;
