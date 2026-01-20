@@ -1,6 +1,7 @@
 
 // Járattípusok
-let jarat = ['vonat', 'busz'];
+let jarat = ['Intercity', 'Interregio', 'Sebesvonat', 'Szemelyvonat', 'Eurocity', 'S10'];
+
 
 // indulo állomások
 let induloallomas = ['Budapest', 'Győr', 'Pécs', 'Szeged', 'Debrecen', 'Miskolc','Békéscsaba', 'Kál-Kápolna'];
