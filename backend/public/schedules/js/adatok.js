@@ -66,10 +66,10 @@ let kortablak = ['Kisgyerek (0-3 éves)',
   'Nyugdíjas/senior (65+ éves)'];
 
 
-//Szeged-> BP-Nyugati(Ic,S),       |kesz|
-//Szeged-> Békéscsaba(Sz),         |kesz|
-//Szeged-> Kiskunfélegyháza(Sz),   |kesz|
-//Bp-Keleti-> Pécs(IC),            |kesz|
+//Szeged-> BP-Nyugati(Ic,S),       |kesz|-
+//Szeged-> Békéscsaba(Sz),         |kesz|-
+//Szeged-> Kiskunfélegyháza(Sz),   |kesz|-
+//Bp-Keleti-> Pécs(IC),            |kesz|-
 //Bp-Nyugati-> Debrecen(IC,SZ,IR), |kesz|
 //Bp-Keleti-> Debrecen(IC,EC),     |kesz|
 //Bp-Nyugati-> Miskolc(IC),        |kesz|
