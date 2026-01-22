@@ -184,7 +184,7 @@ const Menetrend = () => {
                 {/* keresés */ }
                 { kereses ?
                     <button
-                        onClick={ (event) => feldolgoz(event) }
+                        onClick={ (event) => feldolgoz(event) } 
                         style={ {
                             width: '100%',
                             padding: '12px 0',
