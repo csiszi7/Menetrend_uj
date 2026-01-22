@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./jegy.css";
+import "./Jegy.css";
 
 const Jegy = () => {
   const navigate = useNavigate();
-  const [jegy, setJegy] = useState(null);
+  const [jegy, setJegy] = useState({});
+  const [viszony, setViszony] = useState([]);
+  const [kepek, setKepek] = useState([]);
 
   useEffect(() => {
     const mentett = JSON.parse(localStorage.getItem("foglalas"));
     if (mentett) {
       setJegy(mentett);
+      setViszony(mentett.viszonylat);
+      setKepek(mentett.viszonylat.kepek);
     }
   }, []);
 
@@ -27,10 +31,10 @@ const Jegy = () => {
       <h2>{jegy.honnan} → {jegy.hova}</h2>
 
       <p><strong>Indulás:</strong> {jegy.idopont}</p>
-      <p><strong>Ár:</strong> {jegy.ar} Ft</p>
+      <p><strong>Ár:</strong> {viszony.ar * 0.9} Ft</p>
 
       <div className="jegy-kepek">
-        {jegy.viszonylat.kepek.map((kep, i) => (
+        {kepek.map((kep, i) => (
           <img key={i} src={kep} alt="állomás" />
         ))}
       </div>

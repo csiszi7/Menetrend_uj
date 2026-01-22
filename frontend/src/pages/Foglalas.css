@@ -32,7 +32,7 @@
   border-radius: 12px;
 }
 
-.foglalas-info p {
+.foglalas-info p, .foglalas-info label {
   margin: 0;
   font-size: 14px;
   color: #6b7280;

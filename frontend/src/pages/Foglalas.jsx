@@ -2,12 +2,24 @@ import { useEffect, useState } from "react";
 import "./Foglalas.css";
 
 const Foglalas = () => {
-  const [adat, setAdat] = useState(null);
+  const [adat, setAdat] = useState({});
+  const [honnan, setHonnan] = useState('');
+  const [hova, setHova] = useState('');
+  const[idopont, setIdopont] = useState('');
+  const[kedvezmenyek, setKedvezmenyek] = useState([]);
 
   useEffect(() => {
-    const mentett = JSON.parse(localStorage.getItem("foglalas"));
+    const mentett = JSON.parse(localStorage.getItem('foglalas'));
+    const hon = JSON.parse(localStorage.getItem('honnan'));
+  	const hov = JSON.parse(localStorage.getItem('hova'));
+    setHonnan(hon);
+    setHova(hov);
+    setIdopont(mentett.idopont);
+    console.log(mentett);
+    setKedvezmenyek(mentett.viszonylat.kedvezmeny);
+
     if (mentett) {
-      setAdat(mentett);
+      setAdat(mentett.viszonylat);
     }
   }, []);
 
@@ -15,23 +27,40 @@ const Foglalas = () => {
     return <p>Foglalás betöltése...</p>;
   }
 
+  function fizetes() {
+    window.location.href = "/jegy";
+  }
+
   return (
     <div className="foglalas-tarto">
-      <h2>{adat.honnan} → {adat.hova}</h2>
+      <h2>{honnan} → {hova}</h2>
 
       <div className="foglalas-info">
-        <p><strong>Indulás:</strong> {adat.idopont}</p>
+        <p><strong>Indulás:</strong> {idopont}</p>
         <p><strong>Ár:</strong> {adat.ar} Ft</p>
-        <p><strong>Járat:</strong> {adat.viszonylat.jarat}</p>
+        <p><strong>Járat:</strong> {adat.jarat}</p>
+        <p><strong>Járat indul:</strong> {adat.induloallomas}</p>
+        <p><strong>Járat érkezik:</strong> {adat.celallomas}</p>
+        <p><strong>Kedvezmény:</strong> {kedvezmenyek}</p>
+        {/* <div>
+        <p><strong>Kedvezmények:</strong></p>
+      {
+        kedvezmenyek.map((elem, index) => (
+          <div key={index}>
+            <label htmlFor={elem}>{elem}</label>
+            <input id={elem} type="checkbox" />
+          </div>
+        ))
+      }</div> */}
       </div>
 
       <div className="foglalas-kepek">
-        {adat.viszonylat.kepek?.map((kep, i) => (
+        {adat.kepek?.map((kep, i) => (
           <img key={i} src={kep} alt="állomás" />
         ))}
       </div>
 
-      <button className="veglegesites-gomb">
+      <button className="veglegesites-gomb" onClick={fizetes}>
         Foglalás véglegesítése
       </button>
     </div>
