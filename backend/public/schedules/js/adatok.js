@@ -1,6 +1,6 @@
 
 // Járattípusok
-let jarat = ['Napfény Intercity', 'Civis Interrégio', 'Sebesvonat', 'Személyvonat', 'Hortobágy Eurocity', 'S10','Corona Intercity', 'Nyírség Intercity', 'Tokaj Intercity', 'Mecsek Intercity','Tisza-Szamos Eurocity'];
+let jarat = ['Napfény Intercity', 'Civis Interrégió', 'Sebesvonat', 'Személyvonat', 'Hortobágy Eurocity', 'S10','Corona Intercity', 'Nyírség Intercity', 'Tokaj Intercity', 'Mecsek Intercity','Tisza-Szamos Eurocity', 'Mátra Interrégió'];
 
 
 // indulo állomások
