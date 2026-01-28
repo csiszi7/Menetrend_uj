@@ -51,10 +51,10 @@ const Menetrend = () => {
         setJaratok(jaratokLeszur);
     }
 
-    // const feldolgozMegnyit = (e) => { 
-    //     setMivel(e);
-    //     setKereses(1);
-    // };
+    const feldolgozMegnyit = (e) => { 
+        setMivel(e);
+        setKereses(1);
+    };
     
     const feldolgoz = (e) => {
         e.preventDefault();

@@ -18,7 +18,9 @@ const Viszonylat = () => {
 	const [honnanIndex, setHonnanIndex] = useState(0);
 	const [hova, setHova] = useState('');
 	const [hovaIndex, setHovaIndex] = useState(0);
+	
 
+	
 	function erkezesiIdoSzamol(kezdo, tartam) {
 		let kezdoIdoOra = +kezdo.split(':')[0];    
 		let kezdoIdoPerc = +kezdo.split(':')[1];    
@@ -101,12 +103,20 @@ const Viszonylat = () => {
 	}, []);
 
 	const foglalas = (tetel, ar) => {
-		console.log(tetel);
-		localStorage.setItem('foglalas', JSON.stringify({ viszonylat: viszony[0], idopont: tetel.indIdo, ar: ar.toFixed(0) }));
-		window.location.href = `/foglalas`;
-	}
+  	const adat = {
+    honnan: honnan,
+    hova: hova,
+    idopont: tetel.indIdoHonnan,
+    ar: ar.toFixed(0),
+    viszonylat: viszony[0]
+  };
+
+  localStorage.setItem("foglalas", JSON.stringify(adat));
+  window.location.href = "/foglalas";
+};
 
 	return (
+		
 		<div className="viszonylat-tarto">
 			<div className="cim">{ honnan } ↪  { hova }</div>
 			<div className="tartalom">
