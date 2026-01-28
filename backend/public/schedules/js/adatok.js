@@ -41,7 +41,7 @@ let allomasok = [
  'kőbánya-alsó', 'Pestszentlőrinc', 'Szemeretelep','Vecsés','Vecsés-Kertekalja','Hosszúberek-Péteri', 'Monor', 'Monorierdő','Pilis','Albertirsa','Ceglédbercel','Ceglédbercel-Cserő','Budai út', 'Abony','Szolnok', 'Szajol', 'Törökszentmiklós', 'Fegyvernek-Örményes', 'Kisújszállás', 'Karcag', 'Püspökladány','Kaba' ,'Hajdúszoboszló','Ebes','Debrecen',
   'Rákoshegy','Nyíregyháza','Tokaj','szerencs','Miskolc-Tiszai','Füzesabony','Hatvan','Kisvárda','Záhony','Nyírábrány','Hegyeshalom','Mosonmagyaróvár','Debrecen-Szabadságtelep','Debrecen-Kondoros','Nagycsere','Haláp','Vámospércs','Demecser','Mezőkövesd','Nyékládháza','Kőbánya-felső','Rákos','Akadémiaújtelep','Rákosliget','Rákoscsaba-Újtelep','Pécel','Isaszeg','Gödöllő,','Máriabesnyő','Bag','Aszód','Tura','Vámosgyörk','Adács','Karácsond','Ludas','Nagyút','Kál-Kápolna','Szilhalom','Mezőkövesd-felső','Mezőkeresztes-Mezőnyárád','Csincse','Emőd','Rakamaz','Rákoscsaba','Sásd',
   //Kál-Kápolna-> Kisújszállás
-  'Kál-Kápolna','Erdőtelek','Heves','Hevesvezekény','Kisköre','Kisköre-Tiszahíd','Abádszalók','Kunhegyes','Kenderes','Kisújszállás',
+  'Kál-Kápolna','Erdőtelek','Heves','Hevesvezekény','Kisköre','Kisköre-Tiszahíd','Abádszalók','Kunhegyes','Kenderes','Kisújszállás','Tarnaszentmiklós',
   //Keleti-Gyöngyös
   'Gyöngyöshalász','Kitérőgyár','Gyöngyös'
 
