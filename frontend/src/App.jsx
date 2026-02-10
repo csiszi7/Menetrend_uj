@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import Viszonylat from './pages/Viszonylat';
 import Menetrend from './pages/Menetrend';
 import Foglalas from './pages/Foglalas';
+import Success from './pages/Success';
+import Cancel from './pages/Cancel';
 
 function App() {
     return (
@@ -17,7 +19,7 @@ function App() {
             <Routes>
                 <Route
                     path="/"
-                    element={<Home />}
+                    element={<Home />}s
                 />
                 <Route
                     path="/login"
@@ -47,6 +49,12 @@ function App() {
                     path="/foglalas"
                     element={<Foglalas />}
                 />
+                <Route 
+                 path="/success" 
+                 element={<Success />} />
+                <Route 
+                path="/cancel" 
+                element={<Cancel />} />
             </Routes>
             <Footer />
         </BrowserRouter>
