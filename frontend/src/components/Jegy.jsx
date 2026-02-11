@@ -67,7 +67,7 @@ const Jegy = () => {
       <h2>{jegy.honnan} → {jegy.hova}</h2>
 
       <p><strong>Indulás:</strong> {jegy.idopont}</p>
-      <p><strong>Ár:</strong> {viszony.ar * 0.9} Ft</p>
+      <p><strong>Ár:</strong> {viszony.ar * 0.9} Ft </p>
 
       <p>Igényelt jegyek száma: </p>
       <div className="jegyek-szama">

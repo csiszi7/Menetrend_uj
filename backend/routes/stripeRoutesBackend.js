@@ -5,15 +5,23 @@ const Stripe = require("stripe");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 router.post("/create-checkout-session", async (req, res) => {
+    // try {
+    //     const { darab, jegy, ar } = req.body;
+    //     // console.log({ darab, jegy, ar });
+    //     const szoveg = `${jegy.honnan} -> ${jegy.hova}`;
+    //     console.log(szoveg);
+    //     router.post("/create-checkout-session", async (req, res) => {
     try {
         const { darab, jegy, ar } = req.body;
         // console.log({ darab, jegy, ar });
-
+        const szoveg = `${jegy.honnan} -> ${jegy.hova}`;
+        console.log(szoveg);
+        
         const line_items = {
             price_data: {
                 currency: "huf",
                 product_data: {
-                    name: jegy.honnan,
+                    name: szoveg,
                 },
                 unit_amount: Math.round(parseFloat(ar) * 100), 
             },
@@ -24,9 +32,9 @@ router.post("/create-checkout-session", async (req, res) => {
         const session = await stripe.checkout.sessions.create({
             mode: "payment",
             allow_promotion_codes: true,
-            payment_method_types: ["card"], 
+            payment_method_types: ["card"],
             line_items: [line_items],
-            success_url: "http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}",
+            success_url: "http://localhost:5173/success",
             cancel_url: "http://localhost:5173/cancel",
         });
         
