@@ -7,6 +7,13 @@
   width: 100%;
 }
 
+.kep-sor {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(8, 1fr);
+}
+
 form {
   max-width: 600px;
   margin: 2rem auto;
@@ -80,7 +87,16 @@ form button[name="+Utas"]:hover {
   background: #059669;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1250px) { 
+  .kep-sor {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .kep-sor {
+    grid-template-columns: repeat(4, 1fr);
+  }
   form {
     padding: 1rem;
   }

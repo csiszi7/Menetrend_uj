@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .navbar-kontener {
   align-items: center;
   position: fixed;       /* rögzített pozíció */
@@ -38,11 +42,22 @@
   cursor: pointer;
 }
 
-/* Mobil nézet */
-@media (max-width: 600px) {
+@media screen and (max-width: 1250px) { 
   .navbar-kontener {
-    flex-direction: column; /* linkek függőlegesen */
-    align-items: flex-start; /* balra igazítva */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* Mobil nézet */
+@media screen and (max-width: 600px) {
+  .navbar-kontener {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    flex-wrap: nowrap;
+    /* flex-direction: column; linkek függőlegesen */
+    /* align-items: flex-start; balra igazítva */
   }
 
   .navbar-kontener a {
@@ -56,6 +71,7 @@
   align-items: center;
   gap: 12px;
   margin-left: auto; /* EZ tolja ki jobbra */
+  flex-shrink: 0;   /* EZ FONTOS */
 }
 
 .cart-icon {
@@ -67,3 +83,4 @@
 .cart-icon:hover {
   color: #ffd500;
 }
+
