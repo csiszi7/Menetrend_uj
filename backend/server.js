@@ -64,3 +64,5 @@ app.use((req, res) => {
         return res.json({ msg: 'Általános szerver hiba!' });
     }
 });
+
+module.exports = app; 

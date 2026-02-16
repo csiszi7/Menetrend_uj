@@ -253,10 +253,16 @@ header {
 
 @media screen and (max-width: 1250px) {
 
-  .tartalom {
+  .viszonylat-tarto {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 200px;
+  }
+
+  .tartalom {
+    display: flex;
+    flex-direction: column;
   }
 
   .bal-tarto,
@@ -289,5 +295,27 @@ header {
 
   footer a {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .viszonylat-tarto {
+    margin-bottom: 150px;
+    margin-top: 100px;
+  }
+
+  .allomas-fejlec {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .allomas-fejlec .allomasok {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .teljes-ar, .teljes-foglalas {
+    display: none;
   }
 }
