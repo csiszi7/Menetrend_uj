@@ -3,7 +3,7 @@ const Schedule = require('../../models/Schedule.js');
 exports.getAllSchedulesFrontend = async (req, res) => {
     try {
         const schedules = await Schedule.find({});
-        console.log(schedules);
+        // console.log(schedules);
         
         res.statusCode = 200;
         return res.json({ schedules });

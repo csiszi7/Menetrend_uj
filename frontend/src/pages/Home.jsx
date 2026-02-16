@@ -17,13 +17,14 @@ const Home = () => {
       >
 
         {/* --- 8 KÉP EGY SORBAN --- */}
-        <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
+        <div className="kep-sor" >
           <img src="/images/traxx_480 023.jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/csörgő.jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/kiss .jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/Máv kiss keleti.jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/máv bd.jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/oroshaza.jpg" alt="" style={{ width: "80px", height: "auto" }} />
+          <img src="/images/samu.jpg" alt="" style={{ width: "80px", height: "auto" }} />
           <img src="/images/samu.jpg" alt="" style={{ width: "80px", height: "auto" }} />
         </div>
         {/* --- /KÉPSOR --- */}

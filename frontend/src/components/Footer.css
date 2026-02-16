@@ -1,16 +1,18 @@
 footer {
   width: 100%;
-  background-color: #1e3a8a; /* szép kék */
-  padding: 12px 0;
-  position: fixed;     /* mindig alul marad */
+  background-color: #1e3a8a;
+  padding: 16px 20px;
+  position: fixed;
   bottom: 0;
   left: 0;
 
   display: flex;
-  justify-content: center; /* középre rakja a linkeket */
-  gap: 30px;               /* távolság a linkek között */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;              /* fontos */
+  gap: 24px;
 
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
 }
 
 footer a {
@@ -19,12 +21,38 @@ footer a {
   font-weight: 500;
   font-size: 15px;
   transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 footer a:hover {
-  color: #93c5fd;   /* világoskék hover */
+  color: #93c5fd;
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  footer {
+    gap: 18px;
+  }
+
+  footer a {
+    font-size: 14px;
+  }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;   /* egymás alá */
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  footer a {
+    font-size: 14px;
+  }
+}
+
+/* hogy ne takarja ki a tartalmat */
 body {
-  padding-bottom: 60px; /* hogy a footer ne takarja ki a tartalmat */
+  padding-bottom: 90px;
 }

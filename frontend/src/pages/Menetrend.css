@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  padding-bottom: 120px; /* nagyobb mint a footer magassága */
+}
 .menetrend-form {
 max-width: 420px;
 margin: 30px auto;
@@ -6,6 +14,7 @@ border: 1px solid #ddd;
 border-radius: 12px;
 background: #fafafa;
 box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+padding-bottom: 90px;
 }
 
 
@@ -48,6 +57,7 @@ border-radius: 8px;
 font-size: 16px;
 font-weight: bold;
 cursor: pointer;
+margin-bottom: 20px;
 }
 
 .a {
@@ -61,4 +71,31 @@ cursor: pointer;
 
 .a:hover {
   color: #66aaff;
+}
+
+@media (max-width: 600px) {
+
+  footer {
+
+    padding: 10px 0;        /* kisebb padding */
+    gap: 4px;               /* kisebb távolság */
+    font-size: 13px;        /* kisebb betű */
+  }
+
+  footer a {
+    font-size: 13px;
+  }
+
+  body {
+    padding-bottom: 60px;   /* igazítsd a footer magasságához */
+  }
+
+  .submit-btn {
+    margin-bottom: 25px;   /* minimális feljebb tolás */
+  }
+
+
+  .menetrend-form {
+    padding-bottom: 25px;
+  }
 }
