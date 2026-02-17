@@ -41,7 +41,7 @@ const Navbar = () => {
               <Link to='/menetrend'>Menetrend</Link>
             </div>
             {isLoggedIn ? 
-            <div>
+            <div className="jobb-elemek">
               <button onClick={kijelenkezes}>Kijelentkezés</button>
             </div>  
             

@@ -102,6 +102,7 @@ const Menetrend = () => {
                     border: '1px solid #ddd',
                     borderRadius: 12,
                     background: '#fff',
+                    
                 }}
             >
                 

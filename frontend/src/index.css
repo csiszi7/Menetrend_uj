@@ -19,6 +19,7 @@ body{
   background-color: rgba(34, 91, 213, 0.159);
   width: 100vw;
   height: 100vh;  
+  overflow: scroll;
 }
 
 
@@ -77,6 +78,15 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+@media screen and (max-width: 600px) {
+  #fedo {
+    position: relative;
+    margin-bottom: 10px;
+    /* margin-top: 160px; */
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

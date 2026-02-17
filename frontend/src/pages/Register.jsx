@@ -199,6 +199,8 @@ export default function Register() {
                     </div>
 
                     <button
+                    type='submit'
+                    id="regisztracio"
                         style={{
                             flex: 1,
                             color: 'black',

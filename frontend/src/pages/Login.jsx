@@ -71,7 +71,7 @@ export default function Login() {
   return (
     <div id="fedo">
     <form
-      onSubmit={(event) => {bejelentkezes(event)}}
+      // onSubmit={(event) => {bejelentkezes(event)}}
       aria-labelledby="login-heading"
       style={{
         maxWidth: 400,
@@ -121,7 +121,7 @@ export default function Login() {
       )} */}
 
       <div style={{ display: "flex", gap: 8 }}>
-        <button type="submit"  style={{ flex: 1, padding: "10px 12px" }} onClick={bejelentkezes}>
+        <button type="submit" id="bejelentkezes"  style={{ flex: 1, padding: "10px 12px" }} onClick={bejelentkezes}>
           Bejelentkezés 
         </button>
         <p>Ha még nem regisztrált:</p>

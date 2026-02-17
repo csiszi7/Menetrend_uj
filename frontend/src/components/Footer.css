@@ -39,20 +39,17 @@ footer a:hover {
   }
 }
 
-/* Mobil */
 @media (max-width: 600px) {
+
   footer {
-    flex-direction: column;   /* egymás alá */
-    gap: 10px;
-    padding: 20px 0;
+    padding: 6px 0;        /* kisebb felső-alsó tér */
+    gap: 6px;              /* kisebb link távolság */
   }
 
   footer a {
-    font-size: 14px;
+    font-size: 12px;       /* kisebb szöveg */
+    line-height: 1.2;      /* kisebb sorköz */
+    margin: 2px 0;
   }
-}
 
-/* hogy ne takarja ki a tartalmat */
-body {
-  padding-bottom: 90px;
 }

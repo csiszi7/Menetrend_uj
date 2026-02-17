@@ -8,6 +8,10 @@
     flex-direction: row;
 }
 
+#fedo {
+  padding-top: 80px;
+}
+
 .register a {
   display: block;          /* <<< KÜLÖN SORBA TESZI A LINKEKET */
   color: white;

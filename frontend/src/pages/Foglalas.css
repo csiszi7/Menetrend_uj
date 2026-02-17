@@ -1,7 +1,7 @@
 /* Oldal alap */
 .foglalas-tarto {
   max-width: 1100px;
-  margin: 80px auto;
+  margin: 130px auto;
   padding: 32px;
 
   background: #ffffff;
@@ -85,4 +85,8 @@
 
 .veglegesites-gomb:active {
   transform: scale(0.97);
+}
+
+@media screen and (max-width: 600px) {
+   
 }

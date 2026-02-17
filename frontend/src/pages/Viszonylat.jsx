@@ -146,13 +146,14 @@ const Viszonylat = () => {
 					</table>
 				</div>
 				<div className="jobb-tarto" style={ { backgroundColor: 'rgba(0, 0, 100, 0.83)' } }>
+					<div className="allomas-fejlec">
 					<div className="allomasok">
 						<span>Viszonylat Honnan</span>
 						<span>Honnan</span>
 						<span>Hova</span>
 						<span>Viszonylat Hova</span>
-						<span>Teljes Ár</span>
-						<span>Foglalás</span>
+						<span className="teljes-ar">Teljes Ár</span>
+						<span className="teljes-foglalas">Foglalás</span>
 						  <span></span> {/* nyíl oszlopa */}
 					</div>
 					<div className="allomasok">
@@ -162,6 +163,7 @@ const Viszonylat = () => {
 						<span>{cel}</span>
 						<span></span>
 						<span></span>
+					</div>
 					</div>
 					{idopontok.map((elem, index) => (
   <div key={index}>
