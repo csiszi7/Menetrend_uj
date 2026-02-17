@@ -7,7 +7,14 @@
   width: 100%;
 }
 
-form {
+.kep-sor {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* form {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -15,7 +22,7 @@ form {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
-}
+} */
 
 form label {
   display: block;
@@ -80,7 +87,16 @@ form button[name="+Utas"]:hover {
   background: #059669;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1250px) { 
+  .kep-sor {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .kep-sor {
+    grid-template-columns: repeat(4, 1fr);
+  }
   form {
     padding: 1rem;
   }

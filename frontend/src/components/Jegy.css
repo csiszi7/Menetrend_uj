@@ -1,7 +1,7 @@
 /* Oldal alap */
 .jegy-tarto {
   max-width: 900px;
-  margin: 80px auto;
+  margin: 130px auto;
   padding: 32px;
 
   background: #ffffff;
@@ -73,4 +73,26 @@
 
 .jegy-tarto button:active {
   transform: scale(0.97);
+}
+
+.jegyek-szama {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+#szamlalo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+  color: red;
+
+}
+
+
+@media screen and (max-width: 750px) {
+  .jegy-kepek {
+    flex-direction: column;
+  }  
 }

@@ -51,6 +51,9 @@ app.use("/api/register-frontend", userRegisterRouter);
 const userLoginRouter = require("./routes/users/userLoginRoutes.js");
 app.use("/api/login-frontend", userLoginRouter);
 
+app.use('/api/stripe', require('./routes/stripeRoutesBackend.js'));
+
+
 
 app.use((req, res) => {
     try {
@@ -61,3 +64,5 @@ app.use((req, res) => {
         return res.json({ msg: 'Általános szerver hiba!' });
     }
 });
+
+module.exports = app; 

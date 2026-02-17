@@ -35,18 +35,18 @@ const Navbar = () => {
   };
   return (
     <div className="navbar-kontener">
-            <div>
+            <div className="bal-elemek">
               <Link to='/'>Home</Link>
                
               <Link to='/menetrend'>Menetrend</Link>
             </div>
             {isLoggedIn ? 
-            <div>
+            <div className="jobb-elemek">
               <button onClick={kijelenkezes}>Kijelentkezés</button>
             </div>  
             
             :
-            <div>
+            <div className="jobb-elemek">
               <Link to='/register'>Regisztráció</Link>
                <Link to='/login'>Bejelentkezés</Link>
             </div>
